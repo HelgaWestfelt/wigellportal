@@ -1,6 +1,7 @@
 package com.sandstrom.wigellportal.cinema.entities;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.sandstrom.wigellportal.mcrental.entities.Role;
 import jakarta.persistence.*;
@@ -55,7 +56,7 @@ public class CinemaCustomer {
     private List<CinemaBookingTicket> cinemaTicketBookings;
 
     @OneToMany(mappedBy = "cinemaCustomer", cascade = CascadeType.ALL)
-//    @JsonManagedReference
+    @JsonManagedReference
     private List<CinemaBookingVenue> cinemaVenueBookings = new ArrayList<>();
 
 
