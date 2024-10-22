@@ -23,8 +23,9 @@ public class CinemaCustomerServiceImpl implements CinemaCustomerService {
 
 
     @Autowired
-    public CinemaCustomerServiceImpl(CinemaCustomerRepository customerRep){
-        customerRepository = customerRep;
+    public CinemaCustomerServiceImpl(CinemaCustomerRepository customerRep, PasswordEncoder passwordEncoder){
+        this.customerRepository = customerRep;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -55,6 +56,8 @@ public class CinemaCustomerServiceImpl implements CinemaCustomerService {
 
     @Override
     public CinemaCustomer save (CinemaCustomer customer){
+        String encodedPassword = passwordEncoder.encode(customer.getPassword());
+        customer.setPassword(encodedPassword);
         logger.info("New customer was saved.");
         return customerRepository.save(customer);
     }

@@ -22,7 +22,7 @@ public class CinemaBookingVServiceImpl implements CinemaBookingVService {
     private CinemaBookingVRepository bookingCVenueRepository;
 
     @Autowired
-    private CinemaExchangeRateService exchangeRateService; // Injektera ExchangeRateService
+    private CinemaExchangeRateService exchangeRateService;
 
     @Override
     public List<CinemaBookingVenue> findAllBookingsByCustomerId(int customerId) {
