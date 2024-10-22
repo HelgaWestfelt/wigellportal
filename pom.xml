@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.westfelt</groupId>
-    <artifactId>wigellMcRental</artifactId>
+    <artifactId>wigellPortal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>wigellMcRental</name>
-    <description>wigellMcRental</description>
+    <name>WigellPortal</name>
+    <description>WigellPortal</description>
     <url/>
     <licenses>
         <license/>
