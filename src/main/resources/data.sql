@@ -1,239 +1,83 @@
--- Skapa tabeller om de inte finns
-CREATE TABLE IF NOT EXISTS admin (
-                                     id VARCHAR(45) PRIMARY KEY NOT NULL,
-    password CHAR(68) NOT NULL,
-    active TINYINT NOT NULL
-    );
+-- Sätta in mockdata för motorcykelbokningssystemet
+INSERT INTO address (street, zip_code, city) VALUES
+                                                 ('Main Street 1', '12345', 'City A'),
+                                                 ('Second Street 2', '23456', 'City B'),
+                                                 ('Third Street 3', '34567', 'City C'),
+                                                 ('Fourth Street 4', '45678', 'City D'),
+                                                 ('Fifth Street 5', '56789', 'City E');
 
-INSERT INTO admin (id, password, active)
-SELECT 'admin', '$2a$12$yJ17D0.4gvK8L3jgc8Nhu.0OsQdV6Bm4RTm48Y.oSlkAdSM16t/ru', 1
-    WHERE NOT EXISTS (SELECT 1 FROM admin WHERE id = 'admin');
+INSERT INTO customer (first_name, last_name, phone_number, date_of_birth, email, username, password, enabled, role, address_id) VALUES
+('John', 'Doe', '1234567890', '1990-01-01', 'john.doe@example.com', 'johndoe', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 1),
+('Jane', 'Doe', '2345678901', '1991-02-02', 'jane.doe@example.com', 'janedoe', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_ADMIN', 2),
+('Mike', 'Smith', '3456789012', '1985-03-03', 'mike.smith@example.com', 'mikesmith', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 3),
+('Anna', 'Johnson', '4567890123', '1975-04-04', 'anna.johnson@example.com', 'annajohnson', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 4),
+('Tom', 'Brown', '5678901234', '2000-05-05', 'tom.brown@example.com', 'tombrown', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_ADMIN', 5),
+('Maria', 'Wiklund', '2345678901', '1991-02-02', 'maria@example.com', 'maria_w', '$2a$10$c1B932Y8UJfcKj3PZtrbmO27C1Sz8llRijjEsAOuyetr6L6TWCN8q', true, 'ROLE_ADMIN', 2),
+('Anna', 'Andersson', '3456789012', '1985-03-03', 'anna@example.com', 'anna_a', '$2a$10$8Z0mJH74HKLdPFtbLwacKORdqeRSvfaQifav7yuWynHZ9tx9dpQYG', true, 'ROLE_USER', 3);
 
-INSERT INTO admin (id, password, active)
-SELECT 'alfa', '{bcrypt}$2a$12$fuoRGqj.3vO3.dyQ2Mu4wes3/vwMZoMmPrYbxzx78LAkLlJDCtfne', 1
-    WHERE NOT EXISTS (SELECT 1 FROM admin WHERE id = 'alfa');
 
-INSERT INTO admin (id, password, active)
-SELECT 'hugo', '{bcrypt}$2a$12$y6vUb2nfIJMRndv31r4Br.9YIZ.iN2OZYudvlnsmu1lQ8vAH5j16q', 1
-    WHERE NOT EXISTS (SELECT 1 FROM admin WHERE id = 'hugo');
+INSERT INTO motorcycle (brand, model, registration_number, price_per_day, availability) VALUES
+                                                                                            ('Harley-Davidson', 'Street 750', 'ABC123', 500, TRUE),
+                                                                                            ('Yamaha', 'MT-07', 'DEF456', 400, TRUE),
+                                                                                            ('Honda', 'CB500F', 'GHI789', 350, FALSE),
+                                                                                            ('BMW', 'R1200', 'JKL012', 600, TRUE),
+                                                                                            ('Suzuki', 'GSX-R600', 'MNO345', 450, TRUE);
 
-INSERT INTO admin (id, password, active)
-SELECT 'bastian', '{bcrypt}$2a$12$8tzTmpf1fwFEuScYm2kO0eCCIqUcD4RWxqPmenlp63qWg668QtDSC', 1
-    WHERE NOT EXISTS (SELECT 1 FROM admin WHERE id = 'bastian');
+INSERT INTO mc_booking (start_date, end_date, price, customer_id) VALUES
+                                                                   ('2024-01-01', '2024-01-05', 2000, 1),
+                                                                   ('2024-02-01', '2024-02-07', 2800, 2),
+                                                                   ('2024-03-01', '2024-03-03', 1050, 3),
+                                                                   ('2024-04-01', '2024-04-05', 2400, 4),
+                                                                   ('2024-05-01', '2024-05-04', 1800, 5);
 
-CREATE TABLE IF NOT EXISTS roles (
-                                     id VARCHAR(45) NOT NULL,
-    role VARCHAR(45) NOT NULL,
-    CONSTRAINT authorities5_idx_1 UNIQUE (id, role),
-    CONSTRAINT authorities5_ibfk_1 FOREIGN KEY(id) REFERENCES admin (id)
-    );
-INSERT INTO roles (id, role)
-SELECT 'admin', 'ROLE_ADMIN'
-    WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 'admin' AND role = 'ROLE_ADMIN');
+INSERT INTO booking_mc (booking_id, motorcycle_id) VALUES
+                                                       (1, 1),
+                                                       (1, 2),
+                                                       (2, 3),
+                                                       (3, 4),
+                                                       (4, 5),
+                                                       (5, 1);
 
-INSERT INTO roles (id, role)
-SELECT 'alfa', 'ROLE_ADMIN'
-    WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 'alfa' AND role = 'ROLE_ADMIN');
+-- Lägg till filmer i cinema_movie
+INSERT INTO cinema_movie (title, length, genre, age_limit) VALUES
+                                                               ('Inception', 148, 'SCIENCEFICTION', 13),
+                                                               ('The Godfather', 175, 'THRILLER', 15),
+                                                               ('The Dark Knight', 152, 'ACTION', 13),
+                                                               ('Pulp Fiction', 154, 'THRILLER', 15),
+                                                               ('Interstellar', 169, 'SCIENCEFICTION', 13);
 
-INSERT INTO roles (id, role)
-SELECT 'alfa', 'ROLE_USER'
-    WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 'alfa' AND role = 'ROLE_USER');
+-- Lägg till venues i cinema_venue
+INSERT INTO cinema_venue (name, max_no_of_guests) VALUES
+                                                      ('Venue A', 200),
+                                                      ('Venue B', 150),
+                                                      ('Venue C', 300),
+                                                      ('Venue D', 100),
+                                                      ('Venue E', 250);
 
-INSERT INTO roles (id, role)
-SELECT 'hugo', 'ROLE_USER'
-    WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 'hugo' AND role = 'ROLE_USER');
+-- Lägg till bokningar i cinema_booking_venue
+INSERT INTO cinema_booking_venue (nr_of_guests, cinema_venue_id, customer_id, entertainment, date_and_time, total_price_in_SEK, total_price_in_USD) VALUES
+                                                                                                                                                               (50, 1, 1, 'Live Band', '2024-12-01 19:00:00', 5000.00, 500.00),  -- 50 gäster i Venue A, kund 1
+                                                                                                                                                               (30, 2, 2, 'DJ Set', '2024-12-05 21:00:00', 3000.00, 300.00),     -- 30 gäster i Venue B, kund 2
+                                                                                                                                                               (20, 3, 3, 'Comedy Show', '2024-12-10 18:00:00', 2500.00, 250.00), -- 20 gäster i Venue C, kund 3
+                                                                                                                                                               (10, 4, 4, 'Theater Performance', '2024-12-15 20:00:00', 2000.00, 200.00); -- 10 gäster i Venue D, kund 4
+INSERT INTO destination (city, country) VALUES
+('Paris', 'France'),
+('New York', 'USA'),
+('Tokyo', 'Japan'),
+('Sydney', 'Australia'),
+('Cape Town', 'South Africa');
 
-INSERT INTO roles (id, role)
-SELECT 'bastian', 'ROLE_USER'
-    WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 'bastian' AND role = 'ROLE_USER');
+-- Infoga resor om de inte redan finns
+INSERT INTO trip (hotel, destination_id, weekly_price) VALUES
+('Hotel Eiffel', 1, 500.00),
+('Manhattan Suite', 2, 700.00),
+('Tokyo Plaza', 3, 600.00),
+('Harbour Hotel', 4, 800.00),
+('Oceanview Lodge', 5, 550.00);
 
-CREATE TABLE IF NOT EXISTS padel_address (
-                                             id INT NOT NULL AUTO_INCREMENT,
-                                             street VARCHAR(100) NOT NULL,
-    zip_code VARCHAR(10) NOT NULL,
-    city VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
-    );
-
-CREATE TABLE IF NOT EXISTS padel_customer (
-                                              id INT NOT NULL AUTO_INCREMENT,
-                                              first_name VARCHAR(45),
-    last_name VARCHAR(45),
-    username VARCHAR(45),
-    password VARCHAR(68),
-    role VARCHAR(45),
-    email VARCHAR(45),
-    phone_number VARCHAR(20),
-    date_of_birth VARCHAR(20),
-    address_id INT,
-    PRIMARY KEY (id),
-    FOREIGN KEY (address_id) REFERENCES padel_address(id)
-    );
-
-CREATE TABLE IF NOT EXISTS court (
-                                     id INT NOT NULL AUTO_INCREMENT,
-                                     name VARCHAR(255),
-    location VARCHAR(255),
-    price_per_hour INT,
-    description VARCHAR(255),
-    PRIMARY KEY (id)
-    );
-
-CREATE TABLE IF NOT EXISTS court_times (
-                                           court_id INT NOT NULL,
-                                           time TIME NOT NULL,
-                                           is_available BIT,
-                                           PRIMARY KEY (court_id, time),
-    FOREIGN KEY (court_id) REFERENCES court(id)
-    );
-
-CREATE TABLE IF NOT EXISTS padel_booking (
-                                             id INT NOT NULL AUTO_INCREMENT,
-                                             date DATE,
-                                             time TIME,
-                                             total_price INT,
-                                             total_price_eur FLOAT,
-                                             currency VARCHAR(255),
-    players_count INT,
-    court_id INT,
-    customer_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (court_id) REFERENCES court(id),
-    FOREIGN KEY (customer_id) REFERENCES padel_customer(id)
-    );
-
--- Radera alla poster i rätt ordning
-DELETE FROM padel_booking WHERE 1;
-DELETE FROM padel_customer WHERE 1;
-DELETE FROM court_times WHERE 1;
-DELETE FROM court WHERE 1;
-DELETE FROM padel_address WHERE 1;
-DELETE FROM roles WHERE 1;
-DELETE FROM admin WHERE 1;
-
--- Lägg till adresser
-INSERT INTO padel_address (street, zip_code, city) VALUES ('Userstreet 1', '12345', 'Usercity');
-INSERT INTO padel_address (street, zip_code, city) VALUES ('Space Needle 1', '98101', 'Seattle');
-INSERT INTO padel_address (street, zip_code, city) VALUES ('8 mile', '48226', 'Detroit');
-INSERT INTO padel_address (street, zip_code, city) VALUES ('Space Needle 2', '98101', 'Seattle');
-INSERT INTO padel_address (street, zip_code, city) VALUES ('Adminstreet 1', '11111', 'Admincity');
-
--- Lägg till kunder
-INSERT INTO padel_customer (first_name, last_name, username, password, role, email, phone_number, date_of_birth, address_id)
-VALUES ('User', 'Testsson', 'user', '$2a$12$/Jm2ptrJsvK.AKc0XlGluOMezMArC.AYbeSVfYC2PGL3uysP5O8Ya', 'USER', 'user@gmail.com', '+46123-456-789', '1990-01-01', 1);
-
-INSERT INTO padel_customer (first_name, last_name, username, password, role, email, phone_number, date_of_birth, address_id)
-VALUES ('Kam', 'Chancellor', 'Seahawks', '$2a$12$ku8GoYFXS1kIgEBvzJUH0u90VQc7WebHe4uZY5wm1Fw/I27gNEwWe', 'USER', 'Kchancellor@gmail.com', '+46987-654-321', '1988-04-03', 2);
-
-INSERT INTO padel_customer (first_name, last_name, username, password, role, email, phone_number, date_of_birth, address_id)
-VALUES ('Amon-Ra', 'St.Brown', 'Detroit', '$2a$12$9OrtN8UIZjvngnxsOfRYKeUBHkGnH9KqIABXdTmszjdgnOyOJYPEW', 'USER', 'ABrown@gmail.com', '+4623-456-7891', '1999-10-24', 3);
-
-INSERT INTO padel_customer (first_name, last_name, username, password, role, email, phone_number, date_of_birth, address_id)
-VALUES ('Doug', 'Baldwin', 'Seattle', '$2a$12$.3REAazMTtwj5rWvt6EYheUNO9aQV/lNcaOo6NghM/f0dAwPec0GO', 'USER', 'DBaldwin@gmail.com', '+4687-654-329', '1989-09-21', 4);
-
-INSERT INTO padel_customer (first_name, last_name, username, password, role, email, phone_number, date_of_birth, address_id)
-VALUES ('Admin', 'Adminsson', 'admin', '$2a$12$gyHZLSd6p84ZSavY.yY62uewbD7kpPtjQarBByLaW7B.97DX7D.AO', 'ADMIN', 'admin@gmail.com', '+46', '1980-01-01', 5);
-
--- Lägg till padelbanor
-INSERT INTO court (name, location, price_per_hour, description)
-VALUES ('Padel Court 1', 'Södertälje', 200, 'Inomhus, grönt gräs med vita linjer, finns omklädningsrum och kamera');
-
-INSERT INTO court (name, location, price_per_hour, description)
-VALUES ('Padel Court 2', 'Årsta', 250, 'Inomhus, blått gräs med vita linjer, finns omklädningsrum och kamera');
-
-INSERT INTO court (name, location, price_per_hour, description)
-VALUES ('Padel Court 3', 'Älvsjö', 200, 'Inomhus, grönt gräs med röda linjer');
-
-INSERT INTO court (name, location, price_per_hour, description)
-VALUES ('Padel Court 4', 'Rättvik', 250, 'Utomhus, grönt gräs med vita linjer');
-
-INSERT INTO court (name, location, price_per_hour, description)
-VALUES ('Padel Court 5', 'Haninge', 200, 'Utomhus, grönt gräs med vita linjer, finns omklädningsrum');
-
--- Lägg till bokningsbara tider för varje padelbana
--- Tiderna är mellan 08:00 och 20:00
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '08:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '09:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '10:00:00', FALSE); -- Bokad tid
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '11:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '12:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '13:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '14:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '15:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '16:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '17:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '18:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '19:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '20:00:00', TRUE);
-
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '08:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '09:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '10:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '11:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '12:00:00', FALSE); -- Bokad tid
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '13:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '14:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '15:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '16:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '17:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '18:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '19:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '20:00:00', TRUE);
-
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '08:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '09:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '10:00:00', FALSE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '11:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '12:00:00', TRUE); -- Bokad tid
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '13:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '14:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '15:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '16:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '17:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '18:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '19:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '20:00:00', TRUE);
-
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '08:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '09:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '10:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '11:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '12:00:00', FALSE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '13:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '14:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '15:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '16:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '17:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '18:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '19:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (4, '20:00:00', TRUE);
-
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '08:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '09:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '10:00:00', FALSE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '11:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '12:00:00', TRUE); -- Bokad tid
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '13:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '14:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '15:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '16:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '17:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '18:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '19:00:00', TRUE);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '20:00:00', TRUE);
-
--- Lägg till bokningar
-INSERT INTO padel_booking (date, time, total_price, total_price_eur, currency, players_count, court_id, customer_id)
-VALUES ('2024-10-03', '10:00:00', 200, 19.0, 'SEK', 4, 1, 1);
-
-INSERT INTO padel_booking (date, time, total_price, total_price_eur, currency, players_count, court_id, customer_id)
-VALUES ('2024-10-03', '12:00:00', 250, 23.75, 'SEK', 4, 2, 2);
-
-INSERT INTO padel_booking (date, time, total_price, total_price_eur, currency, players_count, court_id, customer_id)
-VALUES ('2024-10-03', '10:00:00', 200, 19.0, 'SEK', 4, 3, 3);
-
-INSERT INTO padel_booking (date, time, total_price, total_price_eur, currency, players_count, court_id, customer_id)
-VALUES ('2024-10-03', '12:00:00', 250, 23.75, 'SEK', 4, 4, 4);
-
-INSERT INTO padel_booking (date, time, total_price, total_price_eur, currency, players_count, court_id, customer_id)
-VALUES ('2024-10-03', '10:00:00', 200, 19.0, 'SEK', 4, 5, 5);
+INSERT INTO travel_booking (travel_date, return_date, number_of_weeks, total_price_sek, total_price_pln, booking_date, trip_id, customer_id) VALUES
+('2024-10-01', '2024-10-08', 1, 5000.00, 2000.00, '2024-09-25 10:30:00', 1, 2),
+('2024-11-15', '2024-11-22', 1, 7000.00, 2800.00, '2024-10-10 14:20:21', 2, 2),
+('2024-12-05', '2024-12-19', 2, 12000.00, 4800.00, '2024-11-01 09:00:00', 3, 3),
+('2025-01-10', '2025-01-17', 1, 8000.00, 3200.00, '2024-12-01 11:46:03', 4, 4),
+('2025-02-20', '2025-03-06', 2, 11000.00, 4400.00, '2025-01-15 08:30:00', 5, 5);
