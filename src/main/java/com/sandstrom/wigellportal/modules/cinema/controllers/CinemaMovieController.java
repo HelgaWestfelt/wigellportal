@@ -1,8 +1,5 @@
 package com.sandstrom.wigellportal.modules.cinema.controllers;
 
-
-
-
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaMovie;
 import com.sandstrom.wigellportal.modules.cinema.services.CinemaMovieService;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +33,7 @@ public class CinemaMovieController {
         movieService.deleteById(id);
         return "Movie with id " + id + " is deleted.";
     }
+
     @PutMapping("/v1/movies/{id}")
     public CinemaMovie updateMovie(@PathVariable int id, @RequestBody CinemaMovie m) {
         CinemaMovie existingMovie = movieService.findById(id);

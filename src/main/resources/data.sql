@@ -47,19 +47,22 @@ INSERT INTO cinema_movie (title, length, genre, age_limit) VALUES
                                                                ('Interstellar', 169, 'SCIENCEFICTION', 13);
 
 -- Lägg till venues i cinema_venue
-INSERT INTO cinema_venue (name, max_no_of_guests) VALUES
-                                                      ('Venue A', 200),
-                                                      ('Venue B', 150),
-                                                      ('Venue C', 300),
-                                                      ('Venue D', 100),
-                                                      ('Venue E', 250);
+INSERT INTO cinema_venue (name, max_no_of_guests, facilities) VALUES
+                                                                  ('Hepburn', 200, '3D Projection, Dolby Atmos Sound, Luxury seating'),
+                                                                  ('Chaplin', 150, 'Wheelchair accessible, Hearing loops, Catering services'),
+                                                                  ('Monroe', 300, 'IMAX screen, Bar, Inseat food and beverage service, Dolby Atmos Sound'),
+                                                                  ('Garland', 60, '4K Ultra HD Projection, Bar, Hearing loops'),
+                                                                  ('Brando', 250, 'Dolby Atmos Sound, Wheelchair accessible, Hearing loops, 3D projection, Cafe and bar');
+
 
 -- Lägg till bokningar i cinema_booking_venue
 INSERT INTO cinema_booking_venue (nr_of_guests, cinema_venue_id, customer_id, entertainment, date_and_time, total_price_in_SEK, total_price_in_USD) VALUES
-                                                                                                                                                               (50, 1, 1, 'Live Band', '2024-12-01 19:00:00', 5000.00, 500.00),  -- 50 gäster i Venue A, kund 1
-                                                                                                                                                               (30, 2, 2, 'DJ Set', '2024-12-05 21:00:00', 3000.00, 300.00),     -- 30 gäster i Venue B, kund 2
-                                                                                                                                                               (20, 3, 3, 'Comedy Show', '2024-12-10 18:00:00', 2500.00, 250.00), -- 20 gäster i Venue C, kund 3
-                                                                                                                                                               (10, 4, 4, 'Theater Performance', '2024-12-15 20:00:00', 2000.00, 200.00); -- 10 gäster i Venue D, kund 4
+ (200, 1, 1, 'Live Band', '2024-12-01 19:00:00', 5000.00, 500.00),
+ (135, 2, 2, 'DJ Set', '2024-12-05 21:00:00', 3000.00, 300.00),
+ (280, 3, 3, 'Comedy Show', '2024-12-10 18:00:00', 2500.00, 250.00),
+(45, 4, 4, 'Theater Performance', '2024-12-15 20:00:00', 2000.00, 200.00);
+
+
 INSERT INTO destination (city, country) VALUES
 ('Paris', 'France'),
 ('New York', 'USA'),

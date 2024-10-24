@@ -84,7 +84,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/v1/movies/*").hasRole("ADMIN")
 
                         // Cinema customers
-                        .requestMatchers(HttpMethod.GET, "/api/v1/cinema/customers").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/cinema/customers").hasAnyRole("USER", "ADMIN")
                         .requestMatchers(HttpMethod.POST, "/api/v1/cinema/customers").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/v1/cinema/customers/*").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/cinema/customers/*").hasRole("ADMIN")

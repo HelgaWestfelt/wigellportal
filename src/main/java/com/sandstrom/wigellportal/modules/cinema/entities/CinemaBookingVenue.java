@@ -23,11 +23,10 @@ public class CinemaBookingVenue {
 
     @ManyToOne
     @JoinColumn(name = "cinema_venue_id")
-//    @JsonManagedReference
     private CinemaVenue cinemaVenue;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customer.id", nullable = false)
     @JsonBackReference
     private Customer customer;
 
@@ -42,7 +41,6 @@ public class CinemaBookingVenue {
 
     @Column (name = "total_price_in_USD")
     private BigDecimal totalPriceUSD;
-
 
     public CinemaBookingVenue() {}
 
@@ -119,10 +117,6 @@ public class CinemaBookingVenue {
     public void setTotalPriceUSD(BigDecimal totalPriceUSD) {
         this.totalPriceUSD = totalPriceUSD;
     }
-
-//    public BigDecimal getTotalPriceUSD(BigDecimal exchangeRate) {
-//        return totalPriceSEK.multiply(exchangeRate);
-//    }
 
 
     @Override
