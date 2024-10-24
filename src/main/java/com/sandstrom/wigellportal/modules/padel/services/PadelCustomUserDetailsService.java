@@ -1,7 +1,7 @@
 package com.sandstrom.wigellportal.modules.padel.services;
 
-import com.sandstrom.wigellportal.modules.padel.entities.PadelCustomer;
-import com.sandstrom.wigellportal.modules.padel.dao.PadelCustomerRepository;
+import com.sandstrom.wigellportal.customer.Customer;
+import com.sandstrom.wigellportal.customer.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,16 +15,16 @@ import java.util.Collections;
 @Service
 public class PadelCustomUserDetailsService implements UserDetailsService {
 
-    private final PadelCustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     @Autowired
-    public PadelCustomUserDetailsService(PadelCustomerRepository customerRepository) {
+    public PadelCustomUserDetailsService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        PadelCustomer customer = customerRepository.findByUsername(username)
+        Customer customer = customerRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Användare med användarnamn " + username + " hittades inte"));
 
         // Skapa en authority baserat på kundens roll (prefix "ROLE_" krävs av Spring Security)

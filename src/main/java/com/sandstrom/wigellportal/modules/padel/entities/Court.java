@@ -9,7 +9,7 @@ import java.util.Map;
 
 @Entity
 @Table(name = "court")
-public class Court {  // Behåller namnet som Court
+public class Court {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,13 @@ public class Court {  // Behåller namnet som Court
     private int pricePerHour;
 
     @Column(name = "description")
-    private String description;
+    private String description; // Nytt fält för att uppdatera information om banan
 
     @OneToMany(mappedBy = "court", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private List<PadelBooking> bookings;  // Refererar till PadelBooking
+    private List<PadelBooking> bookings;
 
+    // Nytt fält för att lagra bokningsbara tider
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "court_times", joinColumns = @JoinColumn(name = "court_id"))
     @MapKeyColumn(name = "time")
@@ -39,7 +40,8 @@ public class Court {  // Behåller namnet som Court
     @JsonIgnore
     private Map<LocalTime, Boolean> availableTimes = new HashMap<>();
 
-    // Default constructor
+    // Constructors, Getters, Setters, toString()
+
     public Court() {
         initializeAvailableTimes();  // Initiera tillgängliga tider vid skapandet av objektet
     }
@@ -59,7 +61,6 @@ public class Court {  // Behåller namnet som Court
         }
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }

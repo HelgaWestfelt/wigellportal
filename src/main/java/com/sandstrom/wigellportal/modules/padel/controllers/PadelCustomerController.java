@@ -1,7 +1,5 @@
 package com.sandstrom.wigellportal.modules.padel.controllers;
 
-import com.sandstrom.wigellportal.modules.padel.entities.PadelCustomer; // Ändrat från Customer till PadelCustomer
-import com.sandstrom.wigellportal.modules.padel.services.PadelCustomerService; // Ändrat från CustomerService till PadelCustomerService
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

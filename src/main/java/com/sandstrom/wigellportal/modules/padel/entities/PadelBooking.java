@@ -1,5 +1,6 @@
 package com.sandstrom.wigellportal.modules.padel.entities;
 
+import com.sandstrom.wigellportal.customer.Customer;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -33,7 +34,7 @@ public class PadelBooking {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    private PadelCustomer customer;
+    private Customer customer;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "court_id")
@@ -45,7 +46,7 @@ public class PadelBooking {
     public PadelBooking() {
     }
 
-    public PadelBooking(LocalDate date, LocalTime time, int totalPrice, double totalPriceEur, String currency, int playersCount, PadelCustomer customer, Court court) {
+    public PadelBooking(LocalDate date, LocalTime time, int totalPrice, double totalPriceEur, String currency, int playersCount, Customer customer, Court court) {
         this.date = date;
         this.time = time;
         this.totalPrice = totalPrice;
@@ -112,11 +113,11 @@ public class PadelBooking {
         this.playersCount = playersCount;
     }
 
-    public PadelCustomer getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(PadelCustomer customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 

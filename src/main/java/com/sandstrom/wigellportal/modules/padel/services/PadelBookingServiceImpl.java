@@ -2,9 +2,7 @@ package com.sandstrom.wigellportal.modules.padel.services;
 
 import com.sandstrom.wigellportal.modules.padel.dao.CourtRepository;
 import com.sandstrom.wigellportal.modules.padel.dao.PadelBookingRepository;
-import com.sandstrom.wigellportal.modules.padel.dao.PadelCustomerRepository;
 import com.sandstrom.wigellportal.modules.padel.entities.Court;
-import com.sandstrom.wigellportal.modules.padel.entities.PadelCustomer;
 import com.sandstrom.wigellportal.modules.padel.entities.PadelBooking;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

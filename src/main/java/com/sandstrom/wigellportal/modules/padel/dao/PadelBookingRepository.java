@@ -1,7 +1,6 @@
 package com.sandstrom.wigellportal.modules.padel.dao;
 
 import com.sandstrom.wigellportal.modules.padel.entities.Court;
-import com.sandstrom.wigellportal.modules.padel.entities.PadelCustomer;
 import com.sandstrom.wigellportal.modules.padel.entities.PadelBooking;
 import org.springframework.data.jpa.repository.JpaRepository;
 
