@@ -1,4 +1,4 @@
-package com.westfelt.wigellmcrental.services;
+package com.sandstrom.wigellportal.address;
 
 import jakarta.transaction.Transactional;
 
