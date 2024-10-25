@@ -1,13 +1,15 @@
-package com.sandstrom.wigellportal.modules.motorcyclerental.services;
+package com.westfelt.wigellmcrental.services;
 
-import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McRepository;
-import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Motorcycle;
+import com.westfelt.wigellmcrental.currency.CurrencyResponse;
+import com.westfelt.wigellmcrental.dao.McRepository;
+import com.westfelt.wigellmcrental.entities.Motorcycle;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,10 +19,12 @@ public class McServiceImpl implements McService{
     private static final Logger logger = LoggerFactory.getLogger(McServiceImpl.class);
 
     private McRepository mcRepository;
+    private CurrencyService currencyService;
 
     @Autowired
-    public McServiceImpl(McRepository mcRep){
+    public McServiceImpl(McRepository mcRep, CurrencyService currServ){
         mcRepository = mcRep;
+        currencyService = currServ;
     }
 
     @Override
@@ -29,7 +33,9 @@ public class McServiceImpl implements McService{
     }
 
     public List<Motorcycle> findAvailableBikes() {
-        return mcRepository.findByAvailabilityTrue();
+        List<Motorcycle> motorcycles = mcRepository.findByAvailabilityTrue();
+
+        return motorcycles;
     }
 
     @Override
@@ -48,6 +54,10 @@ public class McServiceImpl implements McService{
     @Override
     public Motorcycle save(Motorcycle motorcycle) {
         logger.info("Admin added a motorcycle: {}", motorcycle);
+
+        BigDecimal pricePerDayInGBP = calculatePriceInGBP(motorcycle.getPricePerDay());
+        motorcycle.setPricePerDayInGBP(pricePerDayInGBP);
+
         return mcRepository.save(motorcycle);
     }
 
@@ -70,8 +80,28 @@ public class McServiceImpl implements McService{
 
             logger.info("Admin updated motorcycle: {}", updatedMotorcycle);
 
+           BigDecimal pricePerDayInGBP = calculatePriceInGBP(motorcycle.getPricePerDay());
+           motorcycle.setPricePerDayInGBP(pricePerDayInGBP);
+
             return mcRepository.save(motorcycle);
         }).orElseThrow(() -> new RuntimeException("Motorcycle with id: " + id + " could not be found"));
+    }
+
+    private BigDecimal calculatePriceInGBP(BigDecimal priceInSEK) {
+        CurrencyResponse exchangeRate = currencyService.getCurrencyToGBP();
+
+        if (exchangeRate != null && exchangeRate.getRates() != null) {
+            BigDecimal gbpRate = exchangeRate.getRate("GBP");
+            BigDecimal sekRate = exchangeRate.getRate("SEK");
+            if (gbpRate != null && sekRate != null) {
+                BigDecimal priceInGBP = priceInSEK.divide(sekRate, 4, BigDecimal.ROUND_HALF_UP).multiply(gbpRate);
+                priceInGBP = priceInGBP.setScale(2, BigDecimal.ROUND_HALF_UP);
+                logger.info("Price in SEK " + priceInSEK + " was converted to GBP " + priceInGBP + ".");
+                return priceInGBP;
+            }
+        }
+
+        return BigDecimal.ZERO; // Returnera 0 om växelkursen inte kan hämtas
     }
 
 }

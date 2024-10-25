@@ -1,6 +1,6 @@
-package com.sandstrom.wigellportal.modules.motorcyclerental.services;
+package com.westfelt.wigellmcrental.services;
 
-import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
+import com.westfelt.wigellmcrental.entities.McBooking;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +12,5 @@ public interface McBookingService {
     McBooking save(McBooking booking);
     String deleteById(int id);
     McBooking updateMcBooking(int id, McBooking mcBooking);
-    Map<String, List<McBooking>> findAllBookings();
-    List<McBooking> findBookingByCustomerId(int id);
+    Map<String, List<McBooking>> findAllBookings(int id);
 }
