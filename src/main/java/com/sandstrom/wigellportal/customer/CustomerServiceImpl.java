@@ -16,7 +16,6 @@ import java.util.Optional;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-
     private PasswordEncoder passwordEncoder;
     private static final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
     private CustomerRepository customerRepository;

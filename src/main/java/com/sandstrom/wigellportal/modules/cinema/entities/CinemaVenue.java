@@ -19,24 +19,21 @@ public class CinemaVenue {
     @Column(name = "max_no_of_guests", nullable = false)
     private int maxNoOfGuests;
 
-    @ElementCollection
-    @Column(name = "facilities")
-    private List<String> facilities;
 
+    @Column(name = "facilities")
+    private String facilities;
 
     @OneToMany(mappedBy = "cinemaVenue", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JsonBackReference
     @JsonIgnore
     private List<CinemaBookingVenue> bookings;
 
     public CinemaVenue() {}
 
-    public CinemaVenue(String name, int maxNoOfGuests, List<String> facilities) {
+    public CinemaVenue(String name, int maxNoOfGuests, String facilities) {
         this.name = name;
         this.maxNoOfGuests = maxNoOfGuests;
         this.facilities = facilities;
     }
-
 
     public int getId() {
         return id;
@@ -62,11 +59,11 @@ public class CinemaVenue {
         this.maxNoOfGuests = maxNoOfGuests;
     }
 
-    public List<String> getFacilities() {
+    public String getFacilities() {
         return facilities;
     }
 
-    public void setFacilities(List<String> facilities) {
+    public void setFacilities(String facilities) {
         this.facilities = facilities;
     }
 

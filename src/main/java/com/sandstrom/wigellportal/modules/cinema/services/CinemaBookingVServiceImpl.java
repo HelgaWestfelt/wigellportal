@@ -2,8 +2,11 @@ package com.sandstrom.wigellportal.modules.cinema.services;
 
 
 
+
 import com.sandstrom.wigellportal.modules.cinema.dao.CinemaBookingVRepository;
+import com.sandstrom.wigellportal.modules.cinema.dao.CinemaVenueRepository;
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingVenue;
+import com.sandstrom.wigellportal.modules.cinema.entities.CinemaVenue;
 import com.sandstrom.wigellportal.modules.cinema.models.CinemaExchangeRateResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,9 @@ public class CinemaBookingVServiceImpl implements CinemaBookingVService {
 
     @Autowired
     private CinemaBookingVRepository bookingCVenueRepository;
+
+    @Autowired
+    private CinemaVenueRepository cinemaVenueRepository;
 
     @Autowired
     private CinemaExchangeRateService exchangeRateService;
@@ -44,14 +50,34 @@ public class CinemaBookingVServiceImpl implements CinemaBookingVService {
         return bookingCVenue;
     }
 
+
     @Override
     public CinemaBookingVenue save(CinemaBookingVenue bookingCVenue) {
+
+        int nrOfGuests = bookingCVenue.getNrOfGuests();
+        logger.info("Antal gäster i bokningen: " + nrOfGuests);
+
+        // Hämta CinemaVenue från databasen, för att jämföra antal gäster med max antal i lokalen
+        int venueId = bookingCVenue.getCinemaVenue().getId();
+        CinemaVenue venue = cinemaVenueRepository.findById(venueId)
+                .orElseThrow(() -> new IllegalArgumentException("Venue with id " + venueId + " was not found."));
+
+        int maxGuests = venue.getMaxNoOfGuests();
+        logger.info("Max nr of guests for the venue: " + maxGuests);
+
+        if (nrOfGuests > maxGuests) {
+            logger.info("The nr of guests exceeds max nr of guests in the chosen venue.");
+            throw new IllegalArgumentException("The nr of guests exceeds max nr of guests in the chosen venue.");
+        }
+        bookingCVenue.setCinemaVenue(venue);
+
         BigDecimal priceInUSD = calculatePriceInUSD(bookingCVenue.getTotalPriceSEK());
         bookingCVenue.setTotalPriceUSD(priceInUSD);
 
-        logger.info("New cinema venue booking was made.");
+        logger.info("New venue booking was made.");
         return bookingCVenueRepository.save(bookingCVenue);
     }
+
 
     @Override
     public void deleteById(int id) {
