@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Locale;
 
 @Service
-public class CurrencyConversionService {
+public class PadelCurrencyConversionService {
 
     @Autowired
     private RestTemplate restTemplate;
@@ -26,6 +26,10 @@ public class CurrencyConversionService {
 
     // Allmän metod för att konvertera valutor
     public double convertCurrency(String fromCurrency, String toCurrency, double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Conversion amount must be greater than zero.");
+        }
+
         try {
             // Bygg URL med API Access Key och korrekt formaterad mängd
             String formattedAmount = String.format(Locale.ENGLISH, "%.2f", amount);
@@ -60,6 +64,7 @@ public class CurrencyConversionService {
             throw new RuntimeException("General error occurred while fetching conversion rate", e);
         }
     }
+
 
     // Metod för att konvertera SEK till EUR
     public double convertToEuro(double sekAmount) {

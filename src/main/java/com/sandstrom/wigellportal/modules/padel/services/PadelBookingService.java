@@ -23,4 +23,5 @@ public interface PadelBookingService {
     void deleteBooking(int id); // Admin kan ta bort bokningar
 
     boolean isTimeBooked(Court court, LocalTime time); // Kontrollera om en tid är bokad på en specifik bana
+    List<String> getAvailableTimes();
 }

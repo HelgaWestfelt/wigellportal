@@ -116,6 +116,9 @@ public class CustomerServiceImpl implements CustomerService {
                 customer.getLastName()
         );
     }
+    public Customer createCustomer(Customer customer) {
+        return customerRepository.save(customer);
+    }
 
 
 }
