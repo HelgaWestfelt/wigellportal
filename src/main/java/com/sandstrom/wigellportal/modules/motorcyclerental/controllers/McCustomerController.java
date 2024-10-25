@@ -55,9 +55,4 @@ public class McCustomerController {
     }
 
 
-    @GetMapping("/mcBooking/{id}")
-    public List<McBooking> getBookings(@PathVariable int id) {
-        return mcBookingService.findBookingByCustomerId(id);
-    }
-
 }

@@ -1,4 +1,4 @@
-package com.westfelt.wigellmcrental.entities;
+package com.sandstrom.wigellportal.modules.motorcyclerental.entities;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;

@@ -30,13 +30,6 @@ INSERT INTO mc_booking (start_date, end_date, price, customer_id) VALUES
                                                                    ('2024-04-01', '2024-04-05', 2400, 4),
                                                                    ('2024-05-01', '2024-05-04', 1800, 5);
 
-INSERT INTO booking_mc (booking_id, motorcycle_id) VALUES
-                                                       (1, 1),
-                                                       (1, 2),
-                                                       (2, 3),
-                                                       (3, 4),
-                                                       (4, 5),
-                                                       (5, 1);
 
 -- Lägg till filmer i cinema_movie
 INSERT INTO cinema_movie (title, length, genre, age_limit) VALUES

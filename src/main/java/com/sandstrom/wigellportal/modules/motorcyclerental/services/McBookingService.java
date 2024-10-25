@@ -1,6 +1,8 @@
-package com.westfelt.wigellmcrental.services;
+package com.sandstrom.wigellportal.modules.motorcyclerental.services;
 
-import com.westfelt.wigellmcrental.entities.McBooking;
+
+
+import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
 
 import java.util.List;
 import java.util.Map;

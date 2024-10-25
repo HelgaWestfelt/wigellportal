@@ -1,4 +1,4 @@
-package com.westfelt.wigellmcrental.currency;
+package com.sandstrom.wigellportal.modules.motorcyclerental.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

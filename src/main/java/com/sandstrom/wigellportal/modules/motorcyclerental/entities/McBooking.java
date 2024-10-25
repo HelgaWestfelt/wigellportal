@@ -1,8 +1,9 @@
-package com.westfelt.wigellmcrental.entities;
+package com.sandstrom.wigellportal.modules.motorcyclerental.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sandstrom.wigellportal.customer.Customer;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "booking")
+@Table(name = "mc_booking")
 public class McBooking {
 
     @Id

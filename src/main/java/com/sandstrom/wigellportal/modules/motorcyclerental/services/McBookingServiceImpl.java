@@ -1,12 +1,13 @@
-package com.westfelt.wigellmcrental.services;
+package com.sandstrom.wigellportal.modules.motorcyclerental.services;
 
-import com.westfelt.wigellmcrental.currency.CurrencyResponse;
-import com.westfelt.wigellmcrental.dao.CustomerRepository;
-import com.westfelt.wigellmcrental.dao.McBookingRepository;
-import com.westfelt.wigellmcrental.dao.McRepository;
-import com.westfelt.wigellmcrental.entities.Customer;
-import com.westfelt.wigellmcrental.entities.McBooking;
-import com.westfelt.wigellmcrental.entities.Motorcycle;
+import com.sandstrom.wigellportal.customer.Customer;
+import com.sandstrom.wigellportal.customer.CustomerRepository;
+import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McBookingRepository;
+import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McRepository;
+import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
+import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Motorcycle;
+import com.sandstrom.wigellportal.modules.motorcyclerental.services.CurrencyResponse;
+
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

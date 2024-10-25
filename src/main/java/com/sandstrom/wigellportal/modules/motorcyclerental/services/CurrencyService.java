@@ -1,6 +1,6 @@
-package com.westfelt.wigellmcrental.services;
+package com.sandstrom.wigellportal.modules.motorcyclerental.services;
 
-import com.westfelt.wigellmcrental.currency.CurrencyResponse;
+import com.sandstrom.wigellportal.modules.motorcyclerental.services.CurrencyResponse;
 
 public interface CurrencyService {
 
