@@ -34,6 +34,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<Customer> findAll() {
+        logger.info("Listed all customers");
         return customerRepository.findAll();
     }
 
@@ -46,25 +47,9 @@ public class CustomerServiceImpl implements CustomerService{
         } else {
             throw new RuntimeException("Customer with id: " + id + " could not be found");
         }
+        logger.info("Found customer with id: {}", id);
         return customer;
     }
-
-/*    @Transactional
-    @Override
-    public Customer save(Customer customer) {
-        if (customer.getAddress() != null && customer.getAddress().getId() == 0) {
-            // Om adressen är ny, spara den först
-            Address savedAddress = addressRepository.save(customer.getAddress());
-            customer.setAddress(savedAddress);
-        } else if (customer.getAddress() != null && customer.getAddress().getId() > 0) {
-            // Om adressen är befintlig, hämta den
-            Optional<Address> existingAddress = addressRepository.findById(customer.getAddress().getId());
-            existingAddress.ifPresent(customer::setAddress);
-        }
-
-        // Spara kunden med adressen
-        return customerRepository.save(customer);
-    } */
 
     @Transactional
     @Override
@@ -87,7 +72,6 @@ public class CustomerServiceImpl implements CustomerService{
             logger.info("Saved customer: {}", savedCustomer);
         }
 
-        // Återställ kundens bokningar
         savedCustomer.setMcBookings(tempBookings);
 
         return savedCustomer;

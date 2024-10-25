@@ -36,8 +36,8 @@ public class SecutityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/delete/bookings/{id}").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.GET, "/api/v1/bikes").hasRole("USER")
                         .requestMatchers(HttpMethod.POST, "/api/v1/book/bikes").hasRole("USER")
-                        .requestMatchers(HttpMethod.PUT, "/api/v1/update/mcBooking{id}").hasRole("USER")
-                        .requestMatchers(HttpMethod.GET, "/api/v1/mcBookings").hasRole("USER"));
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/update/mcBooking/{id}").hasRole("USER")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/mcBookings/{id}").hasRole("USER"));
         http.httpBasic((Customizer.withDefaults()));
         http.csrf(csrf -> csrf.disable());
         return http.build();

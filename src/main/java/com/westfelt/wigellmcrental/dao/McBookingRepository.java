@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface McBookingRepository extends JpaRepository<McBooking, Integer> {
 
-    // Hämta aktiva bokningar (slutdatum i framtiden)
-    List<McBooking> findByEndDateAfter(LocalDate currentDate);
+    // Hämta aktiva bokningar för en kund
+    List<McBooking> findByCustomerIdAndEndDateAfter(int customerId, LocalDate date);
 
-    // Hämta tidigare bokningar (slutdatum i det förflutna)
-    List<McBooking> findByEndDateBefore(LocalDate currentDate);
+    // Hämta tidigare bokningar för en kund
+    List<McBooking> findByCustomerIdAndEndDateBefore(int customerId, LocalDate date);
 
 }

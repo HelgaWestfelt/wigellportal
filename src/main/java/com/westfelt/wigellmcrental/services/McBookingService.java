@@ -12,5 +12,5 @@ public interface McBookingService {
     McBooking save(McBooking booking);
     String deleteById(int id);
     McBooking updateMcBooking(int id, McBooking mcBooking);
-    Map<String, List<McBooking>> findAllBookings();
+    Map<String, List<McBooking>> findAllBookings(int id);
 }

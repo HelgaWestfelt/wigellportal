@@ -2,6 +2,7 @@ package com.westfelt.wigellmcrental.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.List;
 

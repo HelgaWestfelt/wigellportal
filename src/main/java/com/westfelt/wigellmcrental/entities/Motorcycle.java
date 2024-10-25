@@ -1,9 +1,11 @@
 package com.westfelt.wigellmcrental.entities;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -21,21 +23,25 @@ public class Motorcycle {
     @Column(name = "registration_number")
     private String registrationNumber;
     @Column(name = "price_per_day")
-    private int pricePerDay;
+    private BigDecimal pricePerDay;
+    @Column(name = "price_per_day_in_GBP")
+    private BigDecimal pricePerDayInGBP;
     @Column(name = "availability")
     private boolean availability;
-    @ManyToMany(mappedBy = "motorcycles", cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
+    @ManyToMany(mappedBy = "motorcycles")
+    @JsonIgnore
     private List<McBooking> mcBookings;
 
     public Motorcycle() {
     }
 
     public Motorcycle(String brand, String model, String registrationNumber,
-                      int pricePerDay, boolean availability) {
+                      BigDecimal pricePerDay, BigDecimal pricePerDayInGBP, boolean availability) {
         this.brand = brand;
         this.model = model;
         this.registrationNumber = registrationNumber;
         this.pricePerDay = pricePerDay;
+        this.pricePerDayInGBP = pricePerDayInGBP;
         this.availability = availability;
     }
 
@@ -71,12 +77,20 @@ public class Motorcycle {
         this.registrationNumber = registrationNumber;
     }
 
-    public int getPricePerDay() {
+    public BigDecimal getPricePerDay() {
         return pricePerDay;
     }
 
-    public void setPricePerDay(int pricePerDay) {
+    public void setPricePerDay(BigDecimal pricePerDay) {
         this.pricePerDay = pricePerDay;
+    }
+
+    public BigDecimal getPricePerDayInGBP() {
+        return pricePerDayInGBP;
+    }
+
+    public void setPricePerDayInGBP(BigDecimal pricePerDayInGBP) {
+        this.pricePerDayInGBP = pricePerDayInGBP;
     }
 
     public boolean isAvailability() {
@@ -103,6 +117,7 @@ public class Motorcycle {
                 ", model='" + model + '\'' +
                 ", registrationNumber='" + registrationNumber + '\'' +
                 ", pricePerDay=" + pricePerDay +
+                ", pricePerDayInGBP=" + pricePerDayInGBP +
                 ", availability=" + availability +
                 ", mcBookings=" + mcBookings +
                 '}';

@@ -38,6 +38,7 @@ public class AddressServiceImpl implements AddressService{
         } else {
             throw new RuntimeException("Address with id: " + id + " could not be found");
         }
+        logger.info("Found address: {}", address);
         return address;
     }
 
