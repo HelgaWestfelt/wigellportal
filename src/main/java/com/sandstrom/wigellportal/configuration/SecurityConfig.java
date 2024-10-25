@@ -108,6 +108,25 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.PUT, "/api/v1/travel/trips/{id}").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/api/v1/travel/trips/{id}").hasRole("USER")
 
+
+                        //Padel
+                        .requestMatchers(HttpMethod.GET, "/api/v1/padel/bookings").hasAnyRole("USER", "ADMIN") // Både USER och ADMIN kan se bokningar
+                        .requestMatchers(HttpMethod.POST, "/api/v1/padel/bookings").hasRole("USER") // Endast USER kan boka en ny tid
+                        .requestMatchers(HttpMethod.GET, "/api/v1/padel/bookings/{id}").hasRole("USER") // Endast USER kan se sin specifika bokning
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/padel/bookings/{id}").hasRole("USER") // Endast USER kan uppdatera sin bokning
+
+                        // Admin endpoints for managing customers and courts
+                        .requestMatchers(HttpMethod.GET, "/api/v1/padel/customers").hasRole("ADMIN") // Endast ADMIN kan lista alla kunder
+                        .requestMatchers(HttpMethod.POST, "/api/v1/padel/customers").hasRole("ADMIN") // Endast ADMIN kan lägga till nya kunder
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/padel/customers/{id}").hasRole("ADMIN") // Endast ADMIN kan uppdatera kundinformation
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/padel/customers/{id}").hasRole("ADMIN") // Endast ADMIN kan ta bort en kund
+                        .requestMatchers(HttpMethod.POST, "/api/v1/padel/courts").hasRole("ADMIN") // Endast ADMIN kan lägga till padelbanor
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/padel/courts/{id}").hasRole("ADMIN") // Endast ADMIN kan uppdatera padelbanor
+
+                        // Admin endpoints for managing bookings
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/padel/bookings/{id}").hasRole("ADMIN") // Endast ADMIN kan ta bort bokningar
+
+
                         .anyRequest().authenticated());
         http.httpBasic(Customizer.withDefaults());
         http.csrf(csrf -> csrf.disable());
