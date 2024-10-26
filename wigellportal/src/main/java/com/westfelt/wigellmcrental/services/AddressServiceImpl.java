@@ -1,6 +1,7 @@
-package com.sandstrom.wigellportal.address;
+package com.westfelt.wigellmcrental.services;
 
-import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
+import com.westfelt.wigellmcrental.dao.AddressRepository;
+import com.westfelt.wigellmcrental.entities.Address;
 import jakarta.transaction.Transactional;
 
 import org.slf4j.LoggerFactory;
@@ -29,29 +30,15 @@ public class AddressServiceImpl implements AddressService{
     }
 
     @Override
-    public Optional<Address> findById(int id) {
-        return addressRepository.findById(id);
-    }
-
-    @Override
-    public Address findByAddress(Address address) {
-        if (address.getId() != null) {
-            Optional<Address> existingAddress = findById(address.getId());
-
-            if (existingAddress.isPresent()) {
-                return existingAddress.get();
-            } else {
-                throw new EntityNotFoundException("Adress med id " + address.getId() + " kunde inte hittas.");
-            }
-        }else {
-            Optional<Address> existingAddress = addressRepository.findByStreetAndZipCodeAndCity(address.getStreet(), address.getZipCode(), address.getCity());
-
-            if (existingAddress.isPresent()) {
-                return existingAddress.get();
-            } else {
-                return null;
-            }
+    public Address findById(int id) {
+        Optional<Address> adr = addressRepository.findById(id);
+        Address address = null;
+        if(adr.isPresent()){
+            address = adr.get();
+        } else {
+            throw new RuntimeException("Address with id: " + id + " could not be found");
         }
+        return address;
     }
 
     @Transactional

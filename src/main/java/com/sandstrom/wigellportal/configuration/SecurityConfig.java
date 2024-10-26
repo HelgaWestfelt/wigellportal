@@ -106,8 +106,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/api/v1/travel/destinations/{id}").hasRole("ADMIN")
 
                         // Travel endpoints from TravelCustomerController
-                        .requestMatchers(HttpMethod.GET, "/api/v1/travel/trips").hasRole("USER")
-                        .requestMatchers(HttpMethod.POST, "/api/v1/travel/trips").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/travel/trips").hasAnyRole("USER", "ADMIN")
+
+                        .requestMatchers(HttpMethod.POST, "/api/v1/travel/trips").hasRole("USER")
                         .requestMatchers(HttpMethod.PUT, "/api/v1/travel/trips/{id}").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/api/v1/travel/trips/{id}").hasRole("USER")
 

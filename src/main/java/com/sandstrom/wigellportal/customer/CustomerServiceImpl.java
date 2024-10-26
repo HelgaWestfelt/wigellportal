@@ -3,6 +3,8 @@ package com.sandstrom.wigellportal.customer;
 import com.sandstrom.wigellportal.address.Address;
 import com.sandstrom.wigellportal.address.AddressService;
 import com.sandstrom.wigellportal.modules.travel.dto.CustomerDTO;
+import com.sandstrom.wigellportal.modules.travel.entities.Trip;
+import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,11 +17,9 @@ import java.util.Optional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
     private static final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
-    private CustomerRepository customerRepository;
-
+    private final CustomerRepository customerRepository;
     private final AddressService addressService;
     @Autowired
     public CustomerServiceImpl(CustomerRepository customerRep, AddressService addressService, PasswordEncoder passwordEncoder){
@@ -27,91 +27,23 @@ public class CustomerServiceImpl implements CustomerService {
         this.addressService = addressService;
         this.passwordEncoder = passwordEncoder;
     }
-
     @Override
     public List<Customer> findAll(){
-        logger.info("All registered customers have been listed");
+        logger.info("All registered customers have been listed.");
         return customerRepository.findAll();
     }
-
     @Override
     public Customer findById(int id){
-        Optional<Customer> c = customerRepository.findById(id);
-        Customer customer = null;
-        if(c.isPresent()){
-            customer = c.get();
+        Optional<Customer> customer = customerRepository.findById(id);
+
+        if(customer.isPresent()){
+            return customer.get();
         }
         else{
-            throw new RuntimeException("Customer with id " + id + " could not be found.");
+            throw new EntityNotFoundException("Kund med id " + id + " kunde inte hittas.");
         }
-        logger.info("Customer with id " + " was listed.");
-        return customer;
-    }
-
-    @Override
-    @Transactional
-    public Customer save(Customer customer) {
-        Address existingAddress = addressService.findByAddress(customer.getAddress());
-        if (existingAddress != null) {
-            customer.setAddress(existingAddress);
-        } else {
-            Address savedAddress = addressService.save(customer.getAddress());
-            customer.setAddress(savedAddress);
-        }
-
-        // Kryptera lösenordet innan det sparas
-        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
-
-        Customer savedCustomer = customerRepository.save(customer);
-        logger.info("Admin created customer with id {}.", savedCustomer.getId());
-
-        return savedCustomer;
-    }
-
-
-    @Override
-    @Transactional
-    public Customer update(int id, Customer updatedCustomer) {
-        Optional<Customer> existingCustomerOptional = customerRepository.findById(id);
-        if (existingCustomerOptional.isEmpty()) {
-            //throw new EntityNotFoundException("Kund med ID " + id + " hittades inte.");
-        }
-
-        Customer existingCustomer = existingCustomerOptional.get();
-        if (updatedCustomer.getFirstName() != null) {
-            existingCustomer.setFirstName(updatedCustomer.getFirstName());
-        }
-        if (updatedCustomer.getLastName() != null) {
-            existingCustomer.setLastName(updatedCustomer.getLastName());
-        }
-        if (updatedCustomer.getDateOfBirth() != null) {
-            existingCustomer.setDateOfBirth(updatedCustomer.getDateOfBirth());
-        }
-        if (updatedCustomer.getEmail() != null) {
-            existingCustomer.setEmail(updatedCustomer.getEmail());
-        }
-        if (updatedCustomer.getPhoneNumber() != null) {
-            existingCustomer.setPhoneNumber(updatedCustomer.getPhoneNumber());
-        }
-
-        Address existingAddress = addressService.findByAddress(updatedCustomer.getAddress());
-        if (existingAddress != null) {
-            existingCustomer.setAddress(existingAddress);
-        } else {
-            Address savedAddress = addressService.save(updatedCustomer.getAddress());
-            existingCustomer.setAddress(savedAddress);
-        }
-
-        customerRepository.save(existingCustomer);
-        logger.info("Admin updated customer with id {}.", existingCustomer.getId());
-        return existingCustomer;
     }
     @Override
-    public void deleteById(int id){
-        logger.info("Customer with id " + id + " was deleted.");
-        customerRepository.deleteById(id);
-    }
-
     public CustomerDTO createCustomerDTO(Customer customer) {
         return new CustomerDTO(
                 customer.getId(),
@@ -120,14 +52,72 @@ public class CustomerServiceImpl implements CustomerService {
         );
     }
     @Override
-    public Customer createCustomer(Customer customer) {
-        // Kryptera lösenordet innan det sparas
-        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+    @Transactional
+    public Customer save (Customer customer){
+        try {
+            Address existingAddress = addressService.findByAddress(customer.getAddress());
+            if (existingAddress != null) {
+                customer.setAddress(existingAddress);
+            } else {
+                Address savedAddress = addressService.save(customer.getAddress());
+                customer.setAddress(savedAddress);
+            }
 
-        Customer savedCustomer = customerRepository.save(customer);
-        logger.info("Admin created a new customer with id {}", savedCustomer.getId());
+            customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+            customer.setEnabled(true);
 
-        return savedCustomer;
+            customerRepository.save(customer);
+            logger.info("Admin created customer with id {}.", customer.getId());
+
+            return customer;
+
+        }catch (Exception e) {
+            throw new IllegalArgumentException("Något gick fel. Kontrollera inmatning av indata.");
+        }
+    }
+    @Override
+    @Transactional
+    public Customer update(int id, Customer updatedCustomer) {
+        Customer existingCustomer = findById(id);
+
+            if (updatedCustomer.getFirstName() != null) {
+                existingCustomer.setFirstName(updatedCustomer.getFirstName());
+            }
+            if (updatedCustomer.getLastName() != null) {
+                existingCustomer.setLastName(updatedCustomer.getLastName());
+            }
+            if (updatedCustomer.getDateOfBirth() != null) {
+                existingCustomer.setDateOfBirth(updatedCustomer.getDateOfBirth());
+            }
+            if (updatedCustomer.getEmail() != null) {
+                existingCustomer.setEmail(updatedCustomer.getEmail());
+            }
+            if (updatedCustomer.getPhoneNumber() != null) {
+                existingCustomer.setPhoneNumber(updatedCustomer.getPhoneNumber());
+            }
+
+            Address existingAddress = addressService.findByAddress(updatedCustomer.getAddress());
+            if (existingAddress != null) {
+                existingCustomer.setAddress(existingAddress);
+            } else {
+                Address savedAddress = addressService.save(updatedCustomer.getAddress());
+                existingCustomer.setAddress(savedAddress);
+            }
+
+            customerRepository.save(existingCustomer);
+            logger.info("Admin updated customer with id {}.", existingCustomer.getId());
+            return existingCustomer;
+
     }
 
+    @Override
+    @Transactional
+    public void deleteById(int id){
+        Customer customer = findById(id);
+
+        customer.setActive(false);
+        customerRepository.save(customer);
+        logger.info("Admin marked customer with id {} as inactive.", id);
+
+    }
 }

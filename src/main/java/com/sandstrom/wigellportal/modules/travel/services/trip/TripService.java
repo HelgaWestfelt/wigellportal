@@ -3,10 +3,10 @@ package com.sandstrom.wigellportal.modules.travel.services.trip;
 import com.sandstrom.wigellportal.modules.travel.dto.TripDTO;
 import com.sandstrom.wigellportal.modules.travel.entities.Destination;
 import com.sandstrom.wigellportal.modules.travel.entities.Trip;
+import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
 import com.sandstrom.wigellportal.modules.travel.repositories.TripRepository;
 import com.sandstrom.wigellportal.modules.travel.services.currencyconversion.CurrencyConversionService;
-import com.sandstrom.wigellportal.modules.travel.services.destination.DestinationService;
-import jakarta.persistence.EntityNotFoundException;
+import com.sandstrom.wigellportal.modules.travel.services.destination.DestinationServiceInterface;
 import jakarta.transaction.Transactional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,17 +20,15 @@ import java.util.Optional;
 @Service
 public class TripService implements TripServiceInterface {
     private final TripRepository tripRepository;
-    private final DestinationService destinationService;
+    private final DestinationServiceInterface destinationService;
     private final CurrencyConversionService currencyConversionService;
     private final Logger logger = LogManager.getLogger(TripService.class);
-
     @Autowired
-    public TripService (TripRepository tripRepository, DestinationService destinationService, CurrencyConversionService currencyConversionService) {
+    public TripService (TripRepository tripRepository, DestinationServiceInterface destinationService, CurrencyConversionService currencyConversionService) {
         this.tripRepository = tripRepository;
         this.destinationService = destinationService;
         this.currencyConversionService = currencyConversionService;
     }
-
     @Override
     public Optional<Trip> findById(int id) {
         return tripRepository.findById(id);
@@ -59,12 +57,26 @@ public class TripService implements TripServiceInterface {
         }
         return null;
     }
-
     @Override
-    public List<Trip> findAll() {
-        return tripRepository.findAll();
-    }
+    public List<TripDTO> getAllTrips() {
+        List<Trip> trips = tripRepository.findByActive(true);
+        List<TripDTO> tripsDTO = new ArrayList<>();
 
+        for (Trip trip : trips) {
+            tripsDTO.add(createTripDTO(trip));
+        }
+        return tripsDTO;
+    }
+    @Override
+    public TripDTO createTripDTO (Trip trip) {
+        return new TripDTO(
+                trip.getId(),
+                trip.getDestination(),
+                trip.getHotel(),
+                trip.getWeeklyPrice(),
+                currencyConversionService.convertSEKtoPLN(trip.getWeeklyPrice())
+        );
+    }
     @Override
     @Transactional
     public Trip save(Trip trip) {
@@ -86,15 +98,15 @@ public class TripService implements TripServiceInterface {
             return trip;
         }
     }
-
     @Override
     @Transactional
     public Trip update(int id, Trip updatedTrip) {
         Optional<Trip> existingTripOptional = tripRepository.findById(id);
-        Trip existingTrip = null;
 
-        if (existingTripOptional.isPresent()) {
-            existingTrip = existingTripOptional.get();
+        if (existingTripOptional.isEmpty()) {
+            throw new EntityNotFoundException("Resa med id " + id + " kunde inte hittas.");
+        } else {
+            Trip existingTrip = existingTripOptional.get();
 
             if (updatedTrip.getHotel() != null) {
                 existingTrip.setHotel(updatedTrip.getHotel());
@@ -115,40 +127,21 @@ public class TripService implements TripServiceInterface {
             }
             tripRepository.save(existingTrip);
             logger.info("Admin updated trip with id {}.", existingTrip.getId());
-        } else {
-            throw new EntityNotFoundException("Resa med ID " + id + " hittades inte.");
+            return existingTrip;
         }
-
-        return existingTrip;
     }
-
     @Override
     @Transactional
     public void delete(int id) {
         Optional<Trip> optionalTrip = tripRepository.findById(id);
 
         if (optionalTrip.isPresent()) {
-            tripRepository.deleteById(id);
-            logger.info("Admin deleted trip with id {}.", id);
+            Trip trip = optionalTrip.get();
+            trip.setActive(false);
+            tripRepository.save(trip);
+            logger.info("Admin marked trip with id {} as inactive.", id);
         } else {
-            throw new EntityNotFoundException("Resa med id " + id + " finns inte.");
+            throw new EntityNotFoundException("Resa med id " + id + " hittades inte.");
         }
-    }
-    public List<TripDTO> getTripsInPLN() {
-        List<Trip> trips = tripRepository.findAll();
-        List<TripDTO> tripsDTO = new ArrayList<>();
-        for (Trip trip : trips) {
-            tripsDTO.add(createTripDTO(trip));
-        }
-        return tripsDTO;
-    }
-    public TripDTO createTripDTO (Trip trip) {
-        return new TripDTO(
-                trip.getId(),
-                trip.getDestination(),
-                trip.getHotel(),
-                trip.getWeeklyPrice(),
-                currencyConversionService.convertSEKtoPLN(trip.getWeeklyPrice())
-        );
     }
 }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <!-- Console appender
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console> -->
+
+        <File name="MyFile" fileName="events.log" immediateFlush="true" append="false">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.sandstrom.wigellportal.modules.travel.services.TravelBookingService" level="info" additivity="false">
+            <AppenderRef ref="MyFile" level="info"/>
+        </Logger>
+        <Logger name="com.sandstrom.wigellportal.modules.travel.services.customer.CustomerServiceImpl" level="info" additivity="false">
+            <AppenderRef ref="MyFile" level="info"/>
+        </Logger>
+        <Logger name="com.sandstrom.wigellportal.modules.travel.services.trip.TripService" level="info" additivity="false">
+            <AppenderRef ref="MyFile" level="info"/>
+        </Logger>
+
+        <!-- Root logger
+        <Root level="info">
+            <AppenderRef ref="MyFile"/>
+        </Root> -->
+    </Loggers>
+</Configuration>

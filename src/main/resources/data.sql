@@ -70,15 +70,15 @@ INSERT INTO destination (city, country) VALUES
 ('Cape Town', 'South Africa');
 
 -- Infoga resor om de inte redan finns
-INSERT INTO trip (hotel, destination_id, weekly_price) VALUES
-('Hotel Eiffel', 1, 500.00),
-('Manhattan Suite', 2, 700.00),
-('Tokyo Plaza', 3, 600.00),
-('Harbour Hotel', 4, 800.00),
-('Oceanview Lodge', 5, 550.00);
+INSERT INTO trip (hotel, destination_id, weekly_price, active) VALUES
+('Hotel Eiffel', 1, 500.00, true),
+('Manhattan Suite', 2, 700.00, true),
+('Tokyo Plaza', 3, 600.00, true),
+('Harbour Hotel', 4, 800.00, true),
+('Oceanview Lodge', 5, 550.00, true);
 
 INSERT INTO travel_booking (travel_date, return_date, number_of_weeks, total_price_sek, total_price_pln, booking_date, trip_id, customer_id) VALUES
-('2024-10-01', '2024-10-08', 1, 5000.00, 2000.00, '2024-09-25 10:30:00', 1, 2),
+('2024-10-01', '2024-10-08', 1, 5000.00, 2000.00, '2024-09-25 10:30:00', 1, 1),
 ('2024-11-15', '2024-11-22', 1, 7000.00, 2800.00, '2024-10-10 14:20:21', 2, 2),
 ('2024-12-05', '2024-12-19', 2, 12000.00, 4800.00, '2024-11-01 09:00:00', 3, 3),
 ('2025-01-10', '2025-01-17', 1, 8000.00, 3200.00, '2024-12-01 11:46:03', 4, 4),

@@ -39,7 +39,10 @@ public class Customer {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+
+    @Column(name = "active")
+    private boolean active = true; // Standard är att kunder är aktiva vid skapande
+    @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
@@ -63,7 +66,7 @@ public class Customer {
 
     public Customer(String firstName, String lastName, String phoneNumber,
                     String dateOfBirth, String email, String username,
-                    String password, Role role, Address address) {
+                    String password, boolean enabled, Role role, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -73,15 +76,15 @@ public class Customer {
         this.password = password;
         this.role = role;
         this.address = address;
-        this.enabled = true;
+        this.enabled = enabled;
     }
 
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = true;
+        this.enabled = enabled;
     }
 
     public void setCinemaBookingTickets(List<CinemaBookingTicket> cinemaBookingTickets) {
@@ -188,15 +191,37 @@ public class Customer {
         this.mcBookings = bookings;
     }
 
+    public List<TravelBooking> getTravelBookings() {
+        return travelBookings;
+    }
+
+    public void setTravelBookings(List<TravelBooking> travelBookings) {
+        this.travelBookings = travelBookings;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+        this.enabled = active;
+    }
+
     @Override
     public String toString() {
         return "Kund:   " + id +
+                "\n     Aktiv:          " + active +
                 "\n     Förnamn:        " + firstName +
                 "\n     Efternamn:      " + lastName +
                 "\n     E-postadess:    " + email +
                 "\n     Telefonnummer:  " + phoneNumber +
                 "\n     Personnummer:   " + dateOfBirth +
-                "\n" + address;
+                "\n" + address +
+                "\n\nInloggning:" +
+                "\n     Användarnamn:   " + username +
+                "\n     Lösenord:       " + password +
+                "\n     Aktiv:          " + enabled;
         //eventuellt lägga till username och password här (men det kommer ju även med login när man visar alla kunder)
     }
 }

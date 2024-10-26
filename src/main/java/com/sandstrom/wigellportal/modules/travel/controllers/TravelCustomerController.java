@@ -15,7 +15,6 @@ import java.util.List;
 @RequestMapping(path="api/v1/travel")
 //@RequestMapping(path="/travel")
 public class TravelCustomerController {
-    //private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
     private final TripService tripService;
     private final TravelBookingService travelBookingService;
 
@@ -27,9 +26,9 @@ public class TravelCustomerController {
 
     //Listning av resmål
     @GetMapping("/trips")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<String> getTrips() {
-        List<TripDTO> trips = tripService.getTripsInPLN();
+        List<TripDTO> trips = tripService.getAllTrips();
 
         StringBuilder responseMessage = new StringBuilder("Resemål:\n\n");
 
@@ -42,7 +41,7 @@ public class TravelCustomerController {
 
     //Bokning av resa
     @PostMapping("/trips")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasAnyRole('USER')")
     public ResponseEntity<String> bookTrip(@RequestBody TravelBooking booking) {
         TravelBooking travelBooking = travelBookingService.save(booking);
         TravelBookingDTO travelBookingDTO = travelBookingService.createTravelBookingDTO(travelBooking);
@@ -67,12 +66,17 @@ public class TravelCustomerController {
     public ResponseEntity<String> getBookings(@PathVariable int id) {
         List<TravelBookingDTO> bookings = travelBookingService.getBookingsByCustomerId(id);
 
-        StringBuilder responseMessage = new StringBuilder("Dina bokningar:\n\n");
+        if (bookings.isEmpty()) {
+            return ResponseEntity.ok("Du har inga bokningar.");
+        }else{
+            StringBuilder responseMessage = new StringBuilder("Dina bokningar:\n\n");
 
-        for (TravelBookingDTO booking : bookings) {
-            responseMessage.append(booking.toString()).append("\n\n");
+            for (TravelBookingDTO booking : bookings) {
+                responseMessage.append(booking.toString()).append("\n\n");
+            }
+
+            return ResponseEntity.ok(responseMessage.toString());
         }
-
-        return ResponseEntity.ok(responseMessage.toString());
     }
+
 }
