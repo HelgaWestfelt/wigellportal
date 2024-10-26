@@ -6,7 +6,6 @@ import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McBookingReposito
 import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McRepository;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Motorcycle;
-import com.sandstrom.wigellportal.modules.motorcyclerental.services.CurrencyResponse;
 
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -39,11 +38,14 @@ public class McBookingServiceImpl implements McBookingService {
     @Override
     public List<McBooking> findAll() {
         logger.info("Listed all mc bookings: {}", mcBookingRepository.findAll());
+        updateMotorcycleAvailability();
         return mcBookingRepository.findAll();
     }
 
     @Override
     public McBooking findById(int id) {
+        updateMotorcycleAvailability();
+
         Optional<McBooking> mcBook = mcBookingRepository.findById(id);
         McBooking mcBooking = null;
         if(mcBook.isPresent()){
@@ -63,7 +65,7 @@ public class McBookingServiceImpl implements McBookingService {
 
         Customer customer = booking.getCustomer();
 
-        // Hantera kunden (samma som tidigare)
+
         if (customer != null) {
             if (customer.getId() == 0) {
                 customer = customerRepository.save(customer);
@@ -76,20 +78,22 @@ public class McBookingServiceImpl implements McBookingService {
             throw new RuntimeException("Booking need a Customer");
         }
 
-        // Hämta och sätt motorcyklarna
         List<Motorcycle> motorcycles = new ArrayList<>();
         for (Motorcycle mc : booking.getMotorcycles()) {
             Motorcycle managedMc = mcRepository.findById(mc.getId())
                     .orElseThrow(() -> new RuntimeException("Motorcycle with id: " + mc.getId() + " could not be found"));
-            motorcycles.add(managedMc);
 
+            managedMc.setAvailability(false);
+            mcRepository.save(managedMc);
+
+            motorcycles.add(managedMc);
         }
         booking.setMotorcycles(motorcycles);
 
-        McBooking savedBooking = mcBookingRepository.save(booking);
+        BigDecimal priceInGBP = calculatePriceInGBP(booking.getPrice());
+        booking.setPriceInGBP(priceInGBP);
 
-        BigDecimal priceInGBP = calculatePriceInGBP(savedBooking.getPrice());
-        savedBooking.setPriceInGBP(priceInGBP);
+        McBooking savedBooking = mcBookingRepository.save(booking);
 
         return savedBooking;
 
@@ -101,12 +105,16 @@ public class McBookingServiceImpl implements McBookingService {
     public String deleteById(int id) {
         mcBookingRepository.deleteById(id);
         logger.info("Admin deleted booking with id: {}", id);
+        updateMotorcycleAvailability();
         return "Booking with id " + id + " is deleted";
     }
 
     @Transactional
     @Override
     public McBooking updateMcBooking(int id, McBooking updatedMcBooking){
+
+        updateMotorcycleAvailability();
+
         return mcBookingRepository.findById(id).map(mcBooking -> {
             mcBooking.setStartDate(updatedMcBooking.getStartDate());
             mcBooking.setEndDate(updatedMcBooking.getEndDate());
@@ -119,7 +127,6 @@ public class McBookingServiceImpl implements McBookingService {
                 mcBooking.setCustomer(customer);
             }
 
-            // Hantera motorcyklarna
             if (updatedMcBooking.getMotorcycles() != null) {
                 List<Motorcycle> motorcycles = new ArrayList<>();
                 for (Motorcycle mc : updatedMcBooking.getMotorcycles()) {
@@ -130,6 +137,11 @@ public class McBookingServiceImpl implements McBookingService {
                 mcBooking.setMotorcycles(motorcycles);
             }
             logger.info("Customer updated booking: {}", mcBooking);
+
+            BigDecimal priceInGBP = calculatePriceInGBP(mcBooking.getPrice());
+            mcBooking.setPriceInGBP(priceInGBP);
+
+            updateMotorcycleAvailability();
 
             return mcBookingRepository.save(mcBooking);
         }).orElseThrow(() -> new RuntimeException("Booking with id: " + id + " could not be found"));
@@ -144,7 +156,6 @@ public class McBookingServiceImpl implements McBookingService {
         List<McBooking> activeBookings = mcBookingRepository.findByCustomerIdAndEndDateAfter(customerId, currentDate);
         List<McBooking> pastBookings = mcBookingRepository.findByCustomerIdAndEndDateBefore(customerId, currentDate);
 
-        // Lägger in båda listorna i en Map för att strukturera responsen
         Map<String, List<McBooking>> mcBookings = new HashMap<>();
         mcBookings.put("activeBookings", activeBookings);
         mcBookings.put("pastBookings", pastBookings);
@@ -168,8 +179,32 @@ public class McBookingServiceImpl implements McBookingService {
             }
         }
 
-        return BigDecimal.ZERO; // Returnera 0 om växelkursen inte kan hämtas
+        return BigDecimal.ZERO;
     }
+
+    private void updateMotorcycleAvailability() {
+        LocalDate currentDate = LocalDate.now();
+
+        List<McBooking> pastBookings = mcBookingRepository.findByEndDateBefore(currentDate);
+
+        for (McBooking booking : pastBookings) {
+            for (Motorcycle mc : booking.getMotorcycles()) {
+
+                if (!mc.isAvailability()) {
+
+                    boolean isStillBooked = mcBookingRepository.existsByMotorcyclesIdAndEndDateAfter(mc.getId(), currentDate);
+
+                    if (!isStillBooked) {
+
+                        mc.setAvailability(true);
+                        mcRepository.save(mc);
+                    }
+                }
+            }
+        }
+    }
+
+
 }
 
 
