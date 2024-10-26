@@ -21,21 +21,26 @@ INSERT INTO customer (first_name, last_name, phone_number, date_of_birth, email,
 ('Admin', 'Adminsson', '+46', '1980-01-01', 'admin@gmail.com', 'admin', '$2a$12$gyHZLSd6p84ZSavY.yY62uewbD7kpPtjQarBByLaW7B.97DX7D.AO', true, 'ROLE_ADMIN', 7);
 
 
-
 INSERT INTO motorcycle (brand, model, registration_number, price_per_day, price_per_day_in_GBP, availability) VALUES
-('Harley-Davidson', 'Street 750', 'ABC123', 500, 50, TRUE),
-('Yamaha', 'MT-07', 'DEF456', 400, 40, TRUE),
-('Honda', 'CB500F', 'GHI789', 350, 35, FALSE),
-('BMW', 'R1200', 'JKL012', 600, 60, TRUE),
-('Suzuki', 'GSX-R600', 'MNO345', 450, 45, TRUE);
+('Harley-Davidson', 'Street 750', 'ABC123', 500, 50, true),
+('Yamaha', 'MT-07', 'DEF456', 400, 40, true),
+('Honda', 'CB500F', 'GHI789', 350, 35, true),
+('BMW', 'R1200', 'JKL012', 600, 60, false),
+('Suzuki', 'GSX-R600', 'MNO345', 450, 45, false);
 
 INSERT INTO mc_booking (start_date, end_date, price, price_in_GBP, customer_id) VALUES
 ('2024-01-01', '2024-01-05', 2000, 200, 1),
 ('2024-02-01', '2024-02-07', 2800, 280, 2),
 ('2024-03-01', '2024-03-03', 1050, 105, 3),
-('2024-04-01', '2024-04-05', 2400, 240, 4),
-('2024-05-01', '2024-05-04', 1800, 180, 5);
+('2024-10-25', '2024-10-30', 3500, 300, 4),
+('2024-11-01', '2024-11-04', 1300, 100, 5);
 
+INSERT INTO booking_mc (booking_id, motorcycle_id) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
 
 -- Lägg till filmer i cinema_movie
 INSERT INTO cinema_movie (title, length, genre, age_limit) VALUES
