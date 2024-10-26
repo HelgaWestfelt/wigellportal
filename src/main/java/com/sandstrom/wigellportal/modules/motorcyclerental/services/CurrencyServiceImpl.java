@@ -25,6 +25,8 @@ public class CurrencyServiceImpl implements CurrencyService {
         RestTemplate restTemplate = new RestTemplate();
         CurrencyResponse currencyResponse = restTemplate.getForObject(apiUrl, CurrencyResponse.class);
 
+        logger.info("Currency response: {}", currencyResponse);
+
         return currencyResponse;
     }
 }

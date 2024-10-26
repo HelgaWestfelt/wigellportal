@@ -57,20 +57,23 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
                 configurer
-                        // Motorcycle bookings and management
-                        .requestMatchers(HttpMethod.POST, "/api/v1/add/bikes").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/v1/update/bikes/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/api/v1/list/bikes").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/api/v1/customers").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.POST, "/api/v1/customers").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/v1/customers/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v1/delete/customers/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/v1/delete/bookings/{id}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/api/v1/bikes").hasRole("USER")
-                        .requestMatchers(HttpMethod.POST, "/api/v1/book/bikes").hasRole("USER")
-                        .requestMatchers(HttpMethod.PUT, "/api/v1/update/mcBooking{id}").hasRole("USER")
-                        .requestMatchers(HttpMethod.GET, "/api/v1/mcBookings").hasRole("USER")
-                        .requestMatchers(HttpMethod.GET, "/api/v1/mcBooking/{id}").hasRole("USER")
+                        //Motorcycle endpoints from AdminController
+                        .requestMatchers(HttpMethod.POST, "/api/v1/mc/bikes").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/mc/bikes/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/mc/bikes").hasRole("ADMIN")
+
+                        .requestMatchers(HttpMethod.GET, "/api/v1/mc/customers").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/mc/customers").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/mc/customers/{id}").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/mc/customers/{id}").hasRole("ADMIN")
+
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/mc/bookings/{id}").hasRole("ADMIN")
+
+                        //Motorcycle endpoints from CustomerController
+                        .requestMatchers(HttpMethod.GET, "/api/v1/mc/avaliable-bikes").hasRole("USER")
+                        .requestMatchers(HttpMethod.POST, "/api/v1/mc/bookings").hasRole("USER")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/mc/bookings/{id}").hasRole("USER")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/mc/bookings/{id}").hasRole("USER")
 
                         // Cinema venue bookings
                         .requestMatchers(HttpMethod.POST, "/api/v1/cinvenbookings").hasRole("USER")

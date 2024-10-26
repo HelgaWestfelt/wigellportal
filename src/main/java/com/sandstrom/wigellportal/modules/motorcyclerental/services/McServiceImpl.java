@@ -1,6 +1,8 @@
 package com.sandstrom.wigellportal.modules.motorcyclerental.services;
 
+import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McBookingRepository;
 import com.sandstrom.wigellportal.modules.motorcyclerental.dao.McRepository;
+import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Motorcycle;
 import com.sandstrom.wigellportal.modules.motorcyclerental.services.CurrencyResponse;
 import jakarta.transaction.Transactional;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,26 +23,33 @@ public class McServiceImpl implements McService{
 
     private McRepository mcRepository;
     private CurrencyService currencyService;
+    private McBookingRepository mcBookingRepository;
 
     @Autowired
-    public McServiceImpl(McRepository mcRep, CurrencyService currServ){
+    public McServiceImpl(McRepository mcRep, CurrencyService currServ, McBookingRepository mcBookRep){
         mcRepository = mcRep;
         currencyService = currServ;
+        mcBookingRepository = mcBookRep;
     }
 
     @Override
     public List<Motorcycle> findAll() {
+        updateMotorcycleAvailability();
+        logger.info("Listed all motorcycles");
         return mcRepository.findAll();
     }
 
     public List<Motorcycle> findAvailableBikes() {
+        updateMotorcycleAvailability();
         List<Motorcycle> motorcycles = mcRepository.findByAvailabilityTrue();
+        logger.info("Listed avaliable motorcycles: {}", motorcycles);
 
         return motorcycles;
     }
 
     @Override
     public Motorcycle findById(int id) {
+        updateMotorcycleAvailability();
         Optional<Motorcycle> mc = mcRepository.findById(id);
         Motorcycle motorcycle = null;
         if (mc.isPresent()){
@@ -47,6 +57,7 @@ public class McServiceImpl implements McService{
         } else {
             throw new RuntimeException("Motorcycle with id: " + id + " could not be found");
         }
+        logger.info("Found motorcycle: " + motorcycle);
         return motorcycle;
     }
 
@@ -54,6 +65,8 @@ public class McServiceImpl implements McService{
     @Override
     public Motorcycle save(Motorcycle motorcycle) {
         logger.info("Admin added a motorcycle: {}", motorcycle);
+
+        updateMotorcycleAvailability();
 
         BigDecimal pricePerDayInGBP = calculatePriceInGBP(motorcycle.getPricePerDay());
         motorcycle.setPricePerDayInGBP(pricePerDayInGBP);
@@ -64,6 +77,7 @@ public class McServiceImpl implements McService{
     @Transactional
     @Override
     public void deleteById(int id) {
+        updateMotorcycleAvailability();
         logger.info("Admin deleted motorcycle with id: {}", id);
         mcRepository.deleteById(id);
     }
@@ -71,6 +85,8 @@ public class McServiceImpl implements McService{
     @Transactional
     @Override
     public Motorcycle updateMc(int id, Motorcycle updatedMotorcycle){
+        updateMotorcycleAvailability();
+
        return mcRepository.findById(id).map(motorcycle -> {
             motorcycle.setBrand(updatedMotorcycle.getBrand());
             motorcycle.setModel(updatedMotorcycle.getModel());
@@ -83,7 +99,9 @@ public class McServiceImpl implements McService{
            BigDecimal pricePerDayInGBP = calculatePriceInGBP(motorcycle.getPricePerDay());
            motorcycle.setPricePerDayInGBP(pricePerDayInGBP);
 
-            return mcRepository.save(motorcycle);
+           updateMotorcycleAvailability();
+
+           return mcRepository.save(motorcycle);
         }).orElseThrow(() -> new RuntimeException("Motorcycle with id: " + id + " could not be found"));
     }
 
@@ -101,7 +119,29 @@ public class McServiceImpl implements McService{
             }
         }
 
-        return BigDecimal.ZERO; // Returnera 0 om växelkursen inte kan hämtas
+        return BigDecimal.ZERO;
+    }
+
+    private void updateMotorcycleAvailability() {
+        LocalDate currentDate = LocalDate.now();
+
+        List<McBooking> pastBookings = mcBookingRepository.findByEndDateBefore(currentDate);
+
+        for (McBooking booking : pastBookings) {
+            for (Motorcycle mc : booking.getMotorcycles()) {
+
+                if (!mc.isAvailability()) {
+
+                    boolean isStillBooked = mcBookingRepository.existsByMotorcyclesIdAndEndDateAfter(mc.getId(), currentDate);
+
+                    if (!isStillBooked) {
+
+                        mc.setAvailability(true);
+                        mcRepository.save(mc);
+                    }
+                }
+            }
+        }
     }
 
 }
