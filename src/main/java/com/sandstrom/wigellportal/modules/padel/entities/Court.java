@@ -26,13 +26,12 @@ public class Court {
     private int pricePerHour;
 
     @Column(name = "description")
-    private String description; // Nytt fält för att uppdatera information om banan
+    private String description;
 
     @OneToMany(mappedBy = "court", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
     private List<PadelBooking> bookings;
 
-    // Nytt fält för att lagra bokningsbara tider
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "court_times", joinColumns = @JoinColumn(name = "court_id"))
     @MapKeyColumn(name = "time")
@@ -40,10 +39,10 @@ public class Court {
     @JsonIgnore
     private Map<LocalTime, Boolean> availableTimes = new HashMap<>();
 
-    // Constructors, Getters, Setters, toString()
+
 
     public Court() {
-        initializeAvailableTimes();  // Initiera tillgängliga tider vid skapandet av objektet
+        initializeAvailableTimes();
     }
 
     public Court(String name, String location, int pricePerHour, String description) {
@@ -55,9 +54,8 @@ public class Court {
     }
 
     private void initializeAvailableTimes() {
-        // Lägg till fördefinierade tider mellan 08:00 till 20:00
         for (int hour = 8; hour < 20; hour++) {
-            availableTimes.put(LocalTime.of(hour, 0), true); // Alla tider är initialt tillgängliga
+            availableTimes.put(LocalTime.of(hour, 0), true);
         }
     }
 

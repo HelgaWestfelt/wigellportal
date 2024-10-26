@@ -69,43 +69,34 @@ public class PadelBookingServiceImpl implements PadelBookingService {
 
     @Override
     public PadelBooking createBookingForCustomer(PadelBooking booking, String username) {
-        // Hämta kunden
         Customer customer = customerRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Kund med användarnamn " + username + " hittades inte"));
         booking.setCustomer(customer);
 
-        // Hämta banan
         int courtId = booking.getCourt().getId();
         Court court = courtRepository.findById(courtId)
                 .orElseThrow(() -> new RuntimeException("Bana med id " + courtId + " hittades inte"));
 
-        // Kontrollera om tiden redan är bokad
         if (isTimeBooked(court, booking.getTime())) {
             throw new RuntimeException("Tiden är redan bokad på denna bana.");
         }
 
-        // Sätt banan i bokningen
         booking.setCourt(court);
 
-        // Beräkna totalpris baserat på banans pris per timme
         int totalPriceInSek = court.getPricePerHour();
         booking.setTotalPrice(totalPriceInSek);
 
-        // Sätt standardvaluta till SEK om inte specificerat
         if (booking.getCurrency() == null || booking.getCurrency().isEmpty()) {
             booking.setCurrency("SEK");
         }
 
-        // Om bokningen är i SEK, konvertera till EUR
         if ("SEK".equalsIgnoreCase(booking.getCurrency()) && totalPriceInSek > 0) {
             double totalPriceInEur = currencyConversionService.convertToEuro(totalPriceInSek);
             booking.setTotalPriceEur(totalPriceInEur);
         }
 
-        // Uppdatera tillgängliga tider (markera tiden som bokad)
         court.getAvailableTimes().put(booking.getTime(), false);
 
-        // Spara bokningen
         PadelBooking savedBooking = bookingRepository.save(booking);
         logger.info("Kund {} bokade en tid på bana {} för tid {} och datum {}",
                 username, courtId, booking.getTime(), booking.getDate());
@@ -121,12 +112,10 @@ public class PadelBookingServiceImpl implements PadelBookingService {
         Court court = courtRepository.findById(courtId)
                 .orElseThrow(() -> new RuntimeException("Bana med id " + courtId + " hittades inte"));
 
-        // Kontrollera om tiden redan är bokad för den nya bokningen
         if (isTimeBooked(court, bookingDetails.getTime()) && !existingBooking.getTime().equals(bookingDetails.getTime())) {
             throw new RuntimeException("Tiden är redan bokad på denna bana.");
         }
 
-        // Återställ tidigare bokade tid till ledig
         court.getAvailableTimes().put(existingBooking.getTime(), true);
 
         existingBooking.setCourt(court);
@@ -134,17 +123,14 @@ public class PadelBookingServiceImpl implements PadelBookingService {
         existingBooking.setTime(bookingDetails.getTime());
         existingBooking.setPlayersCount(bookingDetails.getPlayersCount());
 
-        // Beräkna och uppdatera totalpris baserat på banans pris per timme
         int totalPriceInSek = court.getPricePerHour();
         existingBooking.setTotalPrice(totalPriceInSek);
 
-        // Om SEK är vald som valuta, konvertera till EUR
         if ("SEK".equalsIgnoreCase(existingBooking.getCurrency()) && totalPriceInSek > 0) {
             double totalPriceInEur = currencyConversionService.convertToEuro(totalPriceInSek);
             existingBooking.setTotalPriceEur(totalPriceInEur);
         }
 
-        // Markera den nya tiden som bokad
         court.getAvailableTimes().put(existingBooking.getTime(), false);
 
         PadelBooking updatedBooking = bookingRepository.save(existingBooking);
@@ -157,7 +143,6 @@ public class PadelBookingServiceImpl implements PadelBookingService {
     public void deleteBooking(int id) {
         PadelBooking booking = getBookingById(id);
 
-        // Återställ tiden till ledig om bokningen tas bort
         Court court = booking.getCourt();
         court.getAvailableTimes().put(booking.getTime(), true);
 
@@ -172,12 +157,11 @@ public class PadelBookingServiceImpl implements PadelBookingService {
         return booked;
     }
 
-    // Ny metod för att hämta tillgängliga tider
     @Override
     public List<String> getAvailableTimes() {
+        logger.info("Kund listar alla lediga tider");
         List<Court> allCourts = courtRepository.findAll();
 
-        // Hämta alla lediga tider
         return allCourts.stream()
                 .flatMap(court -> court.getAvailableTimes().entrySet().stream()
                         .filter(Map.Entry::getValue) // Endast lediga tider

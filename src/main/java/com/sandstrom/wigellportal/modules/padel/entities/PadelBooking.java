@@ -40,9 +40,6 @@ public class PadelBooking {
     @JoinColumn(name = "court_id")
     private Court court;
 
-    // Getters, Setters, Constructors, toString()
-
-    // Default constructor
     public PadelBooking() {
     }
 

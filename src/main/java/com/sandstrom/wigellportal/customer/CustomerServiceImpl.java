@@ -115,9 +115,10 @@ public class CustomerServiceImpl implements CustomerService {
                 customer.getLastName()
         );
     }
+    @Override
     public Customer createCustomer(Customer customer) {
-        return customerRepository.save(customer);
+        Customer savedCustomer = customerRepository.save(customer);
+        logger.info("Admin created a new customer with id {}", savedCustomer.getId());
+        return savedCustomer;
     }
-
-
 }

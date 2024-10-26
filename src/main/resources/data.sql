@@ -102,7 +102,7 @@ VALUES (5, 'Padel Court 5', 'Haninge', 200, 'Utomhus, grönt gräs med vita linj
 
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '08:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '09:00:00', true);
-INSERT INTO court_times (court_id, time, is_available) VALUES (1, '10:00:00', false); -- Bokad tid
+INSERT INTO court_times (court_id, time, is_available) VALUES (1, '10:00:00', false);
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '11:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '12:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '13:00:00', true);
@@ -113,14 +113,13 @@ INSERT INTO court_times (court_id, time, is_available) VALUES (1, '17:00:00', tr
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '18:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '19:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (1, '20:00:00', true);
--- Repetera för fler tider...
 
 -- Repetera samma mönster för alla padelbanor
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '08:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '09:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '10:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '11:00:00', true);
-INSERT INTO court_times (court_id, time, is_available) VALUES (2, '12:00:00', false); -- Bokad tid
+INSERT INTO court_times (court_id, time, is_available) VALUES (2, '12:00:00', false);
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '13:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '14:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (2, '15:00:00', true);
@@ -134,7 +133,7 @@ INSERT INTO court_times (court_id, time, is_available) VALUES (3, '08:00:00', tr
 INSERT INTO court_times (court_id, time, is_available) VALUES (3, '09:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (3, '10:00:00', false);
 INSERT INTO court_times (court_id, time, is_available) VALUES (3, '11:00:00', true);
-INSERT INTO court_times (court_id, time, is_available) VALUES (3, '12:00:00', true); -- Bokad tid
+INSERT INTO court_times (court_id, time, is_available) VALUES (3, '12:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (3, '13:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (3, '14:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (3, '15:00:00', true);
@@ -162,7 +161,7 @@ INSERT INTO court_times (court_id, time, is_available) VALUES (5, '08:00:00', tr
 INSERT INTO court_times (court_id, time, is_available) VALUES (5, '09:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (5, '10:00:00', false);
 INSERT INTO court_times (court_id, time, is_available) VALUES (5, '11:00:00', true);
-INSERT INTO court_times (court_id, time, is_available) VALUES (5, '12:00:00', true); -- Bokad tid
+INSERT INTO court_times (court_id, time, is_available) VALUES (5, '12:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (5, '13:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (5, '14:00:00', true);
 INSERT INTO court_times (court_id, time, is_available) VALUES (5, '15:00:00', true);

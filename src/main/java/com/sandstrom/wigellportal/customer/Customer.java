@@ -6,6 +6,7 @@ import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingTicket;
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingVenue;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Role;
+import com.sandstrom.wigellportal.modules.padel.entities.PadelBooking;
 import com.sandstrom.wigellportal.modules.travel.entities.TravelBooking;
 import jakarta.persistence.*;
 
@@ -41,18 +42,21 @@ public class Customer {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "address_id")
     private Address address;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<McBooking> mcBookings;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<CinemaBookingTicket> cinemaBookingTickets;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<CinemaBookingVenue> cinemaBookingVenues;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JsonIgnore
     private List<TravelBooking> travelBookings;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<PadelBooking> bookings;
 
     public Customer() {
     }

@@ -27,7 +27,7 @@ public class PadelCustomerController {
         this.courtService = courtService;
     }
 
-    // Kunder och admin kan boka en tid
+    // Skapa en bokning
     @PostMapping
     @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<?> createBooking(@RequestBody PadelBooking booking) {
@@ -42,7 +42,7 @@ public class PadelCustomerController {
         }
     }
 
-    // Kunder kan se sina bokningar
+    // Se en specifik bokning (endast för användare)
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> getBookingById(@PathVariable int id) {
@@ -56,7 +56,7 @@ public class PadelCustomerController {
         }
     }
 
-    // Kunder kan uppdatera sina egna bokningar
+    // Uppdatera bokning (endast för användare)
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<?> updateBooking(@PathVariable int id, @RequestBody PadelBooking bookingDetails) {
@@ -71,39 +71,29 @@ public class PadelCustomerController {
         }
     }
 
-// Kunder och admin kan se alla tider. Admin ser både lediga och bokade tider, User ser bara tiden och banan.
+    // Visa alla bokningar för admin, och lediga tider för user
     @GetMapping
     @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
-    public ResponseEntity<?> getAvailableTimes() {
+    public ResponseEntity<?> getBookingsOrAvailableTimes() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
-        // Kontrollera om användaren är admin
         boolean isAdmin = auth.getAuthorities().stream()
                 .anyMatch(role -> role.getAuthority().equals("ROLE_ADMIN"));
 
-        List<String> availableTimes;
-
         if (isAdmin) {
-            // Admin ser både banan, tiden och om den är ledig eller inte
-            availableTimes = courtService.getAllCourts().stream()
-                    .flatMap(court -> court.getAvailableTimes().entrySet().stream()
-                            .map(entry -> String.format("Court: %s, Time: %s, Available: %s",
-                                    court.getName(),
-                                    entry.getKey(),
-                                    entry.getValue() ? "true" : "false")))
+            // Admin ser alla bokningar
+            List<PadelBooking> allBookings = bookingService.getAllBookings();
+            List<String> bookingDetails = allBookings.stream()
+                    .map(booking -> String.format("Court: %s, Date: %s, Time: %s, Booked by: %s",
+                            booking.getCourt().getName(),
+                            booking.getDate(),
+                            booking.getTime(),
+                            booking.getCustomer().getUsername()))
                     .collect(Collectors.toList());
+            return ResponseEntity.ok(bookingDetails);
         } else {
-            // User ser endast banan och tiden, utan information om tillgänglighet
-            availableTimes = courtService.getAllCourts().stream()
-                    .flatMap(court -> court.getAvailableTimes().entrySet().stream()
-                            .map(entry -> String.format("Court: %s, Time: %s",
-                                    court.getName(),
-                                    entry.getKey())))
-                    .collect(Collectors.toList());
+            // User ser alla lediga tider (utan ytterligare filtrering)
+            List<String> availableTimes = bookingService.getAvailableTimes();
+            return ResponseEntity.ok(availableTimes);
         }
-
-        return ResponseEntity.ok(availableTimes);
     }
-
-
 }
