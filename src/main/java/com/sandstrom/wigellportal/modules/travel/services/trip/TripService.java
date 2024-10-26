@@ -133,15 +133,16 @@ public class TripService implements TripServiceInterface {
     @Override
     @Transactional
     public void delete(int id) {
-        Optional<Trip> optionalTrip = tripRepository.findById(id);
-
-        if (optionalTrip.isPresent()) {
-            Trip trip = optionalTrip.get();
-            trip.setActive(false);
-            tripRepository.save(trip);
-            logger.info("Admin marked trip with id {} as inactive.", id);
-        } else {
-            throw new EntityNotFoundException("Resa med id " + id + " hittades inte.");
-        }
+        tripRepository.deleteById(id);
+//        Optional<Trip> optionalTrip = tripRepository.findById(id);
+//
+//        if (optionalTrip.isPresent()) {
+//            Trip trip = optionalTrip.get();
+//            trip.setActive(false);
+//            tripRepository.save(trip);
+//            logger.info("Admin marked trip with id {} as inactive.", id);
+//        } else {
+//            throw new EntityNotFoundException("Resa med id " + id + " hittades inte.");
+//        }
     }
 }

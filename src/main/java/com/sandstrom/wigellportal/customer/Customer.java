@@ -5,7 +5,6 @@ import com.sandstrom.wigellportal.address.Address;
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingTicket;
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingVenue;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
-import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Role;
 import com.sandstrom.wigellportal.modules.padel.entities.PadelBooking;
 import com.sandstrom.wigellportal.modules.travel.entities.TravelBooking;
 import jakarta.persistence.*;
@@ -14,7 +13,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
-//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Customer {
 
     @Id
@@ -35,14 +33,11 @@ public class Customer {
     private String username;
     @Column(name = "password", length = 68)
     private String password;
-    private boolean enabled;
+    private boolean enabled = true;
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
-
-    @Column(name = "active")
-    private boolean active = true; // Standard är att kunder är aktiva vid skapande
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "address_id")
     private Address address;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.REMOVE, orphanRemoval = true)
@@ -66,7 +61,7 @@ public class Customer {
 
     public Customer(String firstName, String lastName, String phoneNumber,
                     String dateOfBirth, String email, String username,
-                    String password, boolean enabled, Role role, Address address) {
+                    String password, Role role, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -76,15 +71,14 @@ public class Customer {
         this.password = password;
         this.role = role;
         this.address = address;
-        this.enabled = enabled;
     }
 
     public boolean isEnabled() {
-        return enabled;
+        return true;
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+        this.enabled = true;
     }
 
     public void setCinemaBookingTickets(List<CinemaBookingTicket> cinemaBookingTickets) {
@@ -199,29 +193,26 @@ public class Customer {
         this.travelBookings = travelBookings;
     }
 
-    public boolean isActive() {
-        return active;
+    public List<PadelBooking> getBookings() {
+        return bookings;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
-        this.enabled = active;
+    public void setBookings(List<PadelBooking> bookings) {
+        this.bookings = bookings;
     }
 
     @Override
     public String toString() {
         return "Kund:   " + id +
-                "\n     Aktiv:          " + active +
                 "\n     Förnamn:        " + firstName +
                 "\n     Efternamn:      " + lastName +
                 "\n     E-postadess:    " + email +
                 "\n     Telefonnummer:  " + phoneNumber +
                 "\n     Personnummer:   " + dateOfBirth +
                 "\n" + address +
-                "\n\nInloggning:" +
+                "\n\nAnvändaruppgifter:" +
                 "\n     Användarnamn:   " + username +
                 "\n     Lösenord:       " + password +
                 "\n     Aktiv:          " + enabled;
-        //eventuellt lägga till username och password här (men det kommer ju även med login när man visar alla kunder)
     }
 }

@@ -14,16 +14,21 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="com.sandstrom.wigellportal.modules.travel.services.TravelBookingService" level="info" additivity="false">
+        <Logger name="com.sandstrom.wigellportal.customer" level="info" additivity="false">
             <AppenderRef ref="MyFile" level="info"/>
         </Logger>
-        <Logger name="com.sandstrom.wigellportal.modules.travel.services.customer.CustomerServiceImpl" level="info" additivity="false">
+        <Logger name="com.sandstrom.wigellportal.modules.travel.services" level="info" additivity="false">
             <AppenderRef ref="MyFile" level="info"/>
         </Logger>
-        <Logger name="com.sandstrom.wigellportal.modules.travel.services.trip.TripService" level="info" additivity="false">
+        <Logger name="com.sandstrom.wigellportal.modules.padel.services" level="info" additivity="false">
             <AppenderRef ref="MyFile" level="info"/>
         </Logger>
-
+        <Logger name="com.sandstrom.wigellportal.modules.cinema.services" level="info" additivity="false">
+            <AppenderRef ref="MyFile" level="info"/>
+        </Logger>
+        <Logger name="com.sandstrom.wigellportal.modules.motorcyclerental.services" level="info" additivity="false">
+            <AppenderRef ref="MyFile" level="info"/>
+        </Logger>
         <!-- Root logger
         <Root level="info">
             <AppenderRef ref="MyFile"/>

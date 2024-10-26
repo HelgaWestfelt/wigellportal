@@ -19,6 +19,4 @@ public interface CustomerService {
 
     CustomerDTO createCustomerDTO(Customer customer);
 
-    Customer createCustomer(Customer customer);
-
 }

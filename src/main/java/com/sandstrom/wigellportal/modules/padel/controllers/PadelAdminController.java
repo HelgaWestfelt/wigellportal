@@ -38,7 +38,7 @@ public class PadelAdminController {
     @PostMapping("/customers")
     @PreAuthorize("hasRole('ADMIN')")
     public Customer createCustomer(@RequestBody Customer customer) {
-        return customerService.createCustomer(customer);
+        return customerService.save(customer);
     }
 
     // Ta bort en kund

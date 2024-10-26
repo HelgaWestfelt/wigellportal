@@ -113,11 +113,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public void deleteById(int id){
-        Customer customer = findById(id);
+        findById(id);
 
-        customer.setActive(false);
-        customerRepository.save(customer);
-        logger.info("Admin marked customer with id {} as inactive.", id);
+        customerRepository.deleteById(id);
+        logger.info("Admin deleted customer with id {}.", id);
 
     }
 }
