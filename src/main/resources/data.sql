@@ -1,4 +1,3 @@
--- Sätta in mockdata för motorcykelbokningssystemet
 INSERT INTO address (street, zip_code, city) VALUES
 ('Main Street 1', '12345', 'City A'),
 ('Second Street 2', '23456', 'City B'),
@@ -74,7 +73,6 @@ INSERT INTO destination (city, country) VALUES
 ('Sydney', 'Australia'),
 ('Cape Town', 'South Africa');
 
--- Infoga resor om de inte redan finns
 INSERT INTO trip (hotel, destination_id, weekly_price, active) VALUES
 ('Hotel Eiffel', 1, 500.00, true),
 ('Manhattan Suite', 2, 700.00, true),
