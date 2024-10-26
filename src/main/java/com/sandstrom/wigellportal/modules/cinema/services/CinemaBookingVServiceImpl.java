@@ -55,7 +55,7 @@ public class CinemaBookingVServiceImpl implements CinemaBookingVService {
     public CinemaBookingVenue save(CinemaBookingVenue bookingCVenue) {
 
         int nrOfGuests = bookingCVenue.getNrOfGuests();
-        logger.info("Antal gäster i bokningen: " + nrOfGuests);
+        logger.info("Number of guests in venue booking: " + nrOfGuests);
 
         // Hämta CinemaVenue från databasen, för att jämföra antal gäster med max antal i lokalen
         int venueId = bookingCVenue.getCinemaVenue().getId();

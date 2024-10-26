@@ -26,13 +26,7 @@ public class CinemaVenueController {
     }
 
     @PutMapping("/v1/cinema/rooms/{id}")
-    public CinemaVenue venue(@PathVariable int id, @RequestBody CinemaVenue v) {
-        CinemaVenue existingVenue = venueService.findById(id);
-
-        existingVenue.setName(v.getName());
-        existingVenue.setMaxNoOfGuests(v.getMaxNoOfGuests());
-        existingVenue.setFacilities(v.getFacilities());
-
-        return venueService.save(existingVenue);
+    public CinemaVenue updateVenue(@PathVariable int id, @RequestBody CinemaVenue v) {
+        return venueService.updateVenue(id, v);
     }
 }

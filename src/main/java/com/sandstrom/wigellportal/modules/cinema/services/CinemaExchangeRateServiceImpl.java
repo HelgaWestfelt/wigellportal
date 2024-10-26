@@ -26,12 +26,12 @@ public class CinemaExchangeRateServiceImpl implements CinemaExchangeRateService 
     @Scheduled(fixedRate = 3600000) // Uppdatera varje timme
     public CinemaExchangeRateResponse getExchangeRateToUSD() {
         String apiUrl = String.format(API_URL_TEMPLATE, apiKey, "SEK");
-        logger.info("API URL: " + apiUrl);
+        System.out.println("API URL: " + apiUrl);
 
         RestTemplate restTemplate = new RestTemplate();
         CinemaExchangeRateResponse response = restTemplate.getForObject(apiUrl, CinemaExchangeRateResponse.class);
 
-        logger.info("Exchange API Response: " + response);
+        System.out.println("Exchange API Response: " + response);
         return response;
     }
 }

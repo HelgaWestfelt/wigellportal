@@ -26,7 +26,7 @@ public class CinemaMovieServiceImpl implements CinemaMovieService {
 
     @Override
     public List<CinemaMovie> findAll() {
-        logger.info("All movies was listed.");
+        logger.info("All movies were listed.");
         return movieRepository.findAll();
     }
 
@@ -39,7 +39,6 @@ public class CinemaMovieServiceImpl implements CinemaMovieService {
         } else {
             throw new RuntimeException("Movie with " + id + " could not be found.");
         }
-        logger.info("Movie with id " + id + " was listed.");
         return movie;
     }
 
@@ -48,6 +47,19 @@ public class CinemaMovieServiceImpl implements CinemaMovieService {
         String savedMovie = movieRepository.save(movie).getTitle();
         logger.info("Movie " + savedMovie+ " was added by admin.");
         return movieRepository.save(movie);
+    }
+
+    @Override
+    public CinemaMovie updateMovie(int id, CinemaMovie updatedMovie) {
+        CinemaMovie existingMovie = findById(id);
+
+        existingMovie.setTitle(updatedMovie.getTitle());
+        existingMovie.setLength(updatedMovie.getLength());
+        existingMovie.setGenre(updatedMovie.getGenre());
+        existingMovie.setAgeLimit(updatedMovie.getAgeLimit());
+
+        logger.info("Movie with id " + id + " was updated by admin.");
+        return movieRepository.save(existingMovie);
     }
 
     @Override
