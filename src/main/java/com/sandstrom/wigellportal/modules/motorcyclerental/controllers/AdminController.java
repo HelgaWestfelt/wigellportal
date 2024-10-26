@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/mc")
 public class AdminController {
 
     private CustomerService customerService;
@@ -46,7 +46,7 @@ public class AdminController {
         return ResponseEntity.ok(updated);
     }
 
-    @DeleteMapping("/delete/customers/{id}")
+    @DeleteMapping("/customers/{id}")
     public String deleteCustomer(@PathVariable int id){
        Customer customer = customerService.findById(id);
         if(customer == null){
@@ -56,25 +56,25 @@ public class AdminController {
         return "Customer with id " + id + " is deleted";
     }
 
-    @GetMapping("/list/bikes")
+    @GetMapping("/bikes")
     public List<Motorcycle> findAllB(){
         return mcService.findAll();
     }
 
-    @PostMapping("/add/bikes")
+    @PostMapping("/bikes")
     public Motorcycle addMc(@RequestBody Motorcycle mc){
         System.out.println(mc.getBrand());
         Motorcycle motorcycle = mcService.save(mc);
         return motorcycle;
     }
 
-    @PutMapping("/update/bikes/{id}")
+    @PutMapping("/bikes/{id}")
     public ResponseEntity<Motorcycle> updateMc(@PathVariable int id, @RequestBody Motorcycle mc){
         Motorcycle updated = mcService.updateMc(id, mc);
         return ResponseEntity.ok(updated);
     }
 
-    @DeleteMapping("/delete/bookings/{id}")
+    @DeleteMapping("/bookings/{id}")
     public String deleteBooking(@PathVariable int id){
         McBooking mcBooking = mcBookingService.findById(id);
         if (mcBooking == null){

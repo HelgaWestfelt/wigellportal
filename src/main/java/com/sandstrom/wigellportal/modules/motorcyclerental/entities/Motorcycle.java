@@ -119,7 +119,6 @@ public class Motorcycle {
                 ", pricePerDay=" + pricePerDay +
                 ", pricePerDayInGBP=" + pricePerDayInGBP +
                 ", availability=" + availability +
-                ", mcBookings=" + mcBookings +
                 '}';
     }
 }
