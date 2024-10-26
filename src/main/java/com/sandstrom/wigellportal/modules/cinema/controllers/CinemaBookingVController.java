@@ -3,8 +3,8 @@ package com.sandstrom.wigellportal.modules.cinema.controllers;
 
 
 
-import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingVenue;
 import com.sandstrom.wigellportal.modules.cinema.services.CinemaBookingVService;
+import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingVenue;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +19,6 @@ public class CinemaBookingVController {
     public CinemaBookingVController(CinemaBookingVService bookingCVenueService2){
         bookingCVenueService = bookingCVenueService2;
     }
-
 
     @GetMapping("/v1/cinvenbookings/customer/{customerId}")
     public List<CinemaBookingVenue> getBookingsByCustomerId(@PathVariable int customerId) {
@@ -43,7 +42,6 @@ public class CinemaBookingVController {
         existingBookingCVenue.setEntertainment(b.getEntertainment());
         existingBookingCVenue.setTotalPriceSEK(b.getTotalPriceSEK());
         existingBookingCVenue.setTimeForEvent(b.getTimeForEvent());
-
 
         return bookingCVenueService.save(existingBookingCVenue);
     }

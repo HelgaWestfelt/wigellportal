@@ -1,6 +1,6 @@
-package com.sandstrom.wigellportal.modules.motorcyclerental.controllers;
+package com.westfelt.wigellmcrental.controllers;
 
-import com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService;
+import com.westfelt.wigellmcrental.services.McBookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

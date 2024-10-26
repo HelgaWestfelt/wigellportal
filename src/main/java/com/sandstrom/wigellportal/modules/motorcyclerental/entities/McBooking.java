@@ -1,8 +1,12 @@
 package com.sandstrom.wigellportal.modules.motorcyclerental.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sandstrom.wigellportal.customer.Customer;
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -15,16 +19,20 @@ public class McBooking {
     @Column(name = "id")
     private int id;
     @Column(name = "start_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate startDate;
     @Column(name = "end_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate endDate;
     @Column(name = "price")
-    private int price;
-    @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    private BigDecimal price;
+    @Column(name = "price_in_GBP")
+    private BigDecimal priceInGBP;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @ManyToMany(cascade = {CascadeType.ALL, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "booking_mc",
     joinColumns = @JoinColumn(name = "booking_id"),
     inverseJoinColumns = @JoinColumn(name = "motorcycle_id"))
@@ -34,11 +42,12 @@ public class McBooking {
 
     }
 
-    public McBooking(LocalDate startDate, LocalDate endDate, int price,
+    public McBooking(LocalDate startDate, LocalDate endDate, BigDecimal price, BigDecimal priceInGBP,
                      Customer customer, List<Motorcycle> motorcycles) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;
+        this.priceInGBP = priceInGBP;
         this.customer = customer;
         this.motorcycles = motorcycles;
     }
@@ -67,12 +76,20 @@ public class McBooking {
         this.endDate = endDate;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal getPriceInGBP() {
+        return priceInGBP;
+    }
+
+    public void setPriceInGBP(BigDecimal priceInGBP) {
+        this.priceInGBP = priceInGBP;
     }
 
     public Customer getCustomer() {
@@ -98,6 +115,7 @@ public class McBooking {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", price=" + price +
+                ", priceInGBP=" + priceInGBP +
                 ", customer=" + customer +
                 ", motorcycles=" + motorcycles +
                 '}';

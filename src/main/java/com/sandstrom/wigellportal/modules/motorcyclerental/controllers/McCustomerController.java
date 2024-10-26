@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/mc")
 public class McCustomerController {
 
     private CustomerService customerService;
@@ -28,34 +28,31 @@ public class McCustomerController {
         mcService = mcServ;
     }
 
-    @GetMapping("/bikes")
+    @GetMapping("/avaliable-bikes")
     public List<Motorcycle> findAll(){
         return mcService.findAvailableBikes();
     }
 
-    @PostMapping("/book/bikes")
-    public McBooking bookMc(@RequestBody McBooking mcBook){
-        System.out.println(mcBook.getCustomer());
-        mcBook.setId(0);
-        McBooking mcBooking = mcBookingService.save(mcBook);
-        return mcBooking;
+    @PostMapping("/bookings")
+    public ResponseEntity<McBooking> createBooking(@RequestBody McBooking booking) {
+        McBooking savedBooking = mcBookingService.save(booking);
+        return ResponseEntity.ok(savedBooking);
     }
 
-    @PutMapping("/update/mcBooking{id}")
-    public ResponseEntity<McBooking> updateBooking(@PathVariable int id, McBooking mcBook){
+    @PutMapping("/bookings/{id}")
+    public ResponseEntity<McBooking> updateBooking(@PathVariable int id, @RequestBody McBooking mcBook){
         McBooking updated = mcBookingService.updateMcBooking(id, mcBook);
         return ResponseEntity.ok(updated);
     }
 
-    @GetMapping("/mcBookings")
-    public Map<String, List<McBooking>> getAllBookings() {
-        return mcBookingService.findAllBookings();
+    @GetMapping("/bookings/{id}")
+    public ResponseEntity<Map<String, List<McBooking>>> getAllBookings(@PathVariable int id) {
+        Map<String, List<McBooking>> bookings = mcBookingService.findAllBookings(id);
+        if (bookings.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(bookings);
     }
 
-
-    @GetMapping("/mcBooking/{id}")
-    public List<McBooking> getBookings(@PathVariable int id) {
-        return mcBookingService.findBookingByCustomerId(id);
-    }
 
 }

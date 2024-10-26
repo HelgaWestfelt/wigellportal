@@ -12,5 +12,7 @@ public interface CinemaMovieService {
 
     CinemaMovie save(CinemaMovie movie);
 
+    CinemaMovie updateMovie(int id, CinemaMovie updatedMovie);
+
     void deleteById(int id);
 }
