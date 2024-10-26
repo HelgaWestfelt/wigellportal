@@ -13,5 +13,6 @@ public interface CinemaVenueService {
 
     CinemaVenue save(CinemaVenue venue);
 
+    public CinemaVenue updateVenue(int id, CinemaVenue updatedVenue);
     void deleteById(int id);
 }
