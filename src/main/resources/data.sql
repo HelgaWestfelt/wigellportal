@@ -23,21 +23,6 @@ INSERT INTO motorcycle (brand, model, registration_number, price_per_day, availa
                                                                                             ('BMW', 'R1200', 'JKL012', 600, TRUE),
                                                                                             ('Suzuki', 'GSX-R600', 'MNO345', 450, TRUE);
 
-INSERT INTO mc_booking (start_date, end_date, price, customer_id) VALUES
-                                                                   ('2024-01-01', '2024-01-05', 2000, 1),
-                                                                   ('2024-02-01', '2024-02-07', 2800, 2),
-                                                                   ('2024-03-01', '2024-03-03', 1050, 3),
-                                                                   ('2024-04-01', '2024-04-05', 2400, 4),
-                                                                   ('2024-05-01', '2024-05-04', 1800, 5);
-
-INSERT INTO booking_mc (booking_id, motorcycle_id) VALUES
-                                                       (1, 1),
-                                                       (1, 2),
-                                                       (2, 3),
-                                                       (3, 4),
-                                                       (4, 5),
-                                                       (5, 1);
-
 -- Lägg till filmer i cinema_movie
 INSERT INTO cinema_movie (title, length, genre, age_limit) VALUES
                                                                ('Inception', 148, 'SCIENCEFICTION', 13),
@@ -76,7 +61,7 @@ INSERT INTO trip (hotel, destination_id, weekly_price) VALUES
 ('Oceanview Lodge', 5, 550.00);
 
 INSERT INTO travel_booking (travel_date, return_date, number_of_weeks, total_price_sek, total_price_pln, booking_date, trip_id, customer_id) VALUES
-('2024-10-01', '2024-10-08', 1, 5000.00, 2000.00, '2024-09-25 10:30:00', 1, 2),
+('2024-10-01', '2024-10-08', 1, 5000.00, 2000.00, '2024-09-25 10:30:00', 1, 1),
 ('2024-11-15', '2024-11-22', 1, 7000.00, 2800.00, '2024-10-10 14:20:21', 2, 2),
 ('2024-12-05', '2024-12-19', 2, 12000.00, 4800.00, '2024-11-01 09:00:00', 3, 3),
 ('2025-01-10', '2025-01-17', 1, 8000.00, 3200.00, '2024-12-01 11:46:03', 4, 4),

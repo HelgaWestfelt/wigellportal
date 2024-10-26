@@ -8,6 +8,7 @@ import com.sandstrom.wigellportal.modules.travel.entities.Trip;
 import com.sandstrom.wigellportal.modules.travel.repositories.TravelBookingRepository;
 import com.sandstrom.wigellportal.modules.travel.services.currencyconversion.CurrencyConversionService;
 import com.sandstrom.wigellportal.modules.travel.services.trip.TripService;
+import com.sandstrom.wigellportal.modules.travel.services.trip.TripServiceInterface;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.apache.logging.log4j.LogManager;
@@ -27,29 +28,22 @@ import java.util.stream.Collectors;
 @Service
 public class TravelBookingService implements TravelBookingServiceInterface {
     private final TravelBookingRepository travelBookingRepository;
-    private final TripService tripService;
+    private final TripServiceInterface tripService;
     private final CustomerService customerService;
     private final CurrencyConversionService currencyConversionService;
     private final Logger logger = LogManager.getLogger(TravelBookingService.class);
 
     @Autowired
-    public TravelBookingService (TravelBookingRepository travelBookingRepository, TripService tripService, CustomerService customerService, CurrencyConversionService currencyConversionService) {
+    public TravelBookingService (TravelBookingRepository travelBookingRepository, TripServiceInterface tripService, CustomerService customerService, CurrencyConversionService currencyConversionService) {
         this.travelBookingRepository = travelBookingRepository;
         this.tripService = tripService;
         this.customerService = customerService;
         this.currencyConversionService = currencyConversionService;
     }
-
     @Override
     public Optional<TravelBooking> findById(int id) {
         return travelBookingRepository.findById(id);
     }
-
-//    @Override
-//    public List<TravelBooking> findAll() {
-//        return travelBookingRepository.findAll();
-//    }
-
     @Override
     @Transactional
     public TravelBooking save(TravelBooking travelBooking) {
@@ -96,6 +90,7 @@ public class TravelBookingService implements TravelBookingServiceInterface {
         }
         return travelBooking;
     }
+    @Override
     public List<TravelBookingDTO> getBookingsByCustomerId (int id) {
         List<TravelBooking> bookings = travelBookingRepository.findTravelBookingByCustomerId(id);
         List<TravelBookingDTO> bookingsDTO = new ArrayList<>();
@@ -120,7 +115,6 @@ public class TravelBookingService implements TravelBookingServiceInterface {
                 customerService.createCustomerDTO(travelBooking.getCustomer())
         );
     }
-
     @Override
     @Transactional
     public TravelBooking update(int id, TravelBooking updatedTravelBooking) {
@@ -160,7 +154,6 @@ public class TravelBookingService implements TravelBookingServiceInterface {
 
         return existingTravelBooking;
     }
-
     @Override
     @Transactional
     public void delete(int id) {

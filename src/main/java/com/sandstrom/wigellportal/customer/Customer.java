@@ -5,7 +5,6 @@ import com.sandstrom.wigellportal.address.Address;
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingTicket;
 import com.sandstrom.wigellportal.modules.cinema.entities.CinemaBookingVenue;
 import com.sandstrom.wigellportal.modules.motorcyclerental.entities.McBooking;
-import com.sandstrom.wigellportal.modules.motorcyclerental.entities.Role;
 import com.sandstrom.wigellportal.modules.travel.entities.TravelBooking;
 import jakarta.persistence.*;
 
@@ -38,19 +37,19 @@ public class Customer {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<McBooking> mcBookings;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<CinemaBookingTicket> cinemaBookingTickets;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<CinemaBookingVenue> cinemaBookingVenues;
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<TravelBooking> travelBookings;
 
@@ -59,7 +58,7 @@ public class Customer {
 
     public Customer(String firstName, String lastName, String phoneNumber,
                     String dateOfBirth, String email, String username,
-                    String password, Role role, Address address) {
+                    String password, boolean enabled, Role role, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
@@ -69,15 +68,15 @@ public class Customer {
         this.password = password;
         this.role = role;
         this.address = address;
-        this.enabled = true;
+        this.enabled = enabled;
     }
 
     public boolean isEnabled() {
-        return true;
+        return enabled;
     }
 
     public void setEnabled(boolean enabled) {
-        this.enabled = true;
+        this.enabled = enabled;
     }
 
     public void setCinemaBookingTickets(List<CinemaBookingTicket> cinemaBookingTickets) {
@@ -182,6 +181,14 @@ public class Customer {
 
     public void setMcBookings(List<McBooking> bookings) {
         this.mcBookings = bookings;
+    }
+
+    public List<TravelBooking> getTravelBookings() {
+        return travelBookings;
+    }
+
+    public void setTravelBookings(List<TravelBooking> travelBookings) {
+        this.travelBookings = travelBookings;
     }
 
     @Override

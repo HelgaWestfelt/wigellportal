@@ -1,4 +1,4 @@
-package com.sandstrom.wigellportal.modules.motorcyclerental.entities;
+package com.sandstrom.wigellportal.customer;
 
 public enum Role {
     ROLE_USER,
