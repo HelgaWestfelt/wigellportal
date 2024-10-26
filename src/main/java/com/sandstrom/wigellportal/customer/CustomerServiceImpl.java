@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     @Transactional
-    public Customer save (Customer customer){
+    public Customer save(Customer customer) {
         Address existingAddress = addressService.findByAddress(customer.getAddress());
         if (existingAddress != null) {
             customer.setAddress(existingAddress);
@@ -59,11 +59,15 @@ public class CustomerServiceImpl implements CustomerService {
             customer.setAddress(savedAddress);
         }
 
-        customerRepository.save(customer);
-        logger.info("Admin created customer with id {}.", customer.getId());
+        // Kryptera lösenordet innan det sparas
+        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
 
-        return customer;
+        Customer savedCustomer = customerRepository.save(customer);
+        logger.info("Admin created customer with id {}.", savedCustomer.getId());
+
+        return savedCustomer;
     }
+
 
     @Override
     @Transactional
@@ -117,8 +121,13 @@ public class CustomerServiceImpl implements CustomerService {
     }
     @Override
     public Customer createCustomer(Customer customer) {
+        // Kryptera lösenordet innan det sparas
+        customer.setPassword(passwordEncoder.encode(customer.getPassword()));
+
         Customer savedCustomer = customerRepository.save(customer);
         logger.info("Admin created a new customer with id {}", savedCustomer.getId());
+
         return savedCustomer;
     }
+
 }
