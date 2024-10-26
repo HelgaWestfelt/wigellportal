@@ -3,6 +3,7 @@ package com.sandstrom.wigellportal.customer;
 import com.sandstrom.wigellportal.address.Address;
 import com.sandstrom.wigellportal.address.AddressService;
 import com.sandstrom.wigellportal.modules.travel.dto.CustomerDTO;
+import com.sandstrom.wigellportal.modules.travel.entities.Trip;
 import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -33,16 +34,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
     @Override
     public Customer findById(int id){
-        Optional<Customer> c = customerRepository.findById(id);
-        Customer customer = null;
-        if(c.isPresent()){
-            customer = c.get();
+        Optional<Customer> customer = customerRepository.findById(id);
+
+        if(customer.isPresent()){
+            return customer.get();
         }
         else{
-            throw new RuntimeException("Customer with id " + id + " could not be found.");
+            throw new EntityNotFoundException("Kund med id " + id + " kunde inte hittas.");
         }
-        logger.info("Customer with id " + " was listed.");
-        return customer;
     }
     @Override
     public CustomerDTO createCustomerDTO(Customer customer) {
@@ -79,12 +78,8 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     @Transactional
     public Customer update(int id, Customer updatedCustomer) {
-        Optional<Customer> existingCustomerOptional = customerRepository.findById(id);
+        Customer existingCustomer = findById(id);
 
-        if (existingCustomerOptional.isEmpty()) {
-            throw new EntityNotFoundException("Kund med ID " + id + " hittades inte.");
-        }else {
-            Customer existingCustomer = existingCustomerOptional.get();
             if (updatedCustomer.getFirstName() != null) {
                 existingCustomer.setFirstName(updatedCustomer.getFirstName());
             }
@@ -112,16 +107,17 @@ public class CustomerServiceImpl implements CustomerService {
             customerRepository.save(existingCustomer);
             logger.info("Admin updated customer with id {}.", existingCustomer.getId());
             return existingCustomer;
-        }
+
     }
+
     @Override
     @Transactional
     public void deleteById(int id){
+        Customer customer = findById(id);
 
-        if(findById(id) != null) {
-            customerRepository.deleteById(id);
-            logger.info("Customer with id " + id + " was deleted.");
-        }
+        customer.setActive(false);
+        customerRepository.save(customer);
+        logger.info("Admin marked customer with id {} as inactive.", id);
 
     }
 }

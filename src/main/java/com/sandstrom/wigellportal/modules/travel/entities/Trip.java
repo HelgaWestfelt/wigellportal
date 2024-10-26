@@ -28,6 +28,7 @@ public class Trip {
 
     private Double weeklyPrice;
 
+    private boolean active;
     public Trip () {
 
     }
@@ -36,6 +37,7 @@ public class Trip {
         this.hotel = hotel;
         this.destination = destination;
         this.weeklyPrice = weeklyPrice;
+        this.active = true;
     }
 
     public Integer getId() {
@@ -70,5 +72,19 @@ public class Trip {
         this.weeklyPrice = weeklyPrice;
     }
 
+    public List<TravelBooking> getBookings() {
+        return bookings;
+    }
 
+    public void setBookings(List<TravelBooking> bookings) {
+        this.bookings = bookings;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

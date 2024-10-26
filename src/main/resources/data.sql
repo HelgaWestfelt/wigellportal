@@ -6,14 +6,14 @@ INSERT INTO address (street, zip_code, city) VALUES
                                                  ('Fourth Street 4', '45678', 'City D'),
                                                  ('Fifth Street 5', '56789', 'City E');
 
-INSERT INTO customer (first_name, last_name, phone_number, date_of_birth, email, username, password, enabled, role, address_id) VALUES
-('John', 'Doe', '1234567890', '1990-01-01', 'john.doe@example.com', 'johndoe', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 1),
-('Jane', 'Doe', '2345678901', '1991-02-02', 'jane.doe@example.com', 'janedoe', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_ADMIN', 2),
-('Mike', 'Smith', '3456789012', '1985-03-03', 'mike.smith@example.com', 'mikesmith', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 3),
-('Anna', 'Johnson', '4567890123', '1975-04-04', 'anna.johnson@example.com', 'annajohnson', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 4),
-('Tom', 'Brown', '5678901234', '2000-05-05', 'tom.brown@example.com', 'tombrown', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_ADMIN', 5),
-('Maria', 'Wiklund', '2345678901', '1991-02-02', 'maria@example.com', 'maria_w', '$2a$10$c1B932Y8UJfcKj3PZtrbmO27C1Sz8llRijjEsAOuyetr6L6TWCN8q', true, 'ROLE_ADMIN', 2),
-('Anna', 'Andersson', '3456789012', '1985-03-03', 'anna@example.com', 'anna_a', '$2a$10$8Z0mJH74HKLdPFtbLwacKORdqeRSvfaQifav7yuWynHZ9tx9dpQYG', true, 'ROLE_USER', 3);
+INSERT INTO customer (first_name, last_name, phone_number, date_of_birth, email, username, password, enabled, role, address_id, active) VALUES
+('John', 'Doe', '1234567890', '1990-01-01', 'john.doe@example.com', 'johndoe', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 1, true),
+('Jane', 'Doe', '2345678901', '1991-02-02', 'jane.doe@example.com', 'janedoe', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_ADMIN', 2, true),
+('Mike', 'Smith', '3456789012', '1985-03-03', 'mike.smith@example.com', 'mikesmith', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 3, true),
+('Anna', 'Johnson', '4567890123', '1975-04-04', 'anna.johnson@example.com', 'annajohnson', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_USER', 4, true),
+('Tom', 'Brown', '5678901234', '2000-05-05', 'tom.brown@example.com', 'tombrown', '$2a$10$aG3vGynwbbJ/mob5nBp3euA62CzvjBwRJVQrCgn3TeH6gkB3Eh3Mq', true, 'ROLE_ADMIN', 5, true),
+('Maria', 'Wiklund', '2345678901', '1991-02-02', 'maria@example.com', 'maria_w', '$2a$10$c1B932Y8UJfcKj3PZtrbmO27C1Sz8llRijjEsAOuyetr6L6TWCN8q', true, 'ROLE_ADMIN', 2, true),
+('Anna', 'Andersson', '3456789012', '1985-03-03', 'anna@example.com', 'anna_a', '$2a$10$8Z0mJH74HKLdPFtbLwacKORdqeRSvfaQifav7yuWynHZ9tx9dpQYG', true, 'ROLE_USER', 3, true);
 
 
 INSERT INTO motorcycle (brand, model, registration_number, price_per_day, availability) VALUES
@@ -53,12 +53,12 @@ INSERT INTO destination (city, country) VALUES
 ('Cape Town', 'South Africa');
 
 -- Infoga resor om de inte redan finns
-INSERT INTO trip (hotel, destination_id, weekly_price) VALUES
-('Hotel Eiffel', 1, 500.00),
-('Manhattan Suite', 2, 700.00),
-('Tokyo Plaza', 3, 600.00),
-('Harbour Hotel', 4, 800.00),
-('Oceanview Lodge', 5, 550.00);
+INSERT INTO trip (hotel, destination_id, weekly_price, active) VALUES
+('Hotel Eiffel', 1, 500.00, true),
+('Manhattan Suite', 2, 700.00, true),
+('Tokyo Plaza', 3, 600.00, true),
+('Harbour Hotel', 4, 800.00, true),
+('Oceanview Lodge', 5, 550.00, true);
 
 INSERT INTO travel_booking (travel_date, return_date, number_of_weeks, total_price_sek, total_price_pln, booking_date, trip_id, customer_id) VALUES
 ('2024-10-01', '2024-10-08', 1, 5000.00, 2000.00, '2024-09-25 10:30:00', 1, 1),

@@ -37,7 +37,10 @@ public class Customer {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @Column(name = "active")
+    private boolean active = true; // Standard är att kunder är aktiva vid skapande
+    @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
@@ -191,15 +194,29 @@ public class Customer {
         this.travelBookings = travelBookings;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+        this.enabled = active;
+    }
+
     @Override
     public String toString() {
         return "Kund:   " + id +
+                "\n     Aktiv:          " + active +
                 "\n     Förnamn:        " + firstName +
                 "\n     Efternamn:      " + lastName +
                 "\n     E-postadess:    " + email +
                 "\n     Telefonnummer:  " + phoneNumber +
                 "\n     Personnummer:   " + dateOfBirth +
-                "\n" + address;
+                "\n" + address +
+                "\n\nInloggning:" +
+                "\n     Användarnamn:   " + username +
+                "\n     Lösenord:       " + password +
+                "\n     Aktiv:          " + enabled;
         //eventuellt lägga till username och password här (men det kommer ju även med login när man visar alla kunder)
     }
 }

@@ -3,11 +3,10 @@ package com.sandstrom.wigellportal.modules.travel.services.trip;
 import com.sandstrom.wigellportal.modules.travel.dto.TripDTO;
 import com.sandstrom.wigellportal.modules.travel.entities.Destination;
 import com.sandstrom.wigellportal.modules.travel.entities.Trip;
+import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
 import com.sandstrom.wigellportal.modules.travel.repositories.TripRepository;
 import com.sandstrom.wigellportal.modules.travel.services.currencyconversion.CurrencyConversionService;
-import com.sandstrom.wigellportal.modules.travel.services.destination.DestinationService;
 import com.sandstrom.wigellportal.modules.travel.services.destination.DestinationServiceInterface;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -60,7 +59,7 @@ public class TripService implements TripServiceInterface {
     }
     @Override
     public List<TripDTO> getAllTrips() {
-        List<Trip> trips = tripRepository.findAll();
+        List<Trip> trips = tripRepository.findByActive(true);
         List<TripDTO> tripsDTO = new ArrayList<>();
 
         for (Trip trip : trips) {
@@ -103,10 +102,11 @@ public class TripService implements TripServiceInterface {
     @Transactional
     public Trip update(int id, Trip updatedTrip) {
         Optional<Trip> existingTripOptional = tripRepository.findById(id);
-        Trip existingTrip = null;
 
-        if (existingTripOptional.isPresent()) {
-            existingTrip = existingTripOptional.get();
+        if (existingTripOptional.isEmpty()) {
+            throw new EntityNotFoundException("Resa med id " + id + " kunde inte hittas.");
+        } else {
+            Trip existingTrip = existingTripOptional.get();
 
             if (updatedTrip.getHotel() != null) {
                 existingTrip.setHotel(updatedTrip.getHotel());
@@ -127,11 +127,8 @@ public class TripService implements TripServiceInterface {
             }
             tripRepository.save(existingTrip);
             logger.info("Admin updated trip with id {}.", existingTrip.getId());
-        } else {
-            throw new EntityNotFoundException("Resa med ID " + id + " hittades inte.");
+            return existingTrip;
         }
-
-        return existingTrip;
     }
     @Override
     @Transactional
@@ -139,11 +136,12 @@ public class TripService implements TripServiceInterface {
         Optional<Trip> optionalTrip = tripRepository.findById(id);
 
         if (optionalTrip.isPresent()) {
-            tripRepository.deleteById(id);
-            logger.info("Admin deleted trip with id {}.", id);
+            Trip trip = optionalTrip.get();
+            trip.setActive(false);
+            tripRepository.save(trip);
+            logger.info("Admin marked trip with id {} as inactive.", id);
         } else {
-            throw new EntityNotFoundException("Resa med id " + id + " finns inte.");
+            throw new EntityNotFoundException("Resa med id " + id + " hittades inte.");
         }
     }
-
 }

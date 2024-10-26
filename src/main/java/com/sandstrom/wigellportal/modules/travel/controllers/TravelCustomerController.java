@@ -26,7 +26,7 @@ public class TravelCustomerController {
 
     //Listning av resmål
     @GetMapping("/trips")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
     public ResponseEntity<String> getTrips() {
         List<TripDTO> trips = tripService.getAllTrips();
 
@@ -41,7 +41,7 @@ public class TravelCustomerController {
 
     //Bokning av resa
     @PostMapping("/trips")
-    @PreAuthorize("hasAnyRole('USER', 'ADMIN')")
+    @PreAuthorize("hasAnyRole('USER')")
     public ResponseEntity<String> bookTrip(@RequestBody TravelBooking booking) {
         TravelBooking travelBooking = travelBookingService.save(booking);
         TravelBookingDTO travelBookingDTO = travelBookingService.createTravelBookingDTO(travelBooking);

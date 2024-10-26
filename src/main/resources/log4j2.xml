@@ -17,7 +17,7 @@
         <Logger name="com.sandstrom.wigellportal.modules.travel.services.TravelBookingService" level="info" additivity="false">
             <AppenderRef ref="MyFile" level="info"/>
         </Logger>
-        <Logger name="com.sandstrom.wigellportal.modules.travel.services.customer.CustomerService" level="info" additivity="false">
+        <Logger name="com.sandstrom.wigellportal.modules.travel.services.customer.CustomerServiceImpl" level="info" additivity="false">
             <AppenderRef ref="MyFile" level="info"/>
         </Logger>
         <Logger name="com.sandstrom.wigellportal.modules.travel.services.trip.TripService" level="info" additivity="false">

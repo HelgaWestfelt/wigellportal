@@ -1,5 +1,6 @@
 package com.sandstrom.wigellportal.address;
 
+import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 import org.slf4j.LoggerFactory;
@@ -40,7 +41,7 @@ public class AddressServiceImpl implements AddressService{
             if (existingAddress.isPresent()) {
                 return existingAddress.get();
             } else {
-                return null;
+                throw new EntityNotFoundException("Adress med id " + address.getId() + " kunde inte hittas.");
             }
         }else {
             Optional<Address> existingAddress = addressRepository.findByStreetAndZipCodeAndCity(address.getStreet(), address.getZipCode(), address.getCity());

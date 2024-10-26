@@ -5,25 +5,20 @@ import com.sandstrom.wigellportal.customer.CustomerService;
 import com.sandstrom.wigellportal.modules.travel.dto.TravelBookingDTO;
 import com.sandstrom.wigellportal.modules.travel.entities.TravelBooking;
 import com.sandstrom.wigellportal.modules.travel.entities.Trip;
+import com.sandstrom.wigellportal.modules.travel.exceptions.EntityNotFoundException;
 import com.sandstrom.wigellportal.modules.travel.repositories.TravelBookingRepository;
 import com.sandstrom.wigellportal.modules.travel.services.currencyconversion.CurrencyConversionService;
-import com.sandstrom.wigellportal.modules.travel.services.trip.TripService;
 import com.sandstrom.wigellportal.modules.travel.services.trip.TripServiceInterface;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
-import org.springframework.security.config.annotation.web.session.SessionConcurrencyDsl;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class TravelBookingService implements TravelBookingServiceInterface {
@@ -49,7 +44,6 @@ public class TravelBookingService implements TravelBookingServiceInterface {
     public TravelBooking save(TravelBooking travelBooking) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-        // Kontrollera om kunden är angiven
         if (travelBooking.getCustomer() == null || travelBooking.getCustomer().getId() == null) {
             throw new EntityNotFoundException("Ingen kund angiven för bokningen.");
         }
@@ -57,6 +51,10 @@ public class TravelBookingService implements TravelBookingServiceInterface {
         Customer customer = customerService.findById(travelBooking.getCustomer().getId());
 
         if (customer != null) {
+            // Kontrollera om kunden är aktiv
+            if (!customer.isActive()) {
+                throw new IllegalArgumentException("Kunden är inaktiv och kan inte boka en resa.");
+            }
             travelBooking.setCustomer(customer);
         } else {
             throw new EntityNotFoundException("Kunden existerar inte.");
@@ -64,7 +62,7 @@ public class TravelBookingService implements TravelBookingServiceInterface {
 
         // Kontrollera om trip är null innan vi försöker hämta den
         if (travelBooking.getTrip() == null || travelBooking.getTrip().getId() == null) {
-            throw new EntityNotFoundException("Ingen resa angiven för bokningen.");
+            throw new IllegalArgumentException("Ingen resa angiven för bokningen.");
         } else {
             Trip trip = tripService.findTrip(travelBooking.getTrip());
 
@@ -85,13 +83,15 @@ public class TravelBookingService implements TravelBookingServiceInterface {
                 travelBookingRepository.save(travelBooking);
                 logger.info("Customer created booking with id {}.", travelBooking.getId());
             } else {
-                throw new EntityNotFoundException("Resan hittades inte.");
+                throw new EntityNotFoundException("Resan kunde inte hittas.");
             }
         }
         return travelBooking;
     }
     @Override
     public List<TravelBookingDTO> getBookingsByCustomerId (int id) {
+        customerService.findById(id);
+
         List<TravelBooking> bookings = travelBookingRepository.findTravelBookingByCustomerId(id);
         List<TravelBookingDTO> bookingsDTO = new ArrayList<>();
 
@@ -99,6 +99,7 @@ public class TravelBookingService implements TravelBookingServiceInterface {
             bookingsDTO.add(createTravelBookingDTO(booking));
         }
         return bookingsDTO;
+
     }
     @Override
     public TravelBookingDTO createTravelBookingDTO (TravelBooking travelBooking) {
@@ -119,10 +120,11 @@ public class TravelBookingService implements TravelBookingServiceInterface {
     @Transactional
     public TravelBooking update(int id, TravelBooking updatedTravelBooking) {
         Optional<TravelBooking> existingTravelBookingOptional = travelBookingRepository.findById(id);
-        TravelBooking existingTravelBooking = null;
 
-        if (existingTravelBookingOptional.isPresent()) {
-            existingTravelBooking = existingTravelBookingOptional.get();
+        if (existingTravelBookingOptional.isEmpty()) {
+            throw new EntityNotFoundException("Bokning med id " + id + " hittades inte.");
+        } else {
+            TravelBooking existingTravelBooking = existingTravelBookingOptional.get();
 
             if (updatedTravelBooking.getTravelDate() != null) {
                 existingTravelBooking.setTravelDate(updatedTravelBooking.getTravelDate());
@@ -132,7 +134,6 @@ public class TravelBookingService implements TravelBookingServiceInterface {
                 existingTravelBooking.setNumberOfWeeks(updatedTravelBooking.getNumberOfWeeks());
             }
 
-            // Räknar ut returnDate
             existingTravelBooking.setReturnDate(existingTravelBooking.getTravelDate().plusWeeks(existingTravelBooking.getNumberOfWeeks()));
 
             if (updatedTravelBooking.getTrip() != null) {
@@ -143,16 +144,14 @@ public class TravelBookingService implements TravelBookingServiceInterface {
                     existingTravelBooking.setTotalPriceSEK(existingTravelBooking.getTrip().getWeeklyPrice() * existingTravelBooking.getNumberOfWeeks());
                     existingTravelBooking.setTotalPricePLN(currencyConversionService.convertSEKtoPLN(existingTravelBooking.getTotalPriceSEK()));
                 } else {
-                    throw new EntityNotFoundException("Resan hittades inte.");
+                    throw new EntityNotFoundException("Resan kunde inte hittas.");
                 }
             }
             travelBookingRepository.save(existingTravelBooking);
             logger.info("Customer updated booking with id {}.", existingTravelBooking.getId());
-        } else {
-            throw new EntityNotFoundException("Bokning med ID " + id + " hittades inte.");
-        }
 
-        return existingTravelBooking;
+            return existingTravelBooking;
+        }
     }
     @Override
     @Transactional
