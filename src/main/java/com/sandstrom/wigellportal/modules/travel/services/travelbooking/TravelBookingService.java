@@ -44,6 +44,7 @@ public class TravelBookingService implements TravelBookingServiceInterface {
     public TravelBooking save(TravelBooking travelBooking) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
+        // Kontrollera om kunden är angiven
         if (travelBooking.getCustomer() == null || travelBooking.getCustomer().getId() == null) {
             throw new EntityNotFoundException("Ingen kund angiven för bokningen.");
         }
@@ -51,18 +52,14 @@ public class TravelBookingService implements TravelBookingServiceInterface {
         Customer customer = customerService.findById(travelBooking.getCustomer().getId());
 
         if (customer != null) {
-            // Kontrollera om kunden är aktiv
-            if (!customer.isActive()) {
-                throw new IllegalArgumentException("Kunden är inaktiv och kan inte boka en resa.");
-            }
             travelBooking.setCustomer(customer);
         } else {
-            throw new EntityNotFoundException("Kunden existerar inte.");
+            throw new EntityNotFoundException("Kunden kunde inte hittas.");
         }
 
         // Kontrollera om trip är null innan vi försöker hämta den
         if (travelBooking.getTrip() == null || travelBooking.getTrip().getId() == null) {
-            throw new IllegalArgumentException("Ingen resa angiven för bokningen.");
+            throw new EntityNotFoundException("Ingen resa angiven för bokningen.");
         } else {
             Trip trip = tripService.findTrip(travelBooking.getTrip());
 
@@ -83,7 +80,7 @@ public class TravelBookingService implements TravelBookingServiceInterface {
                 travelBookingRepository.save(travelBooking);
                 logger.info("Customer created booking with id {}.", travelBooking.getId());
             } else {
-                throw new EntityNotFoundException("Resan kunde inte hittas.");
+                throw new EntityNotFoundException("Resan hittades inte.");
             }
         }
         return travelBooking;

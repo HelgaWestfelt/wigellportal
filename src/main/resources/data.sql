@@ -1,12 +1,12 @@
 -- Sätta in mockdata för motorcykelbokningssystemet
 INSERT INTO address (street, zip_code, city) VALUES
-                                                 ('Main Street 1', '12345', 'City A'),
-                                                 ('Second Street 2', '23456', 'City B'),
-                                                 ('Third Street 3', '34567', 'City C'),
-                                                 ('Fourth Street 4', '45678', 'City D'),
-                                                 ('Fifth Street 5', '56789', 'City E'),
-                                                 ('Userstreet 1', '12345', 'Usercity'),
-                                                 ('Adminstreet 1', '11111', 'Admincity');
+('Main Street 1', '12345', 'City A'),
+('Second Street 2', '23456', 'City B'),
+('Third Street 3', '34567', 'City C'),
+('Fourth Street 4', '45678', 'City D'),
+('Fifth Street 5', '56789', 'City E'),
+('Userstreet 1', '12345', 'Usercity'),
+('Adminstreet 1', '11111', 'Admincity');
 
 
 INSERT INTO customer (first_name, last_name, phone_number, date_of_birth, email, username, password, enabled, role, address_id) VALUES
@@ -23,35 +23,35 @@ INSERT INTO customer (first_name, last_name, phone_number, date_of_birth, email,
 
 
 INSERT INTO motorcycle (brand, model, registration_number, price_per_day, price_per_day_in_GBP, availability) VALUES
-                                                                                            ('Harley-Davidson', 'Street 750', 'ABC123', 500, 50, TRUE),
-                                                                                            ('Yamaha', 'MT-07', 'DEF456', 400, 40, TRUE),
-                                                                                            ('Honda', 'CB500F', 'GHI789', 350, 35, FALSE),
-                                                                                            ('BMW', 'R1200', 'JKL012', 600, 60, TRUE),
-                                                                                            ('Suzuki', 'GSX-R600', 'MNO345', 450, 45, TRUE);
+('Harley-Davidson', 'Street 750', 'ABC123', 500, 50, TRUE),
+('Yamaha', 'MT-07', 'DEF456', 400, 40, TRUE),
+('Honda', 'CB500F', 'GHI789', 350, 35, FALSE),
+('BMW', 'R1200', 'JKL012', 600, 60, TRUE),
+('Suzuki', 'GSX-R600', 'MNO345', 450, 45, TRUE);
 
 INSERT INTO mc_booking (start_date, end_date, price, price_in_GBP, customer_id) VALUES
-                                                                   ('2024-01-01', '2024-01-05', 2000, 200, 1),
-                                                                   ('2024-02-01', '2024-02-07', 2800, 280, 2),
-                                                                   ('2024-03-01', '2024-03-03', 1050, 105, 3),
-                                                                   ('2024-04-01', '2024-04-05', 2400, 240, 4),
-                                                                   ('2024-05-01', '2024-05-04', 1800, 180, 5);
+('2024-01-01', '2024-01-05', 2000, 200, 1),
+('2024-02-01', '2024-02-07', 2800, 280, 2),
+('2024-03-01', '2024-03-03', 1050, 105, 3),
+('2024-04-01', '2024-04-05', 2400, 240, 4),
+('2024-05-01', '2024-05-04', 1800, 180, 5);
 
 
 -- Lägg till filmer i cinema_movie
 INSERT INTO cinema_movie (title, length, genre, age_limit) VALUES
-                                                               ('Inception', 148, 'SCIENCEFICTION', 13),
-                                                               ('The Godfather', 175, 'THRILLER', 15),
-                                                               ('The Dark Knight', 152, 'ACTION', 13),
-                                                               ('Pulp Fiction', 154, 'THRILLER', 15),
-                                                               ('Interstellar', 169, 'SCIENCEFICTION', 13);
+('Inception', 148, 'SCIENCEFICTION', 13),
+('The Godfather', 175, 'THRILLER', 15),
+('The Dark Knight', 152, 'ACTION', 13),
+('Pulp Fiction', 154, 'THRILLER', 15),
+('Interstellar', 169, 'SCIENCEFICTION', 13);
 
 -- Lägg till venues i cinema_venue
 INSERT INTO cinema_venue (name, max_no_of_guests, facilities) VALUES
-                                                                  ('Hepburn', 200, '3D Projection, Dolby Atmos Sound, Luxury seating'),
-                                                                  ('Chaplin', 150, 'Wheelchair accessible, Hearing loops, Catering services'),
-                                                                  ('Monroe', 300, 'IMAX screen, Bar, Inseat food and beverage service, Dolby Atmos Sound'),
-                                                                  ('Garland', 60, '4K Ultra HD Projection, Bar, Hearing loops'),
-                                                                  ('Brando', 250, 'Dolby Atmos Sound, Wheelchair accessible, Hearing loops, 3D projection, Cafe and bar');
+('Hepburn', 200, '3D Projection, Dolby Atmos Sound, Luxury seating'),
+('Chaplin', 150, 'Wheelchair accessible, Hearing loops, Catering services'),
+('Monroe', 300, 'IMAX screen, Bar, Inseat food and beverage service, Dolby Atmos Sound'),
+('Garland', 60, '4K Ultra HD Projection, Bar, Hearing loops'),
+('Brando', 250, 'Dolby Atmos Sound, Wheelchair accessible, Hearing loops, 3D projection, Cafe and bar');
 
 
 -- Lägg till bokningar i cinema_booking_venue

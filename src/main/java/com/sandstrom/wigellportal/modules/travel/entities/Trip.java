@@ -28,7 +28,7 @@ public class Trip {
 
     private Double weeklyPrice;
 
-    private boolean active;
+    private boolean active = true;
     public Trip () {
 
     }
@@ -37,7 +37,6 @@ public class Trip {
         this.hotel = hotel;
         this.destination = destination;
         this.weeklyPrice = weeklyPrice;
-        this.active = true;
     }
 
     public Integer getId() {
