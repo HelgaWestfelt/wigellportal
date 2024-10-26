@@ -6051,3 +6051,1098 @@ Adress
 2024-10-26 15:34:19 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
 2024-10-26 15:34:19 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 1.103 seconds (process running for 700.514)
 2024-10-26 15:34:19 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 15:59:00 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 15:59:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2024-10-26 15:59:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2024-10-26 19:20:06 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 19060 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:20:06 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:20:06 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 19:20:06 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 19:20:07 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:20:07 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:20:07 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:20:07 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:20:07 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:20:07 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:20:07 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:20:07 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1531 ms
+2024-10-26 19:20:07 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:20:08 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 19:20:08 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:20:08 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:20:08 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 19:20:08 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@751c8769
+2024-10-26 19:20:08 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 19:20:08 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:20:08 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:20:09 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:20:11 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:20:11 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:20:11 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 19:20:12 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:20:12 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:20:12 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:20:13 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:20:13 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:20:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:20:13 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 7.645 seconds (process running for 8.344)
+2024-10-26 19:20:21 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:20:21 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:20:21 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-26 19:20:22 [http-nio-8585-exec-2] INFO  c.s.w.customer.CustomerServiceImpl - All registered customers have been listed
+2024-10-26 19:20:52 [http-nio-8585-exec-3] INFO  c.s.w.m.m.services.McServiceImpl - Listed all motorcycles
+2024-10-26 19:26:55 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-10-26 19:26:55 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:26:55 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:26:55 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 19:26:55 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-26 19:26:55 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 19060 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:26:55 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:26:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:26:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:26:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:26:55 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:26:55 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:26:55 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:26:55 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:26:55 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 458 ms
+2024-10-26 19:26:55 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:26:55 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:26:55 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:26:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-26 19:26:55 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@60a726d8
+2024-10-26 19:26:55 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-26 19:26:55 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:26:55 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:26:55 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:26:56 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:26:56 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:26:56 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:26:56 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:26:56 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:26:56 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:26:56 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:26:56 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:26:56 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 1.632 seconds (process running for 411.8)
+2024-10-26 19:26:56 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 19:28:58 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:28:58 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:28:58 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-26 19:28:58 [http-nio-8585-exec-1] INFO  c.s.w.customer.CustomerServiceImpl - All registered customers have been listed
+2024-10-26 19:29:04 [http-nio-8585-exec-3] INFO  c.s.w.m.m.services.McServiceImpl - Listed all motorcycles
+2024-10-26 19:29:42 [http-nio-8585-exec-4] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=3, startDate=2024-03-01, endDate=2024-03-03, price=1050.00, priceInGBP=105.00, customer=Kund:   3
+     Förnamn:        Mike
+     Efternamn:      Smith
+     E-postadess:    mike.smith@example.com
+     Telefonnummer:  3456789012
+     Personnummer:   1985-03-03
+
+Adress
+     Adressid:       3
+     Gatuadress:     Third Street 3
+     Postnummer:     34567
+     Ort:            City C, motorcycles=[Motorcycle{id=3, brand='Honda', model='CB500F', registrationNumber='GHI789', pricePerDay=350.00, pricePerDayInGBP=35.00, availability=true}]}, McBooking{id=8, startDate=2024-03-01, endDate=2024-03-03, price=1050.00, priceInGBP=105.00, customer=Kund:   3
+     Förnamn:        Mike
+     Efternamn:      Smith
+     E-postadess:    mike.smith@example.com
+     Telefonnummer:  3456789012
+     Personnummer:   1985-03-03
+
+Adress
+     Adressid:       3
+     Gatuadress:     Third Street 3
+     Postnummer:     34567
+     Ort:            City C, motorcycles=[]}]}
+2024-10-26 19:43:24 [http-nio-8585-exec-7] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=1, startDate=2024-01-01, endDate=2024-01-05, price=2000.00, priceInGBP=200.00, customer=Kund:   1
+     Förnamn:        John
+     Efternamn:      Doe
+     E-postadess:    john.doe@example.com
+     Telefonnummer:  1234567890
+     Personnummer:   1990-01-01
+
+Adress
+     Adressid:       1
+     Gatuadress:     Main Street 1
+     Postnummer:     12345
+     Ort:            City A, motorcycles=[Motorcycle{id=1, brand='Harley-Davidson', model='Street 750', registrationNumber='ABC123', pricePerDay=500.00, pricePerDayInGBP=50.00, availability=true}]}, McBooking{id=6, startDate=2024-01-01, endDate=2024-01-05, price=2000.00, priceInGBP=200.00, customer=Kund:   1
+     Förnamn:        John
+     Efternamn:      Doe
+     E-postadess:    john.doe@example.com
+     Telefonnummer:  1234567890
+     Personnummer:   1990-01-01
+
+Adress
+     Adressid:       1
+     Gatuadress:     Main Street 1
+     Postnummer:     12345
+     Ort:            City A, motorcycles=[]}]}
+2024-10-26 19:44:21 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:44:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-10-26 19:44:21 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-10-26 19:44:23 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 24784 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:44:23 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:44:23 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 19:44:23 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 19:44:24 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:44:24 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:44:24 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:44:24 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:44:24 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:44:24 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:44:24 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:44:24 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1305 ms
+2024-10-26 19:44:24 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:44:24 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 19:44:24 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:44:25 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:44:25 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 19:44:25 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f508106
+2024-10-26 19:44:25 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 19:44:25 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:44:25 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:44:26 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:44:28 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:44:28 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:44:28 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 19:44:29 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:44:29 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:44:29 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:44:30 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:44:30 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:44:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:44:30 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 7.214 seconds (process running for 8.099)
+2024-10-26 19:45:34 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:45:34 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:45:34 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-26 19:45:34 [http-nio-8585-exec-1] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=1, startDate=2024-01-01, endDate=2024-01-05, price=2000.00, priceInGBP=200.00, customer=Kund:   1
+     Förnamn:        John
+     Efternamn:      Doe
+     E-postadess:    john.doe@example.com
+     Telefonnummer:  1234567890
+     Personnummer:   1990-01-01
+
+Adress
+     Adressid:       1
+     Gatuadress:     Main Street 1
+     Postnummer:     12345
+     Ort:            City A, motorcycles=[Motorcycle{id=1, brand='Harley-Davidson', model='Street 750', registrationNumber='ABC123', pricePerDay=500.00, pricePerDayInGBP=50.00, availability=true}]}]}
+2024-10-26 19:46:44 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-10-26 19:46:44 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:46:44 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:46:44 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 19:46:44 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-26 19:46:44 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 24784 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:46:44 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:46:44 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:46:44 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:46:44 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:46:44 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:46:44 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:46:44 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:46:45 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:46:45 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 387 ms
+2024-10-26 19:46:45 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:46:45 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:46:45 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:46:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-26 19:46:45 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6510327d
+2024-10-26 19:46:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-26 19:46:45 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:46:45 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:46:45 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:46:45 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:46:45 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:46:45 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:46:45 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:46:45 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:46:46 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:46:46 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:46:46 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:46:46 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 1.566 seconds (process running for 144.125)
+2024-10-26 19:46:46 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 19:47:01 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:47:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-10-26 19:47:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-10-26 19:47:04 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 14524 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:47:04 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:47:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 19:47:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 19:47:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:47:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:47:05 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:47:05 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:47:05 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:47:05 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:47:05 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:47:05 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1336 ms
+2024-10-26 19:47:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:47:05 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 19:47:05 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:47:06 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:47:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 19:47:06 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c7ece6f
+2024-10-26 19:47:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 19:47:06 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:47:06 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:47:07 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:47:09 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:47:09 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:47:09 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 19:47:10 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:47:10 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:47:10 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:47:11 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:47:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:47:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:47:11 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 7.498 seconds (process running for 8.167)
+2024-10-26 19:47:15 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:47:15 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:47:15 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-26 19:47:15 [http-nio-8585-exec-1] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=1, startDate=2024-01-01, endDate=2024-01-05, price=2000.00, priceInGBP=200.00, customer=Kund:   1
+     Förnamn:        John
+     Efternamn:      Doe
+     E-postadess:    john.doe@example.com
+     Telefonnummer:  1234567890
+     Personnummer:   1990-01-01
+
+Adress
+     Adressid:       1
+     Gatuadress:     Main Street 1
+     Postnummer:     12345
+     Ort:            City A, motorcycles=[Motorcycle{id=1, brand='Harley-Davidson', model='Street 750', registrationNumber='ABC123', pricePerDay=500.00, pricePerDayInGBP=50.00, availability=false}]}]}
+2024-10-26 19:48:06 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:48:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 19:48:06 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-26 19:50:16 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 24712 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:50:16 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:50:16 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 19:50:16 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 19:50:16 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:50:17 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:50:17 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:50:17 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:50:17 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:50:17 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:50:17 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:50:17 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1424 ms
+2024-10-26 19:50:17 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:50:17 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 19:50:17 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:50:18 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:50:18 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 19:50:18 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2313247f
+2024-10-26 19:50:18 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 19:50:18 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:50:18 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:50:19 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:50:21 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:50:21 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:50:22 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 19:50:22 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:50:22 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:50:22 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:50:23 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:50:23 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:50:23 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:50:23 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 7.611 seconds (process running for 8.284)
+2024-10-26 19:50:27 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:50:27 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:50:27 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-10-26 19:50:28 [http-nio-8585-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Customer with id: 187 could not be found] with root cause
+java.lang.RuntimeException: Customer with id: 187 could not be found
+	at com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingServiceImpl.lambda$updateMcBooking$2(McBookingServiceImpl.java:126)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingServiceImpl.lambda$updateMcBooking$4(McBookingServiceImpl.java:126)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingServiceImpl.updateMcBooking(McBookingServiceImpl.java:118)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+	at com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingServiceImpl$$SpringCGLIB$$0.updateMcBooking(<generated>)
+	at com.sandstrom.wigellportal.modules.motorcyclerental.controllers.McCustomerController.updateBooking(McCustomerController.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:213)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-26 19:50:36 [http-nio-8585-exec-4] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=1, startDate=2024-01-01, endDate=2024-01-05, price=2000.00, priceInGBP=200.00, customer=Kund:   1
+     Förnamn:        John
+     Efternamn:      Doe
+     E-postadess:    john.doe@example.com
+     Telefonnummer:  1234567890
+     Personnummer:   1990-01-01
+
+Adress
+     Adressid:       1
+     Gatuadress:     Main Street 1
+     Postnummer:     12345
+     Ort:            City A, motorcycles=[Motorcycle{id=1, brand='Harley-Davidson', model='Street 750', registrationNumber='ABC123', pricePerDay=500.00, pricePerDayInGBP=50.00, availability=true}]}]}
+2024-10-26 19:50:47 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[McBooking{id=5, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}], pastBookings=[]}
+2024-10-26 19:51:24 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-10-26 19:51:24 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:51:24 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:51:24 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 19:51:24 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-26 19:51:24 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 24712 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:51:24 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:51:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:51:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:51:25 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:51:25 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:51:25 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:51:25 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:51:25 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:51:25 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 376 ms
+2024-10-26 19:51:25 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:51:25 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:51:25 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:51:25 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-26 19:51:25 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2dbeb082
+2024-10-26 19:51:25 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-26 19:51:25 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:51:25 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:51:25 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:51:27 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:51:27 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:51:27 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:51:27 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:51:27 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:51:27 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:51:27 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:51:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:51:27 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 2.927 seconds (process running for 72.668)
+2024-10-26 19:51:27 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 19:51:35 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:51:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-10-26 19:51:35 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-10-26 19:51:37 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 11292 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:51:37 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:51:38 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 19:51:38 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 19:51:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:51:38 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 88 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:51:39 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:51:39 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:51:39 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:51:39 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:51:39 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:51:39 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1312 ms
+2024-10-26 19:51:39 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:51:39 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 19:51:39 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:51:39 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:51:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 19:51:40 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@16838033
+2024-10-26 19:51:40 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 19:51:40 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:51:40 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:51:41 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:51:41 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:51:41 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:51:41 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 19:51:42 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:51:42 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:51:42 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:51:43 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:51:43 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:51:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:51:43 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 5.688 seconds (process running for 6.332)
+2024-10-26 19:51:55 [http-nio-8585-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:51:55 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:51:55 [http-nio-8585-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-10-26 19:51:55 [http-nio-8585-exec-1] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[McBooking{id=5, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=false}, Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=false}]}, McBooking{id=10, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[]}], pastBookings=[]}
+2024-10-26 19:52:30 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer updated booking: McBooking{id=5, startDate=2023-12-16, endDate=2023-12-17, price=2300, priceInGBP=null, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=false}]}
+2024-10-26 19:52:31 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.CurrencyServiceImpl - Currency response: CurrencyResponse{success=true, base='EUR', date='2024-10-26', rates={AED=3.96678, AFN=72.028757, ALL=98.554617, AMD=418.834626, ANG=1.950496, AOA=981.749156, ARS=1063.117081, AUD=1.634834, AWG=1.943949, AZN=1.840239, BAM=1.955495, BBD=2.185159, BDT=129.329814, BGN=1.955813, BHD=0.406895, BIF=3143.009425, BMD=1.079971, BND=1.429277, BOB=7.478902, BRL=6.163941, BSD=1.082231, BTC=0.000016112979, BTN=90.990098, BWP=14.468742, BYN=3.541747, BYR=21167.440089, BZD=2.18146, CAD=1.500351, CDF=3077.918975, CHF=0.936153, CLF=0.0371, CLP=1023.709146, CNY=7.690589, CNH=7.688635, COP=4671.837623, CRC=557.410416, CUC=1.079971, CUP=28.619243, CVE=110.247792, CZK=25.304156, DJF=192.719919, DKK=7.464011, DOP=65.169526, DZD=144.256148, EGP=52.64842, ERN=16.199571, ETB=131.604659, EUR=1, FJD=2.428046, FKP=0.826361, GBP=0.833247, GEL=2.937944, GGP=0.826361, GHS=17.392285, GIP=0.826361, GMD=75.062173, GNF=9333.543178, GTQ=8.371693, GYD=226.424659, HKD=8.391756, HNL=27.283741, HRK=7.439956, HTG=142.477761, HUF=404.212127, IDR=16950.25964, ILS=4.091584, IMP=0.826361, INR=90.828028, IQD=1417.778707, IRR=45472.197572, ISK=149.166071, JEP=0.826361, JMD=171.44324, JOD=0.765596, JPY=164.463492, KES=139.608322, KGS=92.665652, KHR=4395.313959, KMF=491.333418, KPW=971.974046, KRW=1499.713544, KWD=0.330882, KYD=0.901859, KZT=526.437831, LAK=23772.959219, LBP=96916.072896, LKR=317.805981, LRD=207.797566, LSL=19.104918, LTL=3.188875, LVL=0.653264, LYD=5.213186, MAD=10.686631, MDL=19.426968, MGA=4987.221572, MKD=61.519132, MMK=3507.705088, MNT=3669.74296, MOP=8.661528, MRU=43.073277, MUR=49.797891, MVR=16.58877, MWK=1876.607091, MXN=21.582045, MYR=4.687484, MZN=69.021382, NAD=19.104653, NGN=1776.553379, NIO=39.823784, NOK=11.850747, NPR=145.583603, NZD=1.80703, OMR=0.415779, PAB=1.082241, PEN=4.063866, PGK=4.331324, PHP=63.248569, PKR=300.434307, PLN=4.337542, PYG=8661.64805, QAR=3.947084, RON=4.975865, RSD=117.021815, RUB=104.962826, RWF=1463.671543, SAR=4.056243, SBD=9.018904, SCR=14.270319, SDG=649.606787, SEK=11.470489, SGD=1.426538, SHP=0.826361, SLE=24.569751, SLL=22646.457513, SOS=618.503461, SRD=36.773571, STD=22353.228212, SVC=9.469522, SYP=2713.460915, SZL=19.098019, THB=36.352237, TJS=11.518009, TMT=3.7799, TND=3.357376, TOP=2.529405, TRY=37.033737, TTD=7.35275, TWD=34.644192, TZS=2946.031434, UAH=44.753715, UGX=3969.380441, USD=1.079971, UYU=45.042969, UZS=13869.963542, VEF=3912253.252178, VES=44.268021, VND=27398.875258, VUV=128.216411, WST=3.025199, XAF=655.854631, XAG=0.032016, XAU=0.000397, XCD=2.918677, XDR=0.814973, XOF=655.854631, XPF=119.331742, YER=270.371241, ZAR=19.084154, ZMK=9721.042737, ZMW=28.652528, ZWL=347.750361}}
+2024-10-26 19:52:31 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.McBookingServiceImpl - Price in SEK 2300 was converted to GBP 167.08.
+2024-10-26 19:52:45 [http-nio-8585-exec-4] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[McBooking{id=10, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[]}], pastBookings=[McBooking{id=5, startDate=2023-12-16, endDate=2023-12-17, price=2300.00, priceInGBP=167.08, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}]}
+2024-10-26 19:53:16 [http-nio-8585-exec-7] INFO  c.s.w.m.m.services.McServiceImpl - Listed avaliable motorcycles: [Motorcycle{id=1, brand='Harley-Davidson', model='Street 750', registrationNumber='ABC123', pricePerDay=500.00, pricePerDayInGBP=50.00, availability=true}, Motorcycle{id=2, brand='Yamaha', model='MT-07', registrationNumber='DEF456', pricePerDay=400.00, pricePerDayInGBP=40.00, availability=true}, Motorcycle{id=3, brand='Honda', model='CB500F', registrationNumber='GHI789', pricePerDay=350.00, pricePerDayInGBP=35.00, availability=true}, Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}, Motorcycle{id=6, brand='Harley-Davidson', model='Street 750', registrationNumber='ABC123', pricePerDay=500.00, pricePerDayInGBP=50.00, availability=true}, Motorcycle{id=7, brand='Yamaha', model='MT-07', registrationNumber='DEF456', pricePerDay=400.00, pricePerDayInGBP=40.00, availability=true}, Motorcycle{id=8, brand='Honda', model='CB500F', registrationNumber='GHI789', pricePerDay=350.00, pricePerDayInGBP=35.00, availability=true}]
+2024-10-26 19:54:21 [http-nio-8585-exec-8] INFO  c.s.w.customer.CustomerServiceImpl - All registered customers have been listed
+2024-10-26 19:54:28 [http-nio-8585-exec-9] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=2, startDate=2024-02-01, endDate=2024-02-07, price=2800.00, priceInGBP=280.00, customer=Kund:   2
+     Förnamn:        Jane
+     Efternamn:      Doe
+     E-postadess:    jane.doe@example.com
+     Telefonnummer:  2345678901
+     Personnummer:   1991-02-02
+
+Adress
+     Adressid:       2
+     Gatuadress:     Second Street 2
+     Postnummer:     23456
+     Ort:            City B, motorcycles=[Motorcycle{id=2, brand='Yamaha', model='MT-07', registrationNumber='DEF456', pricePerDay=400.00, pricePerDayInGBP=40.00, availability=true}, Motorcycle{id=2, brand='Yamaha', model='MT-07', registrationNumber='DEF456', pricePerDay=400.00, pricePerDayInGBP=40.00, availability=true}]}, McBooking{id=7, startDate=2024-02-01, endDate=2024-02-07, price=2800.00, priceInGBP=280.00, customer=Kund:   2
+     Förnamn:        Jane
+     Efternamn:      Doe
+     E-postadess:    jane.doe@example.com
+     Telefonnummer:  2345678901
+     Personnummer:   1991-02-02
+
+Adress
+     Adressid:       2
+     Gatuadress:     Second Street 2
+     Postnummer:     23456
+     Ort:            City B, motorcycles=[]}]}
+2024-10-26 19:56:04 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:56:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 19:56:04 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-26 19:56:24 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:56:24 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:56:24 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 19:56:24 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 19:56:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:56:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:56:26 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:56:26 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:56:26 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:56:26 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:56:26 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:56:26 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1288 ms
+2024-10-26 19:56:26 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:56:26 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 19:56:26 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:56:26 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:56:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 19:56:26 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@751c8769
+2024-10-26 19:56:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 19:56:26 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:56:26 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:56:27 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:56:29 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:56:29 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:56:30 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 19:56:30 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:56:30 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:56:30 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:56:31 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:56:31 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:56:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:56:31 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 7.053 seconds (process running for 7.737)
+2024-10-26 19:56:36 [http-nio-8585-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:56:36 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:56:36 [http-nio-8585-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-10-26 19:56:36 [http-nio-8585-exec-2] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=2, startDate=2024-02-01, endDate=2024-02-07, price=2800.00, priceInGBP=280.00, customer=Kund:   2
+     Förnamn:        Jane
+     Efternamn:      Doe
+     E-postadess:    jane.doe@example.com
+     Telefonnummer:  2345678901
+     Personnummer:   1991-02-02
+
+Adress
+     Adressid:       2
+     Gatuadress:     Second Street 2
+     Postnummer:     23456
+     Ort:            City B, motorcycles=[Motorcycle{id=2, brand='Yamaha', model='MT-07', registrationNumber='DEF456', pricePerDay=400.00, pricePerDayInGBP=40.00, availability=true}]}]}
+2024-10-26 19:56:45 [http-nio-8585-exec-3] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[McBooking{id=5, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=false}]}], pastBookings=[]}
+2024-10-26 19:57:04 [http-nio-8585-exec-4] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer updated booking: McBooking{id=5, startDate=2023-12-16, endDate=2023-12-17, price=2300, priceInGBP=null, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=false}]}
+2024-10-26 19:57:05 [http-nio-8585-exec-4] INFO  c.s.w.m.m.s.CurrencyServiceImpl - Currency response: CurrencyResponse{success=true, base='EUR', date='2024-10-26', rates={AED=3.96678, AFN=72.028757, ALL=98.554617, AMD=418.834626, ANG=1.950496, AOA=981.749156, ARS=1063.117081, AUD=1.634834, AWG=1.943949, AZN=1.840239, BAM=1.955495, BBD=2.185159, BDT=129.329814, BGN=1.955813, BHD=0.406895, BIF=3143.009425, BMD=1.079971, BND=1.429277, BOB=7.478902, BRL=6.163941, BSD=1.082231, BTC=0.000016117469, BTN=90.990098, BWP=14.468742, BYN=3.541747, BYR=21167.440089, BZD=2.18146, CAD=1.500351, CDF=3077.918975, CHF=0.936153, CLF=0.0371, CLP=1023.709146, CNY=7.690589, CNH=7.688635, COP=4671.837623, CRC=557.410416, CUC=1.079971, CUP=28.619243, CVE=110.247792, CZK=25.304156, DJF=192.719919, DKK=7.464011, DOP=65.169526, DZD=144.256148, EGP=52.64842, ERN=16.199571, ETB=131.604659, EUR=1, FJD=2.428046, FKP=0.826361, GBP=0.833247, GEL=2.937944, GGP=0.826361, GHS=17.392285, GIP=0.826361, GMD=75.062173, GNF=9333.543178, GTQ=8.371693, GYD=226.424659, HKD=8.391756, HNL=27.283741, HRK=7.439956, HTG=142.477761, HUF=404.212127, IDR=16950.25964, ILS=4.091584, IMP=0.826361, INR=90.828028, IQD=1417.778707, IRR=45472.197572, ISK=149.166071, JEP=0.826361, JMD=171.44324, JOD=0.765596, JPY=164.463492, KES=139.608322, KGS=92.665652, KHR=4395.313959, KMF=491.333418, KPW=971.974046, KRW=1499.713544, KWD=0.330882, KYD=0.901859, KZT=526.437831, LAK=23772.959219, LBP=96916.072896, LKR=317.805981, LRD=207.797566, LSL=19.104918, LTL=3.188875, LVL=0.653264, LYD=5.213186, MAD=10.686631, MDL=19.426968, MGA=4987.221572, MKD=61.519132, MMK=3507.705088, MNT=3669.74296, MOP=8.661528, MRU=43.073277, MUR=49.797891, MVR=16.58877, MWK=1876.607091, MXN=21.582045, MYR=4.687484, MZN=69.021382, NAD=19.104653, NGN=1776.553379, NIO=39.823784, NOK=11.850747, NPR=145.583603, NZD=1.80703, OMR=0.415779, PAB=1.082241, PEN=4.063866, PGK=4.331324, PHP=63.248569, PKR=300.434307, PLN=4.337542, PYG=8661.64805, QAR=3.947084, RON=4.975865, RSD=117.021815, RUB=104.962826, RWF=1463.671543, SAR=4.056243, SBD=9.018904, SCR=14.270319, SDG=649.606787, SEK=11.470489, SGD=1.426538, SHP=0.826361, SLE=24.569751, SLL=22646.457513, SOS=618.503461, SRD=36.773571, STD=22353.228212, SVC=9.469522, SYP=2713.460915, SZL=19.098019, THB=36.352237, TJS=11.518009, TMT=3.7799, TND=3.357376, TOP=2.529405, TRY=37.033737, TTD=7.35275, TWD=34.644192, TZS=2946.031434, UAH=44.753715, UGX=3969.380441, USD=1.079971, UYU=45.042969, UZS=13869.963542, VEF=3912253.252178, VES=44.268021, VND=27398.875258, VUV=128.216411, WST=3.025199, XAF=655.854631, XAG=0.032016, XAU=0.000397, XCD=2.918677, XDR=0.814973, XOF=655.854631, XPF=119.331742, YER=270.371241, ZAR=19.084154, ZMK=9721.042737, ZMW=28.652528, ZWL=347.750361}}
+2024-10-26 19:57:05 [http-nio-8585-exec-4] INFO  c.s.w.m.m.s.McBookingServiceImpl - Price in SEK 2300 was converted to GBP 167.08.
+2024-10-26 19:57:17 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=5, startDate=2023-12-16, endDate=2023-12-17, price=2300.00, priceInGBP=167.08, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}]}
+2024-10-26 19:57:33 [http-nio-8585-exec-6] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer updated booking: McBooking{id=5, startDate=2024-12-16, endDate=2024-12-17, price=2300, priceInGBP=null, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}
+2024-10-26 19:57:33 [http-nio-8585-exec-6] INFO  c.s.w.m.m.s.CurrencyServiceImpl - Currency response: CurrencyResponse{success=true, base='EUR', date='2024-10-26', rates={AED=3.96678, AFN=72.028757, ALL=98.554617, AMD=418.834626, ANG=1.950496, AOA=981.749156, ARS=1063.117081, AUD=1.634834, AWG=1.943949, AZN=1.840239, BAM=1.955495, BBD=2.185159, BDT=129.329814, BGN=1.955813, BHD=0.406895, BIF=3143.009425, BMD=1.079971, BND=1.429277, BOB=7.478902, BRL=6.163941, BSD=1.082231, BTC=0.000016117469, BTN=90.990098, BWP=14.468742, BYN=3.541747, BYR=21167.440089, BZD=2.18146, CAD=1.500351, CDF=3077.918975, CHF=0.936153, CLF=0.0371, CLP=1023.709146, CNY=7.690589, CNH=7.688635, COP=4671.837623, CRC=557.410416, CUC=1.079971, CUP=28.619243, CVE=110.247792, CZK=25.304156, DJF=192.719919, DKK=7.464011, DOP=65.169526, DZD=144.256148, EGP=52.64842, ERN=16.199571, ETB=131.604659, EUR=1, FJD=2.428046, FKP=0.826361, GBP=0.833247, GEL=2.937944, GGP=0.826361, GHS=17.392285, GIP=0.826361, GMD=75.062173, GNF=9333.543178, GTQ=8.371693, GYD=226.424659, HKD=8.391756, HNL=27.283741, HRK=7.439956, HTG=142.477761, HUF=404.212127, IDR=16950.25964, ILS=4.091584, IMP=0.826361, INR=90.828028, IQD=1417.778707, IRR=45472.197572, ISK=149.166071, JEP=0.826361, JMD=171.44324, JOD=0.765596, JPY=164.463492, KES=139.608322, KGS=92.665652, KHR=4395.313959, KMF=491.333418, KPW=971.974046, KRW=1499.713544, KWD=0.330882, KYD=0.901859, KZT=526.437831, LAK=23772.959219, LBP=96916.072896, LKR=317.805981, LRD=207.797566, LSL=19.104918, LTL=3.188875, LVL=0.653264, LYD=5.213186, MAD=10.686631, MDL=19.426968, MGA=4987.221572, MKD=61.519132, MMK=3507.705088, MNT=3669.74296, MOP=8.661528, MRU=43.073277, MUR=49.797891, MVR=16.58877, MWK=1876.607091, MXN=21.582045, MYR=4.687484, MZN=69.021382, NAD=19.104653, NGN=1776.553379, NIO=39.823784, NOK=11.850747, NPR=145.583603, NZD=1.80703, OMR=0.415779, PAB=1.082241, PEN=4.063866, PGK=4.331324, PHP=63.248569, PKR=300.434307, PLN=4.337542, PYG=8661.64805, QAR=3.947084, RON=4.975865, RSD=117.021815, RUB=104.962826, RWF=1463.671543, SAR=4.056243, SBD=9.018904, SCR=14.270319, SDG=649.606787, SEK=11.470489, SGD=1.426538, SHP=0.826361, SLE=24.569751, SLL=22646.457513, SOS=618.503461, SRD=36.773571, STD=22353.228212, SVC=9.469522, SYP=2713.460915, SZL=19.098019, THB=36.352237, TJS=11.518009, TMT=3.7799, TND=3.357376, TOP=2.529405, TRY=37.033737, TTD=7.35275, TWD=34.644192, TZS=2946.031434, UAH=44.753715, UGX=3969.380441, USD=1.079971, UYU=45.042969, UZS=13869.963542, VEF=3912253.252178, VES=44.268021, VND=27398.875258, VUV=128.216411, WST=3.025199, XAF=655.854631, XAG=0.032016, XAU=0.000397, XCD=2.918677, XDR=0.814973, XOF=655.854631, XPF=119.331742, YER=270.371241, ZAR=19.084154, ZMK=9721.042737, ZMW=28.652528, ZWL=347.750361}}
+2024-10-26 19:57:33 [http-nio-8585-exec-6] INFO  c.s.w.m.m.s.McBookingServiceImpl - Price in SEK 2300 was converted to GBP 167.08.
+2024-10-26 19:58:09 [http-nio-8585-exec-7] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer updated booking: McBooking{id=5, startDate=2024-12-16, endDate=2024-12-22, price=2350, priceInGBP=null, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}
+2024-10-26 19:58:10 [http-nio-8585-exec-7] INFO  c.s.w.m.m.s.CurrencyServiceImpl - Currency response: CurrencyResponse{success=true, base='EUR', date='2024-10-26', rates={AED=3.96678, AFN=72.028757, ALL=98.554617, AMD=418.834626, ANG=1.950496, AOA=981.749156, ARS=1063.117081, AUD=1.634834, AWG=1.943949, AZN=1.840239, BAM=1.955495, BBD=2.185159, BDT=129.329814, BGN=1.955813, BHD=0.406895, BIF=3143.009425, BMD=1.079971, BND=1.429277, BOB=7.478902, BRL=6.163941, BSD=1.082231, BTC=0.000016117707, BTN=90.990098, BWP=14.468742, BYN=3.541747, BYR=21167.440089, BZD=2.18146, CAD=1.500351, CDF=3077.918975, CHF=0.936153, CLF=0.0371, CLP=1023.709146, CNY=7.690589, CNH=7.688635, COP=4671.837623, CRC=557.410416, CUC=1.079971, CUP=28.619243, CVE=110.247792, CZK=25.304156, DJF=192.719919, DKK=7.464011, DOP=65.169526, DZD=144.256148, EGP=52.64842, ERN=16.199571, ETB=131.604659, EUR=1, FJD=2.428046, FKP=0.826361, GBP=0.833247, GEL=2.937944, GGP=0.826361, GHS=17.392285, GIP=0.826361, GMD=75.062173, GNF=9333.543178, GTQ=8.371693, GYD=226.424659, HKD=8.391756, HNL=27.283741, HRK=7.439956, HTG=142.477761, HUF=404.212127, IDR=16950.25964, ILS=4.091584, IMP=0.826361, INR=90.828028, IQD=1417.778707, IRR=45472.197572, ISK=149.166071, JEP=0.826361, JMD=171.44324, JOD=0.765596, JPY=164.463492, KES=139.608322, KGS=92.665652, KHR=4395.313959, KMF=491.333418, KPW=971.974046, KRW=1499.713544, KWD=0.330882, KYD=0.901859, KZT=526.437831, LAK=23772.959219, LBP=96916.072896, LKR=317.805981, LRD=207.797566, LSL=19.104918, LTL=3.188875, LVL=0.653264, LYD=5.213186, MAD=10.686631, MDL=19.426968, MGA=4987.221572, MKD=61.519132, MMK=3507.705088, MNT=3669.74296, MOP=8.661528, MRU=43.073277, MUR=49.797891, MVR=16.58877, MWK=1876.607091, MXN=21.582045, MYR=4.687484, MZN=69.021382, NAD=19.104653, NGN=1776.553379, NIO=39.823784, NOK=11.850747, NPR=145.583603, NZD=1.80703, OMR=0.415779, PAB=1.082241, PEN=4.063866, PGK=4.331324, PHP=63.248569, PKR=300.434307, PLN=4.337542, PYG=8661.64805, QAR=3.947084, RON=4.975865, RSD=117.021815, RUB=104.962826, RWF=1463.671543, SAR=4.056243, SBD=9.018904, SCR=14.270319, SDG=649.606787, SEK=11.470489, SGD=1.426538, SHP=0.826361, SLE=24.569751, SLL=22646.457513, SOS=618.503461, SRD=36.773571, STD=22353.228212, SVC=9.469522, SYP=2713.460915, SZL=19.098019, THB=36.352237, TJS=11.518009, TMT=3.7799, TND=3.357376, TOP=2.529405, TRY=37.033737, TTD=7.35275, TWD=34.644192, TZS=2946.031434, UAH=44.753715, UGX=3969.380441, USD=1.079971, UYU=45.042969, UZS=13869.963542, VEF=3912253.252178, VES=44.268021, VND=27398.875258, VUV=128.216411, WST=3.025199, XAF=655.854631, XAG=0.032016, XAU=0.000397, XCD=2.918677, XDR=0.814973, XOF=655.854631, XPF=119.331742, YER=270.371241, ZAR=19.084154, ZMK=9721.042737, ZMW=28.652528, ZWL=347.750361}}
+2024-10-26 19:58:10 [http-nio-8585-exec-7] INFO  c.s.w.m.m.s.McBookingServiceImpl - Price in SEK 2350 was converted to GBP 170.71.
+2024-10-26 19:59:07 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-10-26 19:59:07 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:07 [Thread-1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:07 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 19:59:07 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-10-26 19:59:08 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:59:08 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:59:08 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:59:08 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:59:08 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:59:08 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:08 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:59:08 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:59:08 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:59:08 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 519 ms
+2024-10-26 19:59:08 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:59:08 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:59:08 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:59:08 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-10-26 19:59:08 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2012c5d1
+2024-10-26 19:59:08 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-10-26 19:59:08 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:59:08 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:59:08 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:59:08 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:09 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:59:09 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminController' defined in file [C:\Users\helga\IdeaProjects\wigellMcRental\target\classes\com\sandstrom\wigellportal\modules\motorcyclerental\controllers\AdminController.class]: Unsatisfied dependency expressed through constructor parameter 2: No qualifying bean of type 'com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-10-26 19:59:09 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:09 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-10-26 19:59:09 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2024-10-26 19:59:09 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-26 19:59:09 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-26 19:59:09 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 2 of constructor in com.sandstrom.wigellportal.modules.motorcyclerental.controllers.AdminController required a bean of type 'com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService' in your configuration.
+
+2024-10-26 19:59:10 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:59:10 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:59:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:59:10 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:59:11 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:59:11 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:11 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:59:11 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:59:11 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:59:11 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 389 ms
+2024-10-26 19:59:11 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:59:11 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:59:11 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:59:11 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2024-10-26 19:59:11 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26bfb72
+2024-10-26 19:59:11 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2024-10-26 19:59:11 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:59:11 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:59:11 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:59:11 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:11 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:59:11 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:59:11 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:59:11 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:59:12 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:59:12 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:12 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:59:12 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 1.705 seconds (process running for 168.743)
+2024-10-26 19:59:12 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 19:59:20 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-10-26 19:59:20 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:20 [Thread-5] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:20 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2024-10-26 19:59:20 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2024-10-26 19:59:20 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:59:20 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:59:20 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:59:20 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:59:20 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:59:20 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:20 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:59:20 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:59:20 [restartedMain] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:59:20 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 484 ms
+2024-10-26 19:59:20 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:59:20 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:59:20 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:59:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2024-10-26 19:59:20 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6487f063
+2024-10-26 19:59:20 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2024-10-26 19:59:20 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:59:20 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:59:20 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:59:20 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:21 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:59:21 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminController' defined in file [C:\Users\helga\IdeaProjects\wigellMcRental\target\classes\com\sandstrom\wigellportal\modules\motorcyclerental\controllers\AdminController.class]: Unsatisfied dependency expressed through constructor parameter 2: No qualifying bean of type 'com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-10-26 19:59:21 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2024-10-26 19:59:21 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2024-10-26 19:59:21 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-26 19:59:21 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-26 19:59:21 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 2 of constructor in com.sandstrom.wigellportal.modules.motorcyclerental.controllers.AdminController required a bean of type 'com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sandstrom.wigellportal.modules.motorcyclerental.services.McBookingService' in your configuration.
+
+2024-10-26 19:59:22 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 19:59:22 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 19:59:22 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 19:59:22 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 12 JPA repository interfaces.
+2024-10-26 19:59:22 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 19:59:22 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:22 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 19:59:22 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 19:59:23 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 19:59:23 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 407 ms
+2024-10-26 19:59:23 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 19:59:23 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 19:59:23 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 19:59:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2024-10-26 19:59:23 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1963ac2c
+2024-10-26 19:59:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2024-10-26 19:59:23 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 19:59:23 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 19:59:23 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 19:59:23 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 19:59:23 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 19:59:23 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 19:59:23 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 19:59:23 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 19:59:24 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 19:59:24 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 19:59:24 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 19:59:24 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 1.511 seconds (process running for 180.453)
+2024-10-26 19:59:24 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 19:59:38 [http-nio-8585-exec-3] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 19:59:38 [http-nio-8585-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 19:59:38 [http-nio-8585-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-10-26 19:59:38 [http-nio-8585-exec-3] INFO  c.s.w.m.m.services.McServiceImpl - Listed all motorcycles
+2024-10-26 19:59:47 [http-nio-8585-exec-4] INFO  c.s.w.customer.CustomerServiceImpl - All registered customers have been listed
+2024-10-26 20:00:13 [http-nio-8585-exec-2] INFO  c.s.w.m.m.services.McServiceImpl - Listed all motorcycles
+2024-10-26 20:00:39 [http-nio-8585-exec-6] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[McBooking{id=5, startDate=2024-12-16, endDate=2024-12-22, price=2350.00, priceInGBP=170.71, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}, Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}, Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}, McBooking{id=10, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[]}, McBooking{id=15, startDate=2024-11-01, endDate=2024-11-04, price=1300.00, priceInGBP=100.00, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[]}], pastBookings=[]}
+2024-10-26 20:01:34 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-10-26 20:01:34 [Thread-12] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8585"]
+2024-10-26 20:01:34 [Thread-12] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:01:34 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2024-10-26 20:01:34 [Thread-12] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2024-10-26 20:01:34 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 20:01:34 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 12 JPA repository interfaces.
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 20:01:35 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 20:01:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 20:01:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 20:01:35 [restartedMain] INFO  o.a.c.c.C.[Tomcat-2].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 353 ms
+2024-10-26 20:01:35 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 20:01:35 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 20:01:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2024-10-26 20:01:35 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b5675d
+2024-10-26 20:01:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2024-10-26 20:01:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 20:01:35 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 20:01:35 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:01:35 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 20:01:35 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 20:01:35 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #4 of file [C:\Users\helga\IdeaProjects\wigellMcRental\target\classes\data.sql]: INSER INTO mc_booking (start_date, end_date, price, price_in_GBP, customer_id) VALUES ('2024-01-01', '2024-01-05', 2000, 200, 1), ('2024-02-01', '2024-02-07', 2800, 280, 2), ('2024-03-01', '2024-03-03', 1050, 105, 3), ('2024-10-25', '2024-10-30', 3500, 300, 4), ('2024-11-01', '2024-11-04', 1300, 100, 5)
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:01:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2024-10-26 20:01:35 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2024-10-26 20:01:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-26 20:01:35 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-26 20:01:35 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Failed to execute SQL script statement #4 of file [C:\Users\helga\IdeaProjects\wigellMcRental\target\classes\data.sql]: INSER INTO mc_booking (start_date, end_date, price, price_in_GBP, customer_id) VALUES ('2024-01-01', '2024-01-05', 2000, 200, 1), ('2024-02-01', '2024-02-07', 2800, 280, 2), ('2024-03-01', '2024-03-03', 1050, 105, 3), ('2024-10-25', '2024-10-30', 3500, 300, 4), ('2024-11-01', '2024-11-04', 1300, 100, 5)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.sandstrom.wigellportal.WigellPortal.main(WigellPortal.java:8)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #4 of file [C:\Users\helga\IdeaProjects\wigellMcRental\target\classes\data.sql]: INSER INTO mc_booking (start_date, end_date, price, price_in_GBP, customer_id) VALUES ('2024-01-01', '2024-01-05', 2000, 200, 1), ('2024-02-01', '2024-02-07', 2800, 280, 2), ('2024-03-01', '2024-03-03', 1050, 105, 3), ('2024-10-25', '2024-10-30', 3500, 300, 4), ('2024-11-01', '2024-11-04', 1300, 100, 5)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
+	at org.springframework.boot.jdbc.init.DataSourceScriptDatabaseInitializer.runScripts(DataSourceScriptDatabaseInitializer.java:87)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.runScripts(AbstractScriptDatabaseInitializer.java:146)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyScripts(AbstractScriptDatabaseInitializer.java:108)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.applyDataScripts(AbstractScriptDatabaseInitializer.java:102)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.initializeDatabase(AbstractScriptDatabaseInitializer.java:77)
+	at org.springframework.boot.sql.init.AbstractScriptDatabaseInitializer.afterPropertiesSet(AbstractScriptDatabaseInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802)
+	... 21 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INSER INTO mc_booking (start_date, end_date, price, price_in_GBP, customer_id) V' at line 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:121)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:770)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:653)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
+	... 31 common frames omitted
+2024-10-26 20:05:46 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 17952 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 20:05:46 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 20:05:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 20:05:46 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 12 JPA repository interfaces.
+2024-10-26 20:05:46 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 20:05:46 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 20:05:46 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 20:05:46 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 20:05:46 [restartedMain] INFO  o.a.c.c.C.[Tomcat-3].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 20:05:46 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 356 ms
+2024-10-26 20:05:46 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 20:05:46 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 20:05:46 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 20:05:46 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2024-10-26 20:05:46 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6798d6ee
+2024-10-26 20:05:46 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2024-10-26 20:05:46 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 20:05:46 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 20:05:46 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 20:05:47 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:05:47 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 20:05:47 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 20:05:47 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 20:05:47 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 20:05:47 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 20:05:47 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 20:05:47 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 20:05:47 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 1.394 seconds (process running for 564.14)
+2024-10-26 20:05:47 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-10-26 20:06:01 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:06:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2024-10-26 20:06:01 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2024-10-26 20:06:03 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Starting WigellPortal using Java 21.0.2 with PID 22836 (C:\Users\helga\IdeaProjects\wigellMcRental\target\classes started by helga in C:\Users\helga\IdeaProjects\wigellMcRental)
+2024-10-26 20:06:03 [restartedMain] INFO  c.s.wigellportal.WigellPortal - No active profile set, falling back to 1 default profile: "default"
+2024-10-26 20:06:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-26 20:06:03 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-26 20:06:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-26 20:06:04 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93 ms. Found 12 JPA repository interfaces.
+2024-10-26 20:06:04 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8585 (http)
+2024-10-26 20:06:04 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8585"]
+2024-10-26 20:06:04 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-26 20:06:04 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-26 20:06:04 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-26 20:06:04 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1251 ms
+2024-10-26 20:06:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-26 20:06:05 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-26 20:06:05 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-10-26 20:06:05 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-26 20:06:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-10-26 20:06:05 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d0891b2
+2024-10-26 20:06:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-10-26 20:06:05 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-26 20:06:05 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-26 20:06:07 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-26 20:06:08 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:06:08 [restartedMain] INFO  c.s.w.configuration.SecurityConfig - SecurityConfig instantiated
+2024-10-26 20:06:09 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-26 20:06:09 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-26 20:06:09 [restartedMain] INFO  o.s.s.p.JdbcUserDetailsManager - No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2024-10-26 20:06:09 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsManager
+2024-10-26 20:06:10 [restartedMain] WARN  o.s.b.d.a.OptionalLiveReloadServer - Unable to start LiveReload server
+2024-10-26 20:06:10 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8585"]
+2024-10-26 20:06:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8585 (http) with context path '/'
+2024-10-26 20:06:10 [restartedMain] INFO  c.s.wigellportal.WigellPortal - Started WigellPortal in 7.145 seconds (process running for 7.826)
+2024-10-26 20:06:38 [http-nio-8585-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-26 20:06:38 [http-nio-8585-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-10-26 20:06:38 [http-nio-8585-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-10-26 20:06:38 [http-nio-8585-exec-3] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer updated booking: McBooking{id=5, startDate=2024-12-16, endDate=2024-12-22, price=2350, priceInGBP=null, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=false}]}
+2024-10-26 20:06:39 [http-nio-8585-exec-3] INFO  c.s.w.m.m.s.CurrencyServiceImpl - Currency response: CurrencyResponse{success=true, base='EUR', date='2024-10-26', rates={AED=3.96678, AFN=72.028757, ALL=98.554617, AMD=418.834626, ANG=1.950496, AOA=981.749156, ARS=1063.117081, AUD=1.634834, AWG=1.943949, AZN=1.840239, BAM=1.955495, BBD=2.185159, BDT=129.329814, BGN=1.955813, BHD=0.406895, BIF=3143.009425, BMD=1.079971, BND=1.429277, BOB=7.478902, BRL=6.163941, BSD=1.082231, BTC=0.000016127086, BTN=90.990098, BWP=14.468742, BYN=3.541747, BYR=21167.440089, BZD=2.18146, CAD=1.500351, CDF=3077.918975, CHF=0.936153, CLF=0.0371, CLP=1023.709146, CNY=7.690589, CNH=7.688635, COP=4671.837623, CRC=557.410416, CUC=1.079971, CUP=28.619243, CVE=110.247792, CZK=25.304156, DJF=192.719919, DKK=7.464011, DOP=65.169526, DZD=144.256148, EGP=52.64842, ERN=16.199571, ETB=131.604659, EUR=1, FJD=2.428046, FKP=0.826361, GBP=0.833247, GEL=2.937944, GGP=0.826361, GHS=17.392285, GIP=0.826361, GMD=75.062173, GNF=9333.543178, GTQ=8.371693, GYD=226.424659, HKD=8.391756, HNL=27.283741, HRK=7.439956, HTG=142.477761, HUF=404.212127, IDR=16950.25964, ILS=4.091584, IMP=0.826361, INR=90.828028, IQD=1417.778707, IRR=45472.197572, ISK=149.166071, JEP=0.826361, JMD=171.44324, JOD=0.765596, JPY=164.463492, KES=139.608322, KGS=92.665652, KHR=4395.313959, KMF=491.333418, KPW=971.974046, KRW=1499.713544, KWD=0.330882, KYD=0.901859, KZT=526.437831, LAK=23772.959219, LBP=96916.072896, LKR=317.805981, LRD=207.797566, LSL=19.104918, LTL=3.188875, LVL=0.653264, LYD=5.213186, MAD=10.686631, MDL=19.426968, MGA=4987.221572, MKD=61.519132, MMK=3507.705088, MNT=3669.74296, MOP=8.661528, MRU=43.073277, MUR=49.797891, MVR=16.58877, MWK=1876.607091, MXN=21.582045, MYR=4.687484, MZN=69.021382, NAD=19.104653, NGN=1776.553379, NIO=39.823784, NOK=11.850747, NPR=145.583603, NZD=1.80703, OMR=0.415779, PAB=1.082241, PEN=4.063866, PGK=4.331324, PHP=63.248569, PKR=300.434307, PLN=4.337542, PYG=8661.64805, QAR=3.947084, RON=4.975865, RSD=117.021815, RUB=104.962826, RWF=1463.671543, SAR=4.056243, SBD=9.018904, SCR=14.270319, SDG=649.606787, SEK=11.470489, SGD=1.426538, SHP=0.826361, SLE=24.569751, SLL=22646.457513, SOS=618.503461, SRD=36.773571, STD=22353.228212, SVC=9.469522, SYP=2713.460915, SZL=19.098019, THB=36.352237, TJS=11.518009, TMT=3.7799, TND=3.357376, TOP=2.529405, TRY=37.033737, TTD=7.35275, TWD=34.644192, TZS=2946.031434, UAH=44.753715, UGX=3969.380441, USD=1.079971, UYU=45.042969, UZS=13869.963542, VEF=3912253.252178, VES=44.268021, VND=27398.875258, VUV=128.216411, WST=3.025199, XAF=655.854631, XAG=0.032016, XAU=0.000397, XCD=2.918677, XDR=0.814973, XOF=655.854631, XPF=119.331742, YER=270.371241, ZAR=19.084154, ZMK=9721.042737, ZMW=28.652528, ZWL=347.750361}}
+2024-10-26 20:06:39 [http-nio-8585-exec-3] INFO  c.s.w.m.m.s.McBookingServiceImpl - Price in SEK 2350 was converted to GBP 170.71.
+2024-10-26 20:06:58 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer updated booking: McBooking{id=5, startDate=2023-12-16, endDate=2023-12-22, price=2350, priceInGBP=null, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}
+2024-10-26 20:06:58 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.CurrencyServiceImpl - Currency response: CurrencyResponse{success=true, base='EUR', date='2024-10-26', rates={AED=3.96678, AFN=72.028757, ALL=98.554617, AMD=418.834626, ANG=1.950496, AOA=981.749156, ARS=1063.117081, AUD=1.634834, AWG=1.943949, AZN=1.840239, BAM=1.955495, BBD=2.185159, BDT=129.329814, BGN=1.955813, BHD=0.406895, BIF=3143.009425, BMD=1.079971, BND=1.429277, BOB=7.478902, BRL=6.163941, BSD=1.082231, BTC=0.000016127086, BTN=90.990098, BWP=14.468742, BYN=3.541747, BYR=21167.440089, BZD=2.18146, CAD=1.500351, CDF=3077.918975, CHF=0.936153, CLF=0.0371, CLP=1023.709146, CNY=7.690589, CNH=7.688635, COP=4671.837623, CRC=557.410416, CUC=1.079971, CUP=28.619243, CVE=110.247792, CZK=25.304156, DJF=192.719919, DKK=7.464011, DOP=65.169526, DZD=144.256148, EGP=52.64842, ERN=16.199571, ETB=131.604659, EUR=1, FJD=2.428046, FKP=0.826361, GBP=0.833247, GEL=2.937944, GGP=0.826361, GHS=17.392285, GIP=0.826361, GMD=75.062173, GNF=9333.543178, GTQ=8.371693, GYD=226.424659, HKD=8.391756, HNL=27.283741, HRK=7.439956, HTG=142.477761, HUF=404.212127, IDR=16950.25964, ILS=4.091584, IMP=0.826361, INR=90.828028, IQD=1417.778707, IRR=45472.197572, ISK=149.166071, JEP=0.826361, JMD=171.44324, JOD=0.765596, JPY=164.463492, KES=139.608322, KGS=92.665652, KHR=4395.313959, KMF=491.333418, KPW=971.974046, KRW=1499.713544, KWD=0.330882, KYD=0.901859, KZT=526.437831, LAK=23772.959219, LBP=96916.072896, LKR=317.805981, LRD=207.797566, LSL=19.104918, LTL=3.188875, LVL=0.653264, LYD=5.213186, MAD=10.686631, MDL=19.426968, MGA=4987.221572, MKD=61.519132, MMK=3507.705088, MNT=3669.74296, MOP=8.661528, MRU=43.073277, MUR=49.797891, MVR=16.58877, MWK=1876.607091, MXN=21.582045, MYR=4.687484, MZN=69.021382, NAD=19.104653, NGN=1776.553379, NIO=39.823784, NOK=11.850747, NPR=145.583603, NZD=1.80703, OMR=0.415779, PAB=1.082241, PEN=4.063866, PGK=4.331324, PHP=63.248569, PKR=300.434307, PLN=4.337542, PYG=8661.64805, QAR=3.947084, RON=4.975865, RSD=117.021815, RUB=104.962826, RWF=1463.671543, SAR=4.056243, SBD=9.018904, SCR=14.270319, SDG=649.606787, SEK=11.470489, SGD=1.426538, SHP=0.826361, SLE=24.569751, SLL=22646.457513, SOS=618.503461, SRD=36.773571, STD=22353.228212, SVC=9.469522, SYP=2713.460915, SZL=19.098019, THB=36.352237, TJS=11.518009, TMT=3.7799, TND=3.357376, TOP=2.529405, TRY=37.033737, TTD=7.35275, TWD=34.644192, TZS=2946.031434, UAH=44.753715, UGX=3969.380441, USD=1.079971, UYU=45.042969, UZS=13869.963542, VEF=3912253.252178, VES=44.268021, VND=27398.875258, VUV=128.216411, WST=3.025199, XAF=655.854631, XAG=0.032016, XAU=0.000397, XCD=2.918677, XDR=0.814973, XOF=655.854631, XPF=119.331742, YER=270.371241, ZAR=19.084154, ZMK=9721.042737, ZMW=28.652528, ZWL=347.750361}}
+2024-10-26 20:06:58 [http-nio-8585-exec-5] INFO  c.s.w.m.m.s.McBookingServiceImpl - Price in SEK 2350 was converted to GBP 170.71.
+2024-10-26 20:07:07 [http-nio-8585-exec-7] INFO  c.s.w.m.m.s.McBookingServiceImpl - Customer listed all bookings: {activeBookings=[], pastBookings=[McBooking{id=5, startDate=2023-12-16, endDate=2023-12-22, price=2350.00, priceInGBP=170.71, customer=Kund:   5
+     Förnamn:        Tom
+     Efternamn:      Brown
+     E-postadess:    tom.brown@example.com
+     Telefonnummer:  5678901234
+     Personnummer:   2000-05-05
+
+Adress
+     Adressid:       5
+     Gatuadress:     Fifth Street 5
+     Postnummer:     56789
+     Ort:            City E, motorcycles=[Motorcycle{id=5, brand='Suzuki', model='GSX-R600', registrationNumber='MNO345', pricePerDay=450.00, pricePerDayInGBP=45.00, availability=true}]}]}
+2024-10-26 20:07:16 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-26 20:07:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-10-26 20:07:16 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

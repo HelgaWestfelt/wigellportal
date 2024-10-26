@@ -134,6 +134,7 @@ public class McBookingServiceImpl implements McBookingService {
                             .orElseThrow(() -> new RuntimeException("Motorcycle with id: " + mc.getId() + " could not be found"));
                     motorcycles.add(motorcycle);
                 }
+                updateMotorcycleAvailability();
                 mcBooking.setMotorcycles(motorcycles);
             }
             logger.info("Customer updated booking: {}", mcBooking);
@@ -141,7 +142,7 @@ public class McBookingServiceImpl implements McBookingService {
             BigDecimal priceInGBP = calculatePriceInGBP(mcBooking.getPrice());
             mcBooking.setPriceInGBP(priceInGBP);
 
-            updateMotorcycleAvailability();
+
 
             return mcBookingRepository.save(mcBooking);
         }).orElseThrow(() -> new RuntimeException("Booking with id: " + id + " could not be found"));
